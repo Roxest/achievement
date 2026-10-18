@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "pxcachievements",
+  "version": "${version}",
+  "name": "Pixelclub Achievements",
+  "description": "Server-side Quest Book & Achievement System for Pixelclub Fabric 1.21.1",
+  "authors": [
+    "Pixelclub Center"
+  ],
+  "contact": {
+    "homepage": "https://pixelclub.net",
+    "sources": "https://github.com/PixelclubCenter"
+  },
+  "license": "All-Rights-Reserved",
+  "environment": "server",
+  "entrypoints": {
+    "server": [
+      "com.pixelclub.achievement.PxcAchievementsMod"
+    ]
+  },
+  "mixins": [
+    "pxcachievements.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "cobblemon": ">=1.7.3"
+  }
+}

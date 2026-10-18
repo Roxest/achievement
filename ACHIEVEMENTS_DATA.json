@@ -1,0 +1,2178 @@
+{
+  "total_categories": 16,
+  "total_achievements": 316,
+  "categories": {
+    "Catching Pokémon": {
+      "description": "From \"I caught a thing\" to \"I can make the exact Pokémon appear\".",
+      "target_count": 25,
+      "actual_count": 25,
+      "sections": {
+        "FIRST THROWS": {
+          "Gotcha!": {
+            "description": "Catch your very first Pokémon.",
+            "target": "0/1",
+            "proposed_reward": "5x Poké Balls, 100 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Keep 'Em Stocked": {
+            "description": "Craft 16 Poké Balls from apricorns.",
+            "target": "0/16",
+            "proposed_reward": "16x Iron Ingots, 250 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Soften the Blow": {
+            "description": "Catch a Pokémon while it's below 25% HP.",
+            "target": "0/1",
+            "proposed_reward": "10x Great Balls, 200 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Sleep On It": {
+            "description": "Catch a Pokémon that's suffering a status condition (Sleep, Paralyze, Freeze, Burn, or Poison).",
+            "target": "0/1",
+            "proposed_reward": "5x Ultra Balls, 250 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Make It Yours": {
+            "description": "Use /caughtball to change the ball a Pokémon is kept in.",
+            "target": "0/1",
+            "proposed_reward": "1x Premier Ball, 150 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "A BALL FOR EVERY JOB": {
+          "Stepping Up": {
+            "description": "Catch Pokémon using three different types of Poké Balls.",
+            "target": "0/3",
+            "proposed_reward": "5x Ultra Balls, 300 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "The Apricorn Rainbow": {
+            "description": "Craft an apricorn ball of each colour: one of all 7 apricorn ball varieties.",
+            "target": "0/7",
+            "proposed_reward": "1x Trainer Crate Key, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Right Tool, Right Job": {
+            "description": "Catch a Water- or Bug-type Pokémon with a Net Ball.",
+            "target": "0/2",
+            "proposed_reward": "10x Net Balls, 250 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "CASTING A WIDE NET": {
+          "Variety Is the Spice": {
+            "description": "Catch 25 different species.",
+            "target": "0/25",
+            "proposed_reward": "15x Great Balls, 500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Type Collector": {
+            "description": "Catch a Pokémon of all 18 types (one of each type).",
+            "target": "0/18",
+            "proposed_reward": "1x Trainer Crate Key, 1,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Around the World": {
+            "description": "Catch Pokémon across 10 different biomes.",
+            "target": "0/10",
+            "proposed_reward": "10x Ultra Balls, 750 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Through the Ages": {
+            "description": "Catch a Pokémon from every generation, Gen 1 through Gen 9.",
+            "target": "0/9",
+            "proposed_reward": "1x Ultra Crate Key, 1,200 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "THE POKÉDEX": {
+          "A Good Start": {
+            "description": "Reach 50 Pokédex entries.",
+            "target": "0/50",
+            "proposed_reward": "10x Ultra Balls, 500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Kanto Veteran": {
+            "description": "Reach 151 Pokédex entries.",
+            "target": "0/151",
+            "proposed_reward": "1x Trainer Crate Key, 1,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Halfway Home": {
+            "description": "Reach 500 Pokédex entries.",
+            "target": "0/500",
+            "proposed_reward": "2x Ultra Crate Keys, 5,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "The 800 Club": {
+            "description": "Reach 800 Pokédex entries.",
+            "target": "0/800",
+            "proposed_reward": "1x Master Crate Key, 10,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Living Legend": {
+            "description": "Reach 1,000 Pokédex entries (complete the Pokédex).",
+            "target": "0/1000",
+            "proposed_reward": "1x Master Ball, 25,000 PokéCoins, Title: 'Living Legend'",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "CATCH COMBOS": {
+          "On a Roll": {
+            "description": "Reach a Catch Combo of 10.",
+            "target": "0/10",
+            "proposed_reward": "5x Lure, 300 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "In the Zone": {
+            "description": "Reach a Catch Combo of 100.",
+            "target": "0/100",
+            "proposed_reward": "1x Trainer Crate Key, 1,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Unbroken": {
+            "description": "Reach a Catch Combo of 900, the point where maximum shiny chance is unlocked.",
+            "target": "0/900",
+            "proposed_reward": "1x Shiny Charm Voucher, 10,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "POKÉ SNACKS & THE HUNT": {
+          "Snack Attack": {
+            "description": "Craft and use your first Poké Snack.",
+            "target": "0/1",
+            "proposed_reward": "3x Sweet Poké Snacks, 200 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Calling Your Shot": {
+            "description": "Use a type-boosting Poké Snack, then catch a Pokémon of that boosted type.",
+            "target": "0/1",
+            "proposed_reward": "5x Type Poké Snacks, 400 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Designer Spawns": {
+            "description": "Use a Poké Snack that stacks a nature booster onto a type booster, then catch that Pokémon.",
+            "target": "0/1",
+            "proposed_reward": "1x Rare Candy, 600 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "THE LONG HAUL": {
+          "Seasoned Catcher": {
+            "description": "Catch 1,000 Pokémon in total.",
+            "target": "0/1000",
+            "proposed_reward": "2x Trainer Crate Keys, 3,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "True Dedication": {
+            "description": "Catch 5,000 Pokémon in total.",
+            "target": "0/5000",
+            "proposed_reward": "1x Master Crate Key, 15,000 PokéCoins, Title: 'Master Catcher'",
+            "status": "TRANSCRIBED"
+          }
+        }
+      }
+    },
+    "Gyms & The Circuit": {
+      "description": "Lead the player through all 8 gyms, the League, and into the prestige loops.",
+      "target_count": 20,
+      "actual_count": 20,
+      "sections": {
+        "THE GYM GAUNTLET": {
+          "First Badge": {
+            "description": "Earn your first gym badge by beating the first Gym Leader.",
+            "target": "0/1",
+            "proposed_reward": "5x Rare Candies, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Halfway There": {
+            "description": "Hold 4 gym badges.",
+            "target": "0/4",
+            "proposed_reward": "10x Rare Candies, 1,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Gym Conqueror": {
+            "description": "Earn all 8 gym badges.",
+            "target": "0/8",
+            "proposed_reward": "1x Trainer Crate Key, 5,000 PokéCoins, Champion Challenger Pass",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "LEAGUE CONTENDER": {
+          "The Trials": {
+            "description": "Complete the Elite 4 pre-battle quests and earn your challenger pass.",
+            "target": "0/1",
+            "proposed_reward": "10x Max Revives, 2,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Elite": {
+            "description": "Defeat the Elite 4.",
+            "target": "0/1",
+            "proposed_reward": "2x Trainer Crate Keys, 7,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "License to Loop": {
+            "description": "Finish your first full circuit and unlock circuit looping prestige.",
+            "target": "0/1",
+            "proposed_reward": "1x Ultra Crate Key, 10,000 PokéCoins, Circuit Prestige Token",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "THE CIRCUIT": {
+          "Lap Two": {
+            "description": "Complete circuit 2, your first lap under circuit prestige rules.",
+            "target": "0/2",
+            "proposed_reward": "1x Trainer Crate Key, 2,500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Five Rings": {
+            "description": "Complete circuit 5 and claim your first milestone reward.",
+            "target": "0/5",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Double Digits": {
+            "description": "Complete circuit 10.",
+            "target": "0/10",
+            "proposed_reward": "2x Ultra Crate Keys, 10,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Veteran of the Loop": {
+            "description": "Complete circuit 20.",
+            "target": "0/20",
+            "proposed_reward": "1x Master Crate Key, 20,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Circuit Master": {
+            "description": "Complete all 30 circuits.",
+            "target": "0/30",
+            "proposed_reward": "2x Master Crate Keys, 50,000 PokéCoins, Title: 'Circuit Master'",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "GYM CRAFT": {
+          "Super Effective": {
+            "description": "Knock out a gym leader's Pokémon with a super-effective move.",
+            "target": "0/1",
+            "proposed_reward": "3x Rare Candies, 300 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Gem Powered": {
+            "description": "Win a gym battle with a Type Gem boosting your decisive move.",
+            "target": "0/1",
+            "proposed_reward": "1x Random Type Gem, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Flawless": {
+            "description": "Beat a gym leader without a single one of your Pokémon fainting.",
+            "target": "0/1",
+            "proposed_reward": "1x Trainer Crate Key, 1,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "One and Done": {
+            "description": "Beat a gym leader's whole team with a single Pokémon.",
+            "target": "0/1",
+            "proposed_reward": "1x Ultra Crate Key, 2,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Badge Centurion": {
+            "description": "Win 50 gym leader battles across your circuit runs.",
+            "target": "0/50",
+            "proposed_reward": "2x Ultra Crate Keys, 10,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "THE GAUNTLET RULES": {
+          "By the Book": {
+            "description": "Beat all 8 gym leaders without ever fielding a Pokémon above the level cap.",
+            "target": "0/8",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Iron Will": {
+            "description": "Clear all 8 gyms without a single one of your Pokémon fainting across the entire run.",
+            "target": "0/8",
+            "proposed_reward": "1x Master Crate Key, 15,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "No Safety Net": {
+            "description": "Win a gym battle in circuit 16 or higher, where battle items are restricted.",
+            "target": "0/1",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Locked In": {
+            "description": "Win a gym battle in circuit 21 or higher: no items, hard level caps, and competitive AI.",
+            "target": "0/1",
+            "proposed_reward": "1x Master Crate Key, 20,000 PokéCoins, Title: 'Locked In'",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        }
+      }
+    },
+    "Battling": {
+      "description": "Player-versus-player combat, duels, win streaks, and competitive masteries.",
+      "target_count": 18,
+      "actual_count": 18,
+      "sections": {
+        "INTO THE FRAY": {
+          "First Blood": {
+            "description": "Win your first battle against a wild Pokémon.",
+            "target": "0/1",
+            "proposed_reward": "3x Potions, 100 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Type Advantage": {
+            "description": "Defeat a wild Pokémon with a super-effective attack.",
+            "target": "0/1",
+            "proposed_reward": "5x Super Potions, 200 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Punching Up": {
+            "description": "Defeat a wild Pokémon at least 10 levels higher than yours.",
+            "target": "0/1",
+            "proposed_reward": "3x Rare Candies, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Seasoned Fighter": {
+            "description": "Defeat 500 wild Pokémon in total.",
+            "target": "0/500",
+            "proposed_reward": "1x Trainer Crate Key, 2,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "THE DUELIST": {
+          "En Garde": {
+            "description": "Win your first PvP battle against another player.",
+            "target": "0/1",
+            "proposed_reward": "1x Trainer Crate Key, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Two on Two": {
+            "description": "Win a Double Battle against a player.",
+            "target": "0/1",
+            "proposed_reward": "5x Revives, 750 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Triple Threat": {
+            "description": "Win a Triple Battle against a player.",
+            "target": "0/1",
+            "proposed_reward": "5x Max Potions, 1,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Arena Veteran": {
+            "description": "Win 25 PvP battles in total.",
+            "target": "0/25",
+            "proposed_reward": "1x Ultra Crate Key, 3,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "TRAINER COMBAT SKILLS": {
+          "Skill Tree": {
+            "description": "Open /combatskills and spend your first skill point.",
+            "target": "0/1",
+            "proposed_reward": "1x Skill Reset Voucher, 250 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Prosperity First": {
+            "description": "Reach level 10 in any Combat Skill (Trainer Level, Attack, Defense, or Prosperity).",
+            "target": "0/10",
+            "proposed_reward": "1,500 PokéCoins, 10x Exp Candies M",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Jack of All Trades": {
+            "description": "Put at least one point into all four Combat Skill paths.",
+            "target": "0/4",
+            "proposed_reward": "1,000 PokéCoins, 5x Exp Candies L",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Maxed Out": {
+            "description": "Fully max out any one Combat Skill.",
+            "target": "0/1",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "THE DAILY CIRCUIT": {
+          "Daily Grind": {
+            "description": "Win your first Daily Battle at /warp dailybattle.",
+            "target": "0/1",
+            "proposed_reward": "1x Daily Battle Ticket, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "On a Streak": {
+            "description": "Reach a 7-day Daily Battle streak.",
+            "target": "0/7",
+            "proposed_reward": "1x Trainer Crate Key, 2,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Thirty and Thriving": {
+            "description": "Reach a 30-day Daily Battle streak.",
+            "target": "0/30",
+            "proposed_reward": "1x Master Crate Key, 10,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "MASTER TACTICIAN": {
+          "Untouchable": {
+            "description": "Win a battle without a single one of your Pokémon taking any damage.",
+            "target": "0/1",
+            "proposed_reward": "1x Focus Sash, 1,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Giant Slayer": {
+            "description": "Defeat a wild Pokémon at least 25 levels higher than yours.",
+            "target": "0/1",
+            "proposed_reward": "5x Rare Candies, 2,500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Hundred Duels": {
+            "description": "Win 100 PvP battles in total.",
+            "target": "0/100",
+            "proposed_reward": "2x Master Crate Keys, 15,000 PokéCoins, Title: 'Grandmaster Duelist'",
+            "status": "TRANSCRIBED"
+          }
+        }
+      }
+    },
+    "Raids & Dungeons": {
+      "description": "Group content and the difficulty ladders, plus the raid token economy.",
+      "target_count": 18,
+      "actual_count": 18,
+      "sections": {
+        "RAID ROOKIE": {
+          "Answer the Call": {
+            "description": "Join your first raid with /raid during an active raid announcement.",
+            "target": "0/1",
+            "proposed_reward": "500 Raid Coins, 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Raid Cleared": {
+            "description": "Complete a 1-star raid.",
+            "target": "0/1",
+            "proposed_reward": "750 Raid Coins, 750 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Top of the Board": {
+            "description": "Finish in the top 3 of a raid leaderboard.",
+            "target": "0/1",
+            "proposed_reward": "1,000 Raid Coins, 1x Trainer Crate Key",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Powered Up": {
+            "description": "Level a Pokémon up 10+ levels in raids while fighting boss Pokémon.",
+            "target": "0/10",
+            "proposed_reward": "1,500 Raid Coins, 10x Exp Candies XL",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "CLIMBING THE STARS": {
+          "Three-Star General": {
+            "description": "Clear a 3-star raid.",
+            "target": "0/1",
+            "proposed_reward": "1x Trainer Crate Key, 950 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Five-Star Fighter": {
+            "description": "Clear a 5-star raid.",
+            "target": "0/1",
+            "proposed_reward": "1x Ultra Crate Key, 2,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Six-Star Slayer": {
+            "description": "Clear a 6-star raid, the top of the ladder.",
+            "target": "0/1",
+            "proposed_reward": "1x Master Crate Key, 5,000 PokéCoins, Title: 'Raid Slayer'",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "THE RAID SHOP": {
+          "Spoils of War": {
+            "description": "Spend Raid Coins in the /raid shop for the first time.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 1x Exp Candy XL",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Move Tutor": {
+            "description": "Buy a TM-exclusive move or a move-tutor service from the raid shop.",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins, 1x Heart Scale",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Forme Collector": {
+            "description": "Buy any legendary form-change item or special item from the raid shop.",
+            "target": "0/1",
+            "proposed_reward": "2,500 PokéCoins, 1x Ability Capsule",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Big Spender": {
+            "description": "Spend 25,000 Raid Coins in total.",
+            "target": "0/25k",
+            "proposed_reward": "1x Ultra Crate Key, 10,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "INTO THE DUNGEONS": {
+          "Dungeon Delver": {
+            "description": "Head to /warp dungeons and grab the free entry kit / accept your first dungeon quest.",
+            "target": "0/1",
+            "proposed_reward": "3x Dungeon Heals, 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Quest Giver": {
+            "description": "Start every dungeon quest from the NPCs at dungeon hub.",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins, 5x Max Potions",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Into the Nether": {
+            "description": "Clear the Easy (Nether) dungeon.",
+            "target": "0/1",
+            "proposed_reward": "1x Trainer Crate Key, 1,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Deeper Still": {
+            "description": "Clear the Medium and Hard dungeons.",
+            "target": "0/2",
+            "proposed_reward": "1x Ultra Crate Key, 3,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "DUNGEON MASTER": {
+          "No Fear": {
+            "description": "Clear the Extreme dungeon.",
+            "target": "0/1",
+            "proposed_reward": "1x Master Crate Key, 7,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Clean Sweep": {
+            "description": "Clear all four dungeon difficulties at least once.",
+            "target": "0/4",
+            "proposed_reward": "2x Ultra Crate Keys, 10,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Suited Up": {
+            "description": "Earn a full dungeon armour set (such as Dungeon Knight or Raider gear).",
+            "target": "0/1",
+            "proposed_reward": "1x Master Crate Key, 15,000 PokéCoins, Title: 'Dungeon Master'",
+            "status": "DRAFTED_CUTOFF"
+          }
+        }
+      }
+    },
+    "Shinies & Legendaries": {
+      "description": "The rarest catches: wild encounters, streaks, legendary shrines and hunts.",
+      "target_count": 17,
+      "actual_count": 17,
+      "sections": {
+        "FIRST SPARKLE": {
+          "It Sparkled!": {
+            "description": "Catch your first shiny Pokémon.",
+            "target": "0/1",
+            "proposed_reward": "1x Trainer Crate Key, 1,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "The Stuff of Legends": {
+            "description": "Catch your first legendary Pokémon.",
+            "target": "0/1",
+            "proposed_reward": "1x Sub-Legendary Pokemon Crate Key, 2,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "THE HUNT IS ON": {
+          "Scout's Honour": {
+            "description": "Take part in a Scout when one spawns in the wild.",
+            "target": "0/1",
+            "proposed_reward": "5x Ultra Balls, 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Caught the Glimmer": {
+            "description": "Catch a shiny from a Shiny Scout.",
+            "target": "0/1",
+            "proposed_reward": "1x Trainer Crate Key, 2,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Legendary Hunter": {
+            "description": "Catch a legendary from a Legendary Scout.",
+            "target": "0/1",
+            "proposed_reward": "1x Legendary Pokemon Crate Key, 5,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Persistence": {
+            "description": "Take part in 10 Scouts in total, win or lose.",
+            "target": "0/10",
+            "proposed_reward": "1x Ultra Crate Key, 3,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "MANY METHODS": {
+          "Spin to Win": {
+            "description": "Pull a shiny or a legendary from the Poké Spinner (/spinner).",
+            "target": "0/1",
+            "proposed_reward": "2x Spinner Tokens, 1,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "The Masuda Method": {
+            "description": "Breed a shiny using a parent from a different language/trainer tag.",
+            "target": "0/1",
+            "proposed_reward": "1x Destiny Knot, 2,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Hooked a Star": {
+            "description": "Catch a shiny Pokémon by fishing.",
+            "target": "0/1",
+            "proposed_reward": "10x Lure Balls, 2,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Hatched, Not Caught": {
+            "description": "Hatch a shiny Pokémon straight from an egg.",
+            "target": "0/1",
+            "proposed_reward": "1x Everstone, 2,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "THE COLLECTION": {
+          "Shiny Showcase": {
+            "description": "Own 5 shiny Pokémon at once.",
+            "target": "0/5",
+            "proposed_reward": "1x Ultra Crate Key, 3,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Shiny Rainbow": {
+            "description": "Own shiny Pokémon of 6 different types.",
+            "target": "0/6",
+            "proposed_reward": "1x Ultra Crate Key, 4,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Legendary Lineup": {
+            "description": "Own 5 different legendary Pokémon.",
+            "target": "0/5",
+            "proposed_reward": "1x Legendary Pokemon Crate Key, 5,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Best of Both": {
+            "description": "Own a shiny legendary Pokémon.",
+            "target": "0/1",
+            "proposed_reward": "1x Mythical Pokemon Crate Key, 10,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Pokédex Sparkle": {
+            "description": "Register 50 shiny Pokédex entries.",
+            "target": "0/50",
+            "proposed_reward": "1x Master Crate Key, 15,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "LIVING TREASURE": {
+          "Hoarder of Light": {
+            "description": "Catch 25 different scout shiny Pokémon.",
+            "target": "0/25",
+            "proposed_reward": "2x Ultra Crate Keys, 15,000 PokéCoins, Title: 'Radiant Collector'",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Master of Legends": {
+            "description": "Catch 10 different scout legendary Pokémon.",
+            "target": "0/10",
+            "proposed_reward": "2x Master Crate Keys, 25,000 PokéCoins, Title: 'Lord of Legends'",
+            "status": "DRAFTED_CUTOFF"
+          }
+        }
+      }
+    },
+    "Breeding": {
+      "description": "From first eggs in daycares to IV inheritance, egg moves, and perfect specs.",
+      "target_count": 20,
+      "actual_count": 20,
+      "sections": {
+        "FIRST EGGS": {
+          "Love Is in the Air": {
+            "description": "Set up a Pasture Block with a compatible breeding pair.",
+            "target": "0/1",
+            "proposed_reward": "2x Pasture Blocks, 250 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "It Hatched!": {
+            "description": "Hatch your first egg.",
+            "target": "0/1",
+            "proposed_reward": "5x Exp Candies S, 250 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Need a Ditto": {
+            "description": "Produce an egg using a Ditto as a parent.",
+            "target": "0/1",
+            "proposed_reward": "1x Quick Powder, 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Warm Embrace": {
+            "description": "Hatch an egg with a Flame Body or Magma Armor Pokémon in your party.",
+            "target": "0/1",
+            "proposed_reward": "3x Incubator Fuel, 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Pasture Master": {
+            "description": "Run 5 active Pasture Blocks at once on your claim.",
+            "target": "0/5",
+            "proposed_reward": "1x Trainer Crate Key, 1,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "THE IV HUNT": {
+          "Good Genes": {
+            "description": "Breed a Pokémon with at least 3 perfect (31) IVs.",
+            "target": "0/1",
+            "proposed_reward": "1x Power Weight, 750 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Tie the Knot": {
+            "description": "Produce an egg while a parent holds a Destiny Knot.",
+            "target": "0/1",
+            "proposed_reward": "1x Destiny Knot, 1,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Five-Star Stats": {
+            "description": "Breed a Pokémon with 5 perfect (31) IVs.",
+            "target": "0/1",
+            "proposed_reward": "1x Bottle Cap, 2,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Hundo!": {
+            "description": "Breed a flawless 6-IV Pokémon (100% IVs).",
+            "target": "0/1",
+            "proposed_reward": "1x Gold Bottle Cap, 5,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "SELECTIVE BREEDING": {
+          "Power Play": {
+            "description": "Produce an egg using a Power item to guarantee an IV stat inheritance.",
+            "target": "0/1",
+            "proposed_reward": "1x Power Bracer, 750 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Nature's Choice": {
+            "description": "Breed a Pokémon that inherits a parent's Nature using an Everstone.",
+            "target": "0/1",
+            "proposed_reward": "1x Everstone, 750 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Like Mother, Like Child": {
+            "description": "Breed a Pokémon that inherits its mother's Poké Ball type.",
+            "target": "0/1",
+            "proposed_reward": "5x Luxury Balls, 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Born in Style": {
+            "description": "Breed a Pokémon born in a non-standard Poké Ball (e.g. Luxury, Moon, or Cherish).",
+            "target": "0/1",
+            "proposed_reward": "3x Moon Balls, 1,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "EGG MOVES": {
+          "Mirror, Mirror": {
+            "description": "Use a Mirror Herb to teach a Pokémon an egg move during a picnic/pasture.",
+            "target": "0/1",
+            "proposed_reward": "1x Mirror Herb, 1,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Inherited Power": {
+            "description": "Breed a Pokémon that hatches already knowing an egg move from its parents.",
+            "target": "0/1",
+            "proposed_reward": "1x Heart Scale, 1,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Move Collector": {
+            "description": "Teach a single Pokémon two or more egg moves.",
+            "target": "0/1",
+            "proposed_reward": "1x PP Max, 1,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "MASTER BREEDER": {
+          "Selling Hundos": {
+            "description": "Sell a perfect-IV (hundo) Pokémon on the Auction House.",
+            "target": "0/1",
+            "proposed_reward": "1x Trainer Crate Key, 2,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Egg Factory": {
+            "description": "Hatch 100 eggs in total.",
+            "target": "0/100",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Hundo Hatchery": {
+            "description": "Own perfect-IV Pokémon of 5 different species.",
+            "target": "0/5",
+            "proposed_reward": "2x Ultra Crate Keys, 10,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Competitive Ready": {
+            "description": "Breed a single Pokémon that is a hundo, has the desired Nature, and has egg moves.",
+            "target": "0/1",
+            "proposed_reward": "1x Master Crate Key, 15,000 PokéCoins, Title: 'Master Breeder'",
+            "status": "DRAFTED_CUTOFF"
+          }
+        }
+      }
+    },
+    "Training & Team Building": {
+      "description": "Teach a player to fully optimise a Pokémon for endgame content: EVs, IVs, natures, gems.",
+      "target_count": 20,
+      "actual_count": 20,
+      "sections": {
+        "TUNE YOUR TEAM": {
+          "Change of Heart": {
+            "description": "Use a Nature Mint to change a Pokémon's stat-influencing Nature.",
+            "target": "0/1",
+            "proposed_reward": "2x Mint Vouchers, 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "New Talent": {
+            "description": "Use an Ability Capsule to switch a Pokémon's primary ability.",
+            "target": "0/1",
+            "proposed_reward": "1x Ability Capsule, 1,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Hold This": {
+            "description": "Give a Pokémon a competitive held item (e.g. Leftovers, Choice Band, Focus Sash).",
+            "target": "0/1",
+            "proposed_reward": "1x Leftovers, 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Hidden Potential": {
+            "description": "Use an Ability Patch to unlock a Pokémon's Hidden Ability.",
+            "target": "0/1",
+            "proposed_reward": "1x Ability Patch, 3,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "EV TRAINING": {
+          "Vitamin Boost": {
+            "description": "Use a vitamin (Protein, Iron, Carbos, etc.) to add EVs to a Pokémon.",
+            "target": "0/1",
+            "proposed_reward": "5x Protein, 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Spread the Love": {
+            "description": "Add EVs to a Pokémon using mochis.",
+            "target": "0/1",
+            "proposed_reward": "5x Muscle Mochi, 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Fresh Start": {
+            "description": "Use a Fresh-Start Mochi to reset a Pokémon's EVs completely.",
+            "target": "0/1",
+            "proposed_reward": "1x Fresh-Start Mochi, 1,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Fully Trained": {
+            "description": "Max out a Pokémon's EV spread (510 total EVs).",
+            "target": "0/1",
+            "proposed_reward": "1x Trainer Crate Key, 2,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "MOVE MASTERY": {
+          "The Machine": {
+            "description": "Craft a TM Machine.",
+            "target": "0/1",
+            "proposed_reward": "5x Blank TMs, 500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Learn This": {
+            "description": "Teach a Pokémon a move with a TM.",
+            "target": "0/1",
+            "proposed_reward": "3x Random TMs, 500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "One-Shot Lesson": {
+            "description": "Teach a move with a single-use TR.",
+            "target": "0/1",
+            "proposed_reward": "3x Random TRs, 500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Movepool Architect": {
+            "description": "Give a single Pokémon a full custom four-move moveset using TMs and TRs.",
+            "target": "0/1",
+            "proposed_reward": "1x PP Up, 1,500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "TYPE GEMS": {
+          "Brush With Treasure": {
+            "description": "Brush a Suspicious Sand or Gravel block in ruins to uncover a Type Gem.",
+            "target": "0/1",
+            "proposed_reward": "1x Copper Brush, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Gem in Battle": {
+            "description": "Win a battle with a Type-Gem-boosted move.",
+            "target": "0/1",
+            "proposed_reward": "2x Random Type Gems, 500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Gem Crafter": {
+            "description": "Use a Type Gem as a crafting ingredient (such as in custom gear or recipes).",
+            "target": "0/1",
+            "proposed_reward": "2x Type Gems, 750 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Full Spectrum": {
+            "description": "Collect all 18 Type Gems.",
+            "target": "0/18",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins, Title: 'Gemologist'",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "PERFECT SPECIMEN": {
+          "Tournament Ready": {
+            "description": "Build a Pokémon with maxed IVs, optimized EVs, the desired Nature, and moveset.",
+            "target": "0/1",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Perfect Hatch": {
+            "description": "Hatch a Pokémon with all 6 IVs maxed.",
+            "target": "0/1",
+            "proposed_reward": "1x Gold Bottle Cap, 5,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Impossible Hatchling": {
+            "description": "Hatch a genderless Pokémon with all 6 IVs maxed via Ditto breeding.",
+            "target": "0/1",
+            "proposed_reward": "1x Master Crate Key, 10,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Six of the Best": {
+            "description": "Field a full team of six competitively-built Pokémon in your party.",
+            "target": "0/6",
+            "proposed_reward": "2x Master Crate Keys, 20,000 PokéCoins, Title: 'Apex Trainer'",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        }
+      }
+    },
+    "Evolving Pokémon": {
+      "description": "Special evolution mechanics: stones, trade items, friendship, fossils, and Mega Evolution.",
+      "target_count": 20,
+      "actual_count": 20,
+      "sections": {
+        "FIRST EVOLUTIONS": {
+          "Growing Up": {
+            "description": "Evolve a Pokémon for the first time.",
+            "target": "0/1",
+            "proposed_reward": "3x Rare Candies, 200 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Stone Cold": {
+            "description": "Evolve a Pokémon using an Evolution Stone.",
+            "target": "0/1",
+            "proposed_reward": "1x Evolution Stone Choice, 400 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Best Friends": {
+            "description": "Evolve a Pokémon through high friendship.",
+            "target": "0/1",
+            "proposed_reward": "1x Soothe Bell, 400 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Item Evolution": {
+            "description": "Evolve a Pokémon that needs to hold a specific item (e.g. Electirizer, Metal Coat, Protector).",
+            "target": "0/1",
+            "proposed_reward": "1x Metal Coat, 600 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Full Circle": {
+            "description": "Evolve a Pokémon all the way to its final 3-stage evolution.",
+            "target": "0/1",
+            "proposed_reward": "5x Rare Candies, 800 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "TRADE & SPECIAL METHODS": {
+          "Long Distance": {
+            "description": "Evolve a trade-evolution Pokémon using a Linking Cord or trade.",
+            "target": "0/1",
+            "proposed_reward": "2x Linking Cords, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "What's in a Name": {
+            "description": "Pull off a special nickname or unique condition evolution (such as Eevee or Runerigus).",
+            "target": "0/1",
+            "proposed_reward": "1x Name Tag, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Battle-Hardened Evo": {
+            "description": "Complete a battle-condition evolution (such as landing 3 critical hits or taking 49+ damage).",
+            "target": "0/1",
+            "proposed_reward": "3x Focus Bands, 750 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Local Variant": {
+            "description": "Evolve a Pokémon into a regional form by evolving in a specific biome.",
+            "target": "0/1",
+            "proposed_reward": "1x Strange Souvenir, 750 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "FOSSILS": {
+          "Bones of the Past": {
+            "description": "Brush a Suspicious block and uncover a Pokémon fossil.",
+            "target": "0/1",
+            "proposed_reward": "1x Copper Brush, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Back to Life": {
+            "description": "Revive a fossil Pokémon in a Fossil Resurrection Machine.",
+            "target": "0/1",
+            "proposed_reward": "1x Random Fossil, 1,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Jurassic Collector": {
+            "description": "Revive 5 different fossil Pokémon.",
+            "target": "0/5",
+            "proposed_reward": "1x Trainer Crate Key, 2,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "MEGA EVOLUTION": {
+          "Mega Start": {
+            "description": "Obtain a Mega Bracelet.",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins, 5x Ultra Balls",
+            "status": "TRANSCRIBED"
+          },
+          "Stone of Power": {
+            "description": "Obtain your first Mega Stone.",
+            "target": "0/1",
+            "proposed_reward": "1x Random Mega Stone Key, 1,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Mega Evolve!": {
+            "description": "Mega Evolve a Pokémon in battle.",
+            "target": "0/1",
+            "proposed_reward": "2,000 PokéCoins, 5x Max Revives",
+            "status": "TRANSCRIBED"
+          },
+          "Mega Collection": {
+            "description": "Mega Evolve 5 different species.",
+            "target": "0/5",
+            "proposed_reward": "1x Random Mega Stone Key, 5,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "EVOLUTION MASTER": {
+          "Evolutionary": {
+            "description": "Evolve 50 Pokémon in total.",
+            "target": "0/50",
+            "proposed_reward": "1x Ultra Crate Key, 3,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Form Master": {
+            "description": "Unlock an alternate form with a special item (Rotom appliances, Gracidea, Reveal Glass, etc.).",
+            "target": "0/1",
+            "proposed_reward": "1x Reveal Glass, 2,500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "The Coin Collector": {
+            "description": "Evolve Gimmighoul into Gholdengo with 999 Gimmighoul Coins.",
+            "target": "0/1",
+            "proposed_reward": "1x Ultra Crate Key, 10,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Mythic Method": {
+            "description": "Pull off one of the mythic/legendary special evolutions or transformations.",
+            "target": "0/1",
+            "proposed_reward": "1x Master Crate Key, 15,000 PokéCoins, Title: 'Evolutionary Genius'",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        }
+      }
+    },
+    "Fishing": {
+      "description": "Water catches, specialized rods, fishing tournaments, and rare aquatic Pokémon.",
+      "target_count": 18,
+      "actual_count": 18,
+      "sections": {
+        "FIRST CAST": {
+          "Old Rod Rookie": {
+            "description": "Catch your first Pokémon or item using an Old Rod.",
+            "target": "0/1",
+            "proposed_reward": "5x Poké Balls, 100 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          },
+          "Better Gear": {
+            "description": "Craft or acquire a Good Rod.",
+            "target": "0/1",
+            "proposed_reward": "10x Great Balls, 250 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          },
+          "Master of the Waters": {
+            "description": "Craft or acquire a Super Rod.",
+            "target": "0/1",
+            "proposed_reward": "5x Ultra Balls, 500 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          },
+          "Nibble": {
+            "description": "Catch 10 wild Pokémon while fishing.",
+            "target": "0/10",
+            "proposed_reward": "10x Dive Balls, 350 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          }
+        },
+        "ANGLER'S LUCK": {
+          "Lure Master": {
+            "description": "Catch 50 Pokémon using specialized lures or baits.",
+            "target": "0/50",
+            "proposed_reward": "1x Trainer Crate Key, 1,000 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          },
+          "Deep Sea Diver": {
+            "description": "Fish up a water Pokémon in deep ocean waters.",
+            "target": "0/1",
+            "proposed_reward": "1x Prism Scale, 750 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          },
+          "Lava Fisher": {
+            "description": "Catch a fire- or lava-dwelling Pokémon with a specialized lava rod.",
+            "target": "0/1",
+            "proposed_reward": "5x Magma Cream, 1,000 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          },
+          "Treasure Haul": {
+            "description": "Fish up 10 valuable items or treasures while fishing.",
+            "target": "0/10",
+            "proposed_reward": "1x Bottle Cap, 1,500 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          }
+        },
+        "BIG GAME HUNTER": {
+          "Heavyweight": {
+            "description": "Catch a Gyarados, Milotic, or Relicanth while fishing.",
+            "target": "0/1",
+            "proposed_reward": "1x Water Gem, 1,500 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          },
+          "River Monster": {
+            "description": "Catch a Colossal-sized water Pokémon via fishing.",
+            "target": "0/1",
+            "proposed_reward": "1x Size Up Voucher, 2,000 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          },
+          "Predator of the Deep": {
+            "description": "Defeat 25 wild aquatic Pokémon immediately after reeling them in.",
+            "target": "0/25",
+            "proposed_reward": "1x Trainer Crate Key, 2,000 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          }
+        },
+        "TOURNAMENT TIME": {
+          "Weigh-In": {
+            "description": "Participate in a server fishing tournament.",
+            "target": "0/1",
+            "proposed_reward": "1x Tournament Ticket, 500 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          },
+          "Podium Finish": {
+            "description": "Place in the top 3 of a fishing contest.",
+            "target": "0/1",
+            "proposed_reward": "1x Ultra Crate Key, 3,500 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          },
+          "Angler Clan": {
+            "description": "Contribute 20 fish catches to your Clan Challenge.",
+            "target": "0/20",
+            "proposed_reward": "500 Valor, 2,000 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          },
+          "Grand Champion": {
+            "description": "Win 1st place in an official fishing competition.",
+            "target": "0/1",
+            "proposed_reward": "1x Master Crate Key, 10,000 PokéCoins, Title: 'Master Angler'",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          }
+        },
+        "MASTER OF THE SEAS": {
+          "Centurion Angler": {
+            "description": "Reel in 100 Pokémon from the water.",
+            "target": "0/100",
+            "proposed_reward": "1x Ultra Crate Key, 3,000 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          },
+          "Leviathan": {
+            "description": "Fish up 500 total catches across all water bodies.",
+            "target": "0/500",
+            "proposed_reward": "1x Master Crate Key, 10,000 PokéCoins",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          },
+          "Master Angler": {
+            "description": "Complete 1,000 total fish catches.",
+            "target": "0/1000",
+            "proposed_reward": "2x Master Crate Keys, 25,000 PokéCoins, Title: 'Poseidon'",
+            "status": "DRAFTED_MISSING_SCREENSHOTS"
+          }
+        }
+      }
+    },
+    "Exploring & Claiming Land": {
+      "description": "World travel, biomes, waystones/flight, claims, and building your safe base.",
+      "target_count": 21,
+      "actual_count": 21,
+      "sections": {
+        "INTO THE WILD": {
+          "Random Adventure": {
+            "description": "Use /rtp to teleport into the wild.",
+            "target": "0/1",
+            "proposed_reward": "100 PokéCoins, 3x Bread",
+            "status": "TRANSCRIBED"
+          },
+          "Worlds Apart": {
+            "description": "Visit all four dimensions via /rtp.",
+            "target": "0/4",
+            "proposed_reward": "1,000 PokéCoins, 1x Waystone",
+            "status": "TRANSCRIBED"
+          },
+          "Cross the Shard": {
+            "description": "Cross a Shard Border in the Overworld.",
+            "target": "0/1",
+            "proposed_reward": "250 PokéCoins, 1x Compass",
+            "status": "TRANSCRIBED"
+          },
+          "Resource Run": {
+            "description": "Gather loot from a resetting resource dimension via /rtp.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 1x Shulker Shell",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "HOME SWEET HOME": {
+          "Stake Your Claim": {
+            "description": "Claim your first chunk with /claim chunk.",
+            "target": "0/1",
+            "proposed_reward": "1x Golden Shovel, 250 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "No Place Like Home": {
+            "description": "Set a home with /sethome.",
+            "target": "0/1",
+            "proposed_reward": "150 PokéCoins, 1x Bed Choice",
+            "status": "TRANSCRIBED"
+          },
+          "Claim Credits": {
+            "description": "Use a Claim Credit to claim a chunk for free.",
+            "target": "0/1",
+            "proposed_reward": "2x Bonus Claim Credits, 500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Trusted Friends": {
+            "description": "Add a player to one of your claim profiles.",
+            "target": "0/1",
+            "proposed_reward": "250 PokéCoins, 1x Player Head Choice",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "TAKING FLIGHT": {
+          "First Flight": {
+            "description": "Mount a Pokémon and take to the air.",
+            "target": "0/1",
+            "proposed_reward": "1x Air Balloon, 500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Three Ways to Fly": {
+            "description": "Ride a Bird, a Jet and a UFO mount.",
+            "target": "0/3",
+            "proposed_reward": "1x Trainer Crate Key, 1,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Aprijuice": {
+            "description": "Feed a mount Aprijuice to improve its stats.",
+            "target": "0/1",
+            "proposed_reward": "3x Aprijuice, 500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Speed Demon": {
+            "description": "Boost a mount's stat to its cap with Aprijuice.",
+            "target": "0/1",
+            "proposed_reward": "1x Golden Bottle Cap, 2,500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "PATHFINDER": {
+          "Globetrotter": {
+            "description": "Visit 15 different biomes.",
+            "target": "0/15",
+            "proposed_reward": "1,000 PokéCoins, 10x Ultra Balls",
+            "status": "TRANSCRIBED"
+          },
+          "Far From Home": {
+            "description": "Travel 50,000 blocks in total.",
+            "target": "0/50k",
+            "proposed_reward": "1x Ultra Crate Key, 2,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Platform Builder": {
+            "description": "Build a spawn platform and encounter a wild Pokémon on it.",
+            "target": "0/1",
+            "proposed_reward": "64x Stone Bricks, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Sky High": {
+            "description": "Force a rare spawn from a platform built above Y-level 200.",
+            "target": "0/1",
+            "proposed_reward": "1x Flying Gem, 1,500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Cartographer": {
+            "description": "Visit 30 or more different biomes.",
+            "target": "0/30",
+            "proposed_reward": "1x Master Crate Key, 5,000 PokéCoins, Title: 'World Explorer'",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "LANDLORD": {
+          "Fortress": {
+            "description": "Fully customise a claim profile's permissions.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 2x Claim Credits",
+            "status": "TRANSCRIBED"
+          },
+          "Home Network": {
+            "description": "Set up the maximum number of homes available to your rank.",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins, 1x Waystone",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Growing Estate": {
+            "description": "Claim 50 chunks.",
+            "target": "0/50",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Land Baron": {
+            "description": "Claim the maximum 140 chunks.",
+            "target": "0/140",
+            "proposed_reward": "1x Master Crate Key, 15,000 PokéCoins, Title: 'Land Baron'",
+            "status": "TRANSCRIBED"
+          }
+        }
+      }
+    },
+    "Mining & Gathering": {
+      "description": "Turn mindless digging into deliberate gathering: ores, gems, farming, and custom tools.",
+      "target_count": 20,
+      "actual_count": 20,
+      "sections": {
+        "PICK AND SHOVEL": {
+          "Break Ground": {
+            "description": "Mine your first ore.",
+            "target": "0/1",
+            "proposed_reward": "16x Torches, 100 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Diamond in the Rough": {
+            "description": "Mine your first Diamond.",
+            "target": "0/1",
+            "proposed_reward": "3x Diamonds, 300 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Ore Collector": {
+            "description": "Mine every type of overworld ore at least once.",
+            "target": "0/8",
+            "proposed_reward": "1x Trainer Crate Key, 1,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Quarry Worker": {
+            "description": "Mine 1,000 blocks of stone.",
+            "target": "0/1k",
+            "proposed_reward": "1x Iron Pickaxe (Efficiency III), 500 PokéCoins",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "ENCHANTED TOOLS": {
+          "Lucky Strike": {
+            "description": "Mine an ore with a Fortune-enchanted pickaxe.",
+            "target": "0/1",
+            "proposed_reward": "3x Lapis Lazuli Blocks, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Clean Cut": {
+            "description": "Mine a block with Silk Touch.",
+            "target": "0/1",
+            "proposed_reward": "1x Silk Touch Book, 500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Book Smart": {
+            "description": "Buy an enchanted book from /xpshop.",
+            "target": "0/1",
+            "proposed_reward": "5x Bottles o' Enchanting, 250 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Everlasting": {
+            "description": "Get a Mending tool without villagers.",
+            "target": "0/1",
+            "proposed_reward": "1x Mending Book, 1,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "GREEN THUMB": {
+          "Apricorn Farmer": {
+            "description": "Plant and harvest apricorns for your own ball crafting.",
+            "target": "0/1",
+            "proposed_reward": "10x Fertilizer, 250 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Berry Patch": {
+            "description": "Grow berries with the right Mulch for a bigger yield.",
+            "target": "0/1",
+            "proposed_reward": "5x Surprise Mulch, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Specialist Crops": {
+            "description": "Grow a special crafting crop (Mint leaves, Vivichokes, etc.).",
+            "target": "0/1",
+            "proposed_reward": "3x Mint Seeds, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Self-Sufficient": {
+            "description": "Craft an item (a vitamin, mint or Poké Ball) entirely from your grown crops.",
+            "target": "0/1",
+            "proposed_reward": "1x Trainer Crate Key, 1,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "DEEP DELVER": {
+          "Into the Deep": {
+            "description": "Mine below Y-level 0 in the deepslate layer.",
+            "target": "0/1",
+            "proposed_reward": "5x Night Vision Potions, 300 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Netherite": {
+            "description": "Mine Ancient Debris.",
+            "target": "0/1",
+            "proposed_reward": "1x Netherite Scrap, 1,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Diamond Tycoon": {
+            "description": "Mine 100 Diamonds in total.",
+            "target": "0/100",
+            "proposed_reward": "1x Diamond Block, 2,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Master of the Depths": {
+            "description": "Mine enough Ancient Debris for a full netherite gear set.",
+            "target": "0/24",
+            "proposed_reward": "1x Netherite Ingot, 5,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "MASTER GATHERER": {
+          "Brush With History": {
+            "description": "Brush a Suspicious block in the Resource World.",
+            "target": "0/1",
+            "proposed_reward": "1x Diamond Brush, 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Sell the Haul": {
+            "description": "Sell mined materials for 25,000 PokéCoins in total.",
+            "target": "0/25k",
+            "proposed_reward": "1x Trainer Crate Key, 2,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Strip Miner": {
+            "description": "Mine 10,000 blocks in total.",
+            "target": "0/10k",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Resource King": {
+            "description": "Stockpile a huge reserve of a refined material in storage.",
+            "target": "0/2.3k",
+            "proposed_reward": "1x Master Crate Key, 10,000 PokéCoins, Title: 'Master Miner'",
+            "status": "DRAFTED_CUTOFF"
+          }
+        }
+      }
+    },
+    "Making Money": {
+      "description": "Teach the full money loop: spend and save, sell wands, player shops, and auctions.",
+      "target_count": 20,
+      "actual_count": 20,
+      "sections": {
+        "SPEND SMART": {
+          "Window Shopping": {
+            "description": "Buy something from /shop.",
+            "target": "0/1",
+            "proposed_reward": "250 PokéCoins, 1x Shopping Coupon",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Banking Basics": {
+            "description": "Deposit money into the bank with /bank.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 1% Bank Interest Token",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Paper Money": {
+            "description": "Turn wallet money into a banknote with /banknote.",
+            "target": "0/1",
+            "proposed_reward": "250 PokéCoins, 1x Empty Banknote",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Generous Soul": {
+            "description": "Pay another player with /pay.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 1x Heart Particle",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "EARNING YOUR KEEP": {
+          "First Sale": {
+            "description": "Sell an item with /sell hand.",
+            "target": "0/1",
+            "proposed_reward": "250 PokéCoins, 5x Bread",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "XP for Sale": {
+            "description": "Convert XP into value via /xpwithdraw or /xpbottle.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 5x Empty Bottles",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Pocket Money": {
+            "description": "Earn 50,000 PokéCoins in total.",
+            "target": "0/50k",
+            "proposed_reward": "1x Trainer Crate Key, 2,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Six Figures": {
+            "description": "Earn 1,000,000 PokéCoins in total.",
+            "target": "0/1m",
+            "proposed_reward": "1x Ultra Crate Key, 10,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "THE AUCTION GAME": {
+          "Going, Going, Gone": {
+            "description": "Sell an item on the Auction House (/ah).",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 1x Auction Token",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Winning Bid": {
+            "description": "Win an item at auction.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 1x Bidder Trophy",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Slot Machine": {
+            "description": "Use all of your Auction House listing slots at once.",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins, +1 Permanent AH Slot",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Buy Low, Sell High": {
+            "description": "Buy an item on auction and resell it for a profit.",
+            "target": "0/1",
+            "proposed_reward": "1,500 PokéCoins, 1x Golden Coin",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Market Mogul": {
+            "description": "Sell 50 items on the Auction House in total.",
+            "target": "0/50",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "SELL WAND EMPIRE": {
+          "Wave the Wand": {
+            "description": "Use a Sell Wand to sell a container of items.",
+            "target": "0/1",
+            "proposed_reward": "1x Sell Wand (1.2x Multiplier, 100 uses), 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Merge Them": {
+            "description": "Merge multiple Sell Wands with /mergewands.",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins, 1x Wand Upgrade Core",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Bulk Baron": {
+            "description": "Sell a 50,000-PokéCoin haul in a single Sell Wand swipe.",
+            "target": "0/1",
+            "proposed_reward": "1x Trainer Crate Key, 5,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "TYCOON": {
+          "Diversified": {
+            "description": "Earn money from 3 different income sources (shops, auctions, minions).",
+            "target": "0/3",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Nest Egg": {
+            "description": "Hold 5,000,000 PokéCoins in the bank.",
+            "target": "0/5m",
+            "proposed_reward": "1x Ultra Crate Key, 15,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Self-Made": {
+            "description": "Earn 50,000,000 PokéCoins in total.",
+            "target": "0/50m",
+            "proposed_reward": "1x Master Crate Key, 30,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Hundred Millionaire": {
+            "description": "Earn 100,000,000 PokéCoins in total.",
+            "target": "0/100m",
+            "proposed_reward": "2x Master Crate Keys, 50,000 PokéCoins, Title: 'Server Tycoon'",
+            "status": "DRAFTED_CUTOFF"
+          }
+        }
+      }
+    },
+    "Automatic Income": {
+      "description": "AFK minions, processing stations, boosters, and passive server economy.",
+      "target_count": 20,
+      "actual_count": 20,
+      "sections": {
+        "FIRST MINION": {
+          "Hired Help": {
+            "description": "Place your first automated minion.",
+            "target": "0/1",
+            "proposed_reward": "1x Minion Fuel, 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Promotion": {
+            "description": "Upgrade a minion to a higher tier.",
+            "target": "0/1",
+            "proposed_reward": "1x Minion Upgrade Slot, 750 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Auto-Pilot": {
+            "description": "Enable a minion's auto-sell feature.",
+            "target": "0/1",
+            "proposed_reward": "1x Auto-Smelt Module, 1,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Three's Company": {
+            "description": "Run three different minion types at once.",
+            "target": "0/3",
+            "proposed_reward": "1x Trainer Crate Key, 1,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "WORK STATIONS": {
+          "Open for Business": {
+            "description": "Buy a Work Station from /stationstrader and place it down.",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins, 1x Station Core",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Staff the Station": {
+            "description": "Fill a Work Station's slots with Pokémon and workers.",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins, 1x Production Speedup",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Collect the Profits": {
+            "description": "Claim passive profits/rewards from a Work Station.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 1x Station Exp Bottle",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Tier Climber": {
+            "description": "Run a Tier 3 or higher Work Station.",
+            "target": "0/3",
+            "proposed_reward": "1x Trainer Crate Key, 2,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "AUTOMATION": {
+          "Crop Collector": {
+            "description": "Place a Crop Hopper to collect farm drops automatically.",
+            "target": "0/1",
+            "proposed_reward": "1x Crop Hopper, 500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Hopper Network": {
+            "description": "Run 3 Crop Hoppers linked to your storage network.",
+            "target": "0/3",
+            "proposed_reward": "2x Vacuum Hoppers, 1,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Set It and Forget It": {
+            "description": "Set up an AutoSell Chest on your claim.",
+            "target": "0/1",
+            "proposed_reward": "1x AutoSell Chest, 1,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Levelled Up": {
+            "description": "Upgrade an AutoSell Chest to increase capacity and speed.",
+            "target": "0/1",
+            "proposed_reward": "1x Chest Upgrade Module, 2,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "THE BOOST": {
+          "Time Lord": {
+            "description": "Place a Dialga statue to boost a Work Station's productivity.",
+            "target": "0/1",
+            "proposed_reward": "1x Work Station Overdrive Fuel, 1,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Gilded Boost": {
+            "description": "Use a Gilded or Origin Dialga statue for an ultimate workstation boost.",
+            "target": "0/1",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Maxed Production": {
+            "description": "Run a Work Station at max-level production efficiency.",
+            "target": "0/1",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Daily Cap": {
+            "description": "Hit a daily passive-income claim limit.",
+            "target": "0/1",
+            "proposed_reward": "2,500 PokéCoins, 1x Production Surge Pass",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "PASSIVE EMPIRE": {
+          "Four Chests": {
+            "description": "Run the maximum 4 AutoSell Chests simultaneously.",
+            "target": "0/4",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Industrialist": {
+            "description": "Run 2 high-tier (Tier 4+) Work Stations at once.",
+            "target": "0/2",
+            "proposed_reward": "1x Ultra Crate Key, 7,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Money While You Sleep": {
+            "description": "Earn 1,000,000 PokéCoins from passive income alone.",
+            "target": "0/1m",
+            "proposed_reward": "1x Master Crate Key, 15,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Tier Five Tycoon": {
+            "description": "Run a Tier 5 Work Station, the top tier with maximum output.",
+            "target": "0/5",
+            "proposed_reward": "2x Master Crate Keys, 25,000 PokéCoins, Title: 'Industrial Barone'",
+            "status": "DRAFTED_CUTOFF"
+          }
+        }
+      }
+    },
+    "Collecting & Cosmetics": {
+      "description": "Visual expression: hats, particle effects, custom models, sizes, and shiny flexing.",
+      "target_count": 20,
+      "actual_count": 20,
+      "sections": {
+        "DRESS TO IMPRESS": {
+          "First Look": {
+            "description": "Equip a cosmetic hat or costume from /cosmetics.",
+            "target": "0/1",
+            "proposed_reward": "250 PokéCoins, 1x Cosmetic Token",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Name in Lights": {
+            "description": "Equip a chat tag next to your name with /tags.",
+            "target": "0/1",
+            "proposed_reward": "250 PokéCoins, 1x Rainbow Tag Voucher",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Reskinned": {
+            "description": "Apply a custom tool skin to a weapon or tool.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 1x Weapon Skin Voucher",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Hide and Seek": {
+            "description": "Hide your armour appearance with /cosmetic.",
+            "target": "0/1",
+            "proposed_reward": "250 PokéCoins, 1x Invisibility Particle",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "SIZING UP": {
+          "Big Boy": {
+            "description": "Catch or breed an XXXL (Colossal) Pokémon.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 5x Heavy Balls",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Tiny Tot": {
+            "description": "Catch or breed an XXS (Microscopic) Pokémon.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 5x Fast Balls",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Size Voucher": {
+            "description": "Use a Size Up or Size Down Voucher on a Pokémon.",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins, 1x Size Voucher Choice",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Full Range": {
+            "description": "Own Pokémon spanning all 8 distinct size brackets.",
+            "target": "0/8",
+            "proposed_reward": "1x Trainer Crate Key, 3,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "HOME DECOR": {
+          "Plush Life": {
+            "description": "Place your first Pokémon plushie block.",
+            "target": "0/1",
+            "proposed_reward": "250 PokéCoins, 1x Random Mini Plushie",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Pick It Up": {
+            "description": "Pick up and relocate a placed plushie.",
+            "target": "0/1",
+            "proposed_reward": "150 PokéCoins, 1x Display Stand",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Collector's Shelf": {
+            "description": "Place 10 different plushie species on your claim.",
+            "target": "0/10",
+            "proposed_reward": "1,500 PokéCoins, 1x Pikachu Plushie",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Interior Designer": {
+            "description": "Decorate a claim with 25 placed plushies.",
+            "target": "0/25",
+            "proposed_reward": "1x Trainer Crate Key, 3,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "SHOW OFF": {
+          "Tag Collector": {
+            "description": "Collect 10 different chat tags.",
+            "target": "0/10",
+            "proposed_reward": "1x Trainer Crate Key, 2,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Title Holder": {
+            "description": "Equip a title.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 1x Title Voucher",
+            "status": "TRANSCRIBED"
+          },
+          "Walking Rainbow": {
+            "description": "Equip an animated particle Aura cosmetic.",
+            "target": "0/1",
+            "proposed_reward": "1x Cosmetic Crate Key, 2,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Wardrobe": {
+            "description": "Own 25 cosmetic items in your wardrobe.",
+            "target": "0/25",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          }
+        },
+        "COMPLETIONIST": {
+          "Plushie Hoarder": {
+            "description": "Collect 50 plushies in your collection.",
+            "target": "0/50",
+            "proposed_reward": "1x Ultra Crate Key, 7,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Size Master": {
+            "description": "Own an XXXL specimen of 5 different Pokémon species.",
+            "target": "0/5",
+            "proposed_reward": "1x Ultra Crate Key, 7,500 PokéCoins",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Fashion Icon": {
+            "description": "Equip a full matching cosmetic outfit, tag, aura, and title simultaneously.",
+            "target": "0/1",
+            "proposed_reward": "1x Master Crate Key, 10,000 PokéCoins, Title: 'Fashion Icon'",
+            "status": "DRAFTED_CUTOFF"
+          },
+          "Living Museum": {
+            "description": "Own a grand combined collection of 100 cosmetic items and plushies.",
+            "target": "0/100",
+            "proposed_reward": "2x Master Crate Keys, 25,000 PokéCoins, Title: 'Grand Curator'",
+            "status": "DRAFTED_CUTOFF"
+          }
+        }
+      }
+    },
+    "Social & Clans": {
+      "description": "Pull players into the community: chat, clans, clan challenges, and voting milestones.",
+      "target_count": 21,
+      "actual_count": 21,
+      "sections": {
+        "MAKING FRIENDS": {
+          "Say Hello": {
+            "description": "Send a private message with /msg.",
+            "target": "0/1",
+            "proposed_reward": "100 PokéCoins, 1x Chat Color Token",
+            "status": "TRANSCRIBED"
+          },
+          "Come Visit": {
+            "description": "Teleport to a player with /tpa.",
+            "target": "0/1",
+            "proposed_reward": "100 PokéCoins, 3x Ender Pearls",
+            "status": "TRANSCRIBED"
+          },
+          "Show Off Your Team": {
+            "description": "Show a Pokémon or item in chat ([pokemon] or [item] tag).",
+            "target": "0/1",
+            "proposed_reward": "250 PokéCoins, 1x Showcase Token",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Express Yourself": {
+            "description": "Use an emoji from /emoji.",
+            "target": "0/1",
+            "proposed_reward": "100 PokéCoins, 1x Emoji Pack",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "TRADING": {
+          "Fair Trade": {
+            "description": "Trade a Pokémon with another player.",
+            "target": "0/1",
+            "proposed_reward": "250 PokéCoins, 1x Trade Token",
+            "status": "TRANSCRIBED"
+          },
+          "Wheeler Dealer": {
+            "description": "Complete 10 trades.",
+            "target": "0/10",
+            "proposed_reward": "1x Trainer Crate Key, 1,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Master Trader": {
+            "description": "Complete 50 trades.",
+            "target": "0/50",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "CLAN LIFE": {
+          "Find Your Clan": {
+            "description": "Join or create a clan with /clan.",
+            "target": "0/1",
+            "proposed_reward": "250 PokéCoins, 100 Clan Valor",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Clan Chat": {
+            "description": "Send a message in clan chat (/cc).",
+            "target": "0/1",
+            "proposed_reward": "100 PokéCoins, 50 Clan Valor",
+            "status": "TRANSCRIBED"
+          },
+          "Earn Your Valor": {
+            "description": "Earn Valor for your clan.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 250 Clan Valor",
+            "status": "TRANSCRIBED"
+          },
+          "Clan Leader": {
+            "description": "Create a clan and recruit 2 or more members.",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins, 1x Clan Banner",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Climbing the Ranks": {
+            "description": "Get your clan into the top 5 on a clan leaderboard.",
+            "target": "0/1",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "CLAN CHALLENGES": {
+          "Daily Duty": {
+            "description": "Complete a daily clan challenge.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 200 Clan Valor",
+            "status": "TRANSCRIBED"
+          },
+          "Top of the Table": {
+            "description": "Place top 5 in a clan challenge.",
+            "target": "0/1",
+            "proposed_reward": "1,500 PokéCoins, 500 Clan Valor",
+            "status": "TRANSCRIBED"
+          },
+          "Three-Day Triumph": {
+            "description": "Win a 3-day clan challenge.",
+            "target": "0/1",
+            "proposed_reward": "1x Ultra Crate Key, 3,500 PokéCoins, 1,000 Clan Valor",
+            "status": "TRANSCRIBED"
+          },
+          "Biweekly Champion": {
+            "description": "Be in a top-5 clan at the biweekly Valor payout.",
+            "target": "0/1",
+            "proposed_reward": "1x Master Crate Key, 10,000 PokéCoins, 2,500 Clan Valor",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "PILLAR OF THE COMMUNITY": {
+          "Rock the Vote": {
+            "description": "Vote for the server with /vote.",
+            "target": "0/1",
+            "proposed_reward": "1x Vote Key, 250 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Karma": {
+            "description": "Earn Karma in the Karma Shop by welcoming new players or helping chat.",
+            "target": "0/1",
+            "proposed_reward": "50 Karma, 500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Civic Duty": {
+            "description": "Vote 50 times in total.",
+            "target": "0/50",
+            "proposed_reward": "1x Ultra Crate Key, 2,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Gift of Giving": {
+            "description": "Reach a monthly vote gift-card milestone.",
+            "target": "0/1",
+            "proposed_reward": "1x Webstore Coupon Voucher, 5,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Veteran Voter": {
+            "description": "Vote 365 times in total.",
+            "target": "0/365",
+            "proposed_reward": "2x Master Crate Keys, 25,000 PokéCoins, Title: 'Server Pillar'",
+            "status": "TRANSCRIBED"
+          }
+        }
+      }
+    },
+    "Daily Rewards & Playtime": {
+      "description": "Reward loyalty and dedication: streaks, playtime milestones, bingo cards, and spinners.",
+      "target_count": 18,
+      "actual_count": 18,
+      "sections": {
+        "SHOW UP": {
+          "Day One": {
+            "description": "Claim your first login streak reward (/loginstreak).",
+            "target": "0/1",
+            "proposed_reward": "100 PokéCoins, 1x Login Gift Box",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Week Strong": {
+            "description": "Reach a 7-day login streak.",
+            "target": "0/7",
+            "proposed_reward": "1x Trainer Crate Key, 1,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Monthly Devotion": {
+            "description": "Reach a 30-day login streak.",
+            "target": "0/30",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "CLOCKING IN": {
+          "Punch In": {
+            "description": "Claim your first playtime reward (/playtime).",
+            "target": "0/1",
+            "proposed_reward": "100 PokéCoins, 1x Playtime Box",
+            "status": "TRANSCRIBED"
+          },
+          "Minion Milestone": {
+            "description": "Reach playtime reward #10 (the Farmer Minion).",
+            "target": "0/10",
+            "proposed_reward": "1x Farmer Minion, 1,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Slayer Unlocked": {
+            "description": "Reach playtime reward #15 (the Slayer Minion).",
+            "target": "0/15",
+            "proposed_reward": "1x Slayer Minion, 2,500 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Time Served": {
+            "description": "Reach 100 hours of playtime.",
+            "target": "0/100",
+            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "BINGO": {
+          "Bingo!": {
+            "description": "Complete a row on your /bingo card.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins, 1x Bingo Chip",
+            "status": "TRANSCRIBED"
+          },
+          "Full House": {
+            "description": "Complete an entire Bingo card.",
+            "target": "0/1",
+            "proposed_reward": "1x Trainer Crate Key, 2,500 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Shiny Bingo": {
+            "description": "Upgrade your Bingo card to the shiny version.",
+            "target": "0/1",
+            "proposed_reward": "1x Shiny Bingo Ticket, 5,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Bingo Veteran": {
+            "description": "Complete 5 full Bingo cards.",
+            "target": "0/5",
+            "proposed_reward": "1x Ultra Crate Key, 10,000 PokéCoins",
+            "status": "TRANSCRIBED"
+          }
+        },
+        "CLAIM EVERYTHING": {
+          "Spin the Wheel": {
+            "description": "Claim a Reward Spinner (/spinner).",
+            "target": "0/1",
+            "proposed_reward": "1x Spinner Token, 250 PokéCoins",
+            "status": "TRANSCRIBED"
+          },
+          "Daily Discipline": {
+            "description": "Claim your daily rewards on 7 consecutive days.",
+            "target": "0/7",
+            "proposed_reward": "1x Trainer Crate Key, 2,000 PokéCoins",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Never Miss": {
+            "description": "Claim /loginstreak, /playtime and /spinner in a single day.",
+            "target": "0/1",
+            "proposed_reward": "1,500 PokéCoins, 2x Spinner Tokens",
+            "status": "COMPLETED_TRUNCATION"
+          },
+          "Dex Rewards": {
+            "description": "Claim a Pokédex milestone reward (/pokedex).",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins, 10x Ultra Balls",
+            "status": "COMPLETED_TRUNCATION"
+          }
+        },
+        "DEDICATION": {
+          "Centurion": {
+            "description": "Reach a 100-day login streak.",
+            "target": "0/100",
+            "proposed_reward": "1x Master Crate Key, 15,000 PokéCoins, Title: 'The Dedicated'",
+            "status": "TRANSCRIBED"
+          },
+          "No Life Like It": {
+            "description": "Reach 500 hours of playtime.",
+            "target": "0/500",
+            "proposed_reward": "2x Master Crate Keys, 25,000 PokéCoins, Title: 'Pixel Veteran'",
+            "status": "TRANSCRIBED"
+          },
+          "Veteran": {
+            "description": "Reach 1,000 hours of playtime.",
+            "target": "0/1000",
+            "proposed_reward": "3x Master Crate Keys, 50,000 PokéCoins, Title: 'Living Legend'",
+            "status": "TRANSCRIBED"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+# Gradle
+.gradle/
+build/
+
+# IDE & OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs & Runtime
+logs/
+run/
+*.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local agent / skill metadata
+.agents/
+pixelclub-mod-creator/
