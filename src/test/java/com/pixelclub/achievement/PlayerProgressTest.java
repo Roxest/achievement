@@ -88,4 +88,24 @@ public class PlayerProgressTest {
         assertEquals(1, successCount.get(), "Exactly one concurrent thread must succeed in claiming");
         assertEquals(ClaimState.CLAIMED, progress.getState());
     }
+
+    @Test
+    public void testSetProgressExplicitRevertState() {
+        PlayerProgress progress = new PlayerProgress();
+        progress.addProgress(10, 10);
+        assertEquals(ClaimState.COMPLETED, progress.getState());
+        progress.tryClaim();
+        assertEquals(ClaimState.CLAIMED, progress.getState());
+
+        // Explicitly set below target -> must revert to LOCKED
+        progress.setProgressExplicit(5, 10);
+        assertEquals(5, progress.getProgress());
+        assertEquals(ClaimState.LOCKED, progress.getState());
+
+        // Explicitly set back to target -> becomes COMPLETED
+        boolean completed = progress.setProgressExplicit(10, 10);
+        assertTrue(completed);
+        assertEquals(10, progress.getProgress());
+        assertEquals(ClaimState.COMPLETED, progress.getState());
+    }
 }

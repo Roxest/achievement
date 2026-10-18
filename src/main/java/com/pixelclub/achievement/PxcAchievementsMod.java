@@ -53,6 +53,21 @@ public class PxcAchievementsMod implements DedicatedServerModInitializer {
         // 4. Register Built-in Event Listeners
         BuiltInListeners.register();
 
+        // 5. Register Disconnect & Shutdown Flush
+        net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
+            net.minecraft.server.level.ServerPlayer player = handler.getPlayer();
+            if (player != null && playerStore != null) {
+                playerStore.flushPlayerSync(player.getUUID());
+            }
+        });
+
+        net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.SERVER_STOPPING.register(server -> {
+            LOGGER.info("Flushing all achievement dirty data on server shutdown...");
+            if (playerStore != null) {
+                playerStore.shutdown();
+            }
+        });
+
         LOGGER.info("Pixelclub Achievements initialized successfully with {} achievements registered.",
                 registry.getTotalCount());
     }

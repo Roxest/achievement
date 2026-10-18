@@ -38,6 +38,9 @@ public class PlayerStoreTest {
 
     @AfterEach
     public void cleanup() throws Exception {
+        if (store != null) {
+            store.shutdown();
+        }
         if (Files.exists(tempDir)) {
             Files.walk(tempDir)
                     .sorted(Comparator.reverseOrder())
@@ -56,6 +59,9 @@ public class PlayerStoreTest {
         assertEquals(1, progress.getProgress());
         assertEquals(ClaimState.COMPLETED, progress.getState());
 
+        // Flush dirty writes to disk
+        store.flushAllSync();
+
         // Verify disk file created
         Path file = tempDir.resolve(testPlayer.toString() + ".json");
         assertTrue(Files.exists(file), "Player data file must exist on disk");
@@ -65,6 +71,7 @@ public class PlayerStoreTest {
         PlayerProgress reloaded = freshStore.getProgress(testPlayer, achId);
         assertEquals(1, reloaded.getProgress());
         assertEquals(ClaimState.COMPLETED, reloaded.getState());
+        freshStore.shutdown();
     }
 
     @Test
@@ -84,6 +91,32 @@ public class PlayerStoreTest {
         assertFalse(duplicateClaimed);
         assertEquals(beforeAttempts + 1, AchievementWatchdog.getDoubleClaimAttempts(),
                 "Watchdog duplicate claim counter must increment");
+    }
+
+    @Test
+    public void testNegativeIncrementBlockedByWatchdog() {
+        String achId = "catching_gotcha";
+        store.increment(testPlayer, achId, 1);
+        long beforeIllegal = AchievementWatchdog.getIllegalProgressAttempts();
+
+        boolean result = store.increment(testPlayer, achId, -1);
+        assertFalse(result, "Negative increment must be rejected");
+        assertEquals(beforeIllegal + 1, AchievementWatchdog.getIllegalProgressAttempts(),
+                "Watchdog non-monotonic alert counter must increment");
+        assertEquals(1, store.getProgress(testPlayer, achId).getProgress(), "Progress must not decrease");
+    }
+
+    @Test
+    public void testDirtyFlagAndFlushSync() {
+        String achId = "catching_gotcha";
+        store.increment(testPlayer, achId, 1);
+        assertTrue(store.getDirtyPlayers().contains(testPlayer), "Player must be marked dirty after progress update");
+
+        store.flushAllSync();
+        assertFalse(store.getDirtyPlayers().contains(testPlayer), "Dirty players set must be clear after flush");
+
+        Path file = tempDir.resolve(testPlayer.toString() + ".json");
+        assertTrue(Files.exists(file), "File must be flushed to disk");
     }
 
     @Test

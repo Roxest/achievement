@@ -63,7 +63,14 @@ public class PlayerProgress {
     public synchronized boolean setProgressExplicit(int value, int target) {
         this.p = Math.max(0, value);
         this.t = System.currentTimeMillis();
-        return checkCompletion(target);
+        if (this.p < target) {
+            this.s = ClaimState.LOCKED.getId();
+            return false;
+        } else if (this.s == ClaimState.LOCKED.getId()) {
+            this.s = ClaimState.COMPLETED.getId();
+            return true;
+        }
+        return false;
     }
 
     private boolean checkCompletion(int target) {

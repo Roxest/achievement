@@ -154,7 +154,7 @@ public class AchievementGui extends SimpleGui {
                 } else if (state == ClaimState.COMPLETED) {
                     card.addLoreLine(Component.literal("§a▶ CLICK TO CLAIM REWARD! ◀"));
                     card.setCallback((sIdx, type, action) -> {
-                        boolean success = PxcAchievementsMod.getInstance().getPlayerStore().claim(player.getUUID(), ach.getId());
+                        boolean success = PxcAchievementsMod.getInstance().getPlayerStore().claim(player, ach.getId());
                         if (success) {
                             player.sendSystemMessage(Component.literal("§aClaimed achievement: " + ach.getName()));
                             build();

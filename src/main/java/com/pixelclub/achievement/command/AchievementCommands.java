@@ -127,7 +127,7 @@ public class AchievementCommands {
                 return 0;
             }
 
-            boolean claimed = PxcAchievementsMod.getInstance().getPlayerStore().claim(player.getUUID(), achId);
+            boolean claimed = PxcAchievementsMod.getInstance().getPlayerStore().claim(player, achId);
             if (claimed) {
                 ctx.getSource().sendSuccess(() -> Component.literal("Successfully claimed rewards for: " + ach.getName()), false);
                 return 1;
