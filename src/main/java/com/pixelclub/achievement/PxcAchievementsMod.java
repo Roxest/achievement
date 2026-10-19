@@ -53,7 +53,28 @@ public class PxcAchievementsMod implements DedicatedServerModInitializer {
         // 4. Register Built-in Event Listeners
         BuiltInListeners.register();
 
-        // 5. Register Disconnect & Shutdown Flush
+        // 5. Register UIPayload networking channel & client callback receiver
+        try {
+            net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playS2C().register(com.pixelclub.achievement.network.UIPayload.TYPE, com.pixelclub.achievement.network.UIPayload.CODEC);
+        } catch (IllegalArgumentException ignored) {
+            LOGGER.debug("pixelclub:ui S2C payload type already registered by another mod.");
+        }
+
+        try {
+            net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playC2S().register(com.pixelclub.achievement.network.UIPayload.TYPE, com.pixelclub.achievement.network.UIPayload.CODEC);
+        } catch (IllegalArgumentException ignored) {
+            LOGGER.debug("pixelclub:ui C2S payload type already registered by another mod.");
+        }
+
+        net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.registerGlobalReceiver(com.pixelclub.achievement.network.UIPayload.TYPE, (payload, context) -> {
+            net.minecraft.server.level.ServerPlayer player = context.player();
+            String json = payload.json();
+            context.server().execute(() -> {
+                com.pixelclub.achievement.ui.AchievementGui.handleClientPacket(player, json);
+            });
+        });
+
+        // 6. Register Disconnect & Shutdown Flush
         net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
             net.minecraft.server.level.ServerPlayer player = handler.getPlayer();
             if (player != null && playerStore != null) {
