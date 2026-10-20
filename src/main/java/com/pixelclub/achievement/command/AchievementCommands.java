@@ -41,6 +41,7 @@ public class AchievementCommands {
 
                 // /ach claim <player> <id>
                 .then(Commands.literal("claim")
+                    .requires(s -> s.hasPermission(2))
                     .then(Commands.argument("player", EntityArgument.player())
                         .then(Commands.argument("id", StringArgumentType.word())
                             .executes(AchievementCommands::claimTarget))))

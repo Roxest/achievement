@@ -120,6 +120,19 @@ public class PlayerStoreTest {
     }
 
     @Test
+    public void testSetMaxPartialProgressMarksDirty() {
+        String achId = "catching_a_good_start"; // target 50
+        store.flushAllSync();
+        assertFalse(store.getDirtyPlayers().contains(testPlayer));
+
+        // Partial progress: 10 < 50
+        boolean completed = store.setMax(testPlayer, achId, 10);
+        assertFalse(completed, "Partial progress should not complete achievement");
+        assertEquals(10, store.getProgress(testPlayer, achId).getProgress());
+        assertTrue(store.getDirtyPlayers().contains(testPlayer), "Player UUID must be added to dirty players on partial setMax");
+    }
+
+    @Test
     public void testReset() {
         String achId = "catching_gotcha";
         store.increment(testPlayer, achId, 1);

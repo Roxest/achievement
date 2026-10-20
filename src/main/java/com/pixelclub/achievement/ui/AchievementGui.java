@@ -12,6 +12,7 @@ import com.pixelclub.achievement.model.PlayerProgress;
 import com.pixelclub.achievement.network.UIPayload;
 import com.pixelclub.achievement.storage.PlayerStore;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import org.slf4j.Logger;
@@ -97,18 +98,14 @@ public class AchievementGui {
                     open(player, targetCategory);
                 }
                 case "claim" -> {
+                    Achievement ach = targetAchievement != null ? PxcAchievementsMod.getInstance().getRegistry().getAchievement(targetAchievement) : null;
                     if (targetAchievement != null && store != null) {
                         boolean claimed = store.claim(player, targetAchievement);
-                        if (claimed) {
-                            Achievement ach = PxcAchievementsMod.getInstance().getRegistry().getAchievement(targetAchievement);
-                            if (ach != null) {
-                                player.sendSystemMessage(Component.literal("§a✔ Claimed achievement: §e" + ach.getName()));
-                                open(player, ach.getCategoryId());
-                                return;
-                            }
+                        if (claimed && ach != null) {
+                            player.sendSystemMessage(Component.literal("§a✔ Claimed achievement: §e" + ach.getName()));
                         }
                     }
-                    open(player, targetCategory);
+                    open(player, ach != null ? ach.getCategoryId() : targetCategory);
                 }
                 case "view_category_rewards" -> {
                     player.sendSystemMessage(Component.literal("§e[Quest Book] §7Previewing milestone rewards for category: §6" + targetCategory));
@@ -708,15 +705,16 @@ public class AchievementGui {
     }
 
     private static String getCategoryIconItem(String catId) {
+        boolean cobblemon = FabricLoader.getInstance().isModLoaded("cobblemon");
         return switch (catId.toLowerCase()) {
-            case "catching" -> "minecraft:lead";
+            case "catching" -> cobblemon ? "cobblemon:poke_ball" : "minecraft:lead";
             case "gyms" -> "minecraft:iron_nugget";
             case "battling" -> "minecraft:iron_sword";
             case "raids" -> "minecraft:wither_skeleton_skull";
             case "shinies" -> "minecraft:nether_star";
             case "breeding" -> "minecraft:egg";
             case "training" -> "minecraft:anvil";
-            case "evolving" -> "minecraft:fire_charge";
+            case "evolving" -> cobblemon ? "cobblemon:fire_stone" : "minecraft:fire_charge";
             case "fishing" -> "minecraft:fishing_rod";
             case "exploring" -> "minecraft:compass";
             case "mining" -> "minecraft:diamond_pickaxe";

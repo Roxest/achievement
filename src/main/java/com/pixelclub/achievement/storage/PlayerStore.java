@@ -101,8 +101,9 @@ public class PlayerStore {
         if (ach == null) return false;
 
         PlayerProgress progress = getProgress(uuid, achievementId);
+        int previous = progress.getProgress();
         boolean newlyCompleted = progress.setMaxProgress(value, ach.getTarget());
-        if (newlyCompleted || value > progress.getProgress()) {
+        if (newlyCompleted || progress.getProgress() > previous) {
             markDirty(uuid);
         }
         return newlyCompleted;
@@ -222,7 +223,7 @@ public class PlayerStore {
         return updatedCount;
     }
 
-    private void syncPokedexCaught(UUID uuid) {
+    public void syncPokedexCaught(UUID uuid) {
         try {
             PokedexManager dex = Cobblemon.INSTANCE.getPlayerDataManager().getPokedexData(uuid);
             if (dex != null) {
@@ -232,11 +233,12 @@ public class PlayerStore {
                         caughtCount++;
                     }
                 }
-                setMax(uuid, "catching_a_good_start", Math.min(caughtCount, 10));
+                setMax(uuid, "catching_a_good_start", Math.min(caughtCount, 50));
+                setMax(uuid, "catching_variety_is_the_spice", Math.min(caughtCount, 25));
                 setMax(uuid, "catching_kanto_veteran", Math.min(caughtCount, 151));
                 setMax(uuid, "catching_halfway_home", Math.min(caughtCount, 500));
                 setMax(uuid, "catching_the_800_club", Math.min(caughtCount, 800));
-                setMax(uuid, "catching_living_legend", Math.min(caughtCount, 1025));
+                setMax(uuid, "catching_living_legend", Math.min(caughtCount, 1000));
             }
         } catch (Throwable t) {
             LOGGER.warn("Failed to retroactively sync Pokédex caught count for {}", uuid, t);

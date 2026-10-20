@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Executes reward disbursements on the main server thread upon achievement claim.
@@ -77,30 +78,54 @@ public final class RewardDispatcher {
         int amount = reward.getAmount();
         if (amount <= 0) return;
 
-        boolean deposited = false;
         if (isImpactorAvailable()) {
             try {
                 net.impactdev.impactor.api.economy.EconomyService service = net.impactdev.impactor.api.economy.EconomyService.instance();
                 if (service != null) {
                     CompletableFuture<net.impactdev.impactor.api.economy.accounts.Account> future = service.account(player.getUUID());
-                    net.impactdev.impactor.api.economy.accounts.Account acc = future != null ? future.join() : null;
-                    if (acc != null) {
-                        net.impactdev.impactor.api.economy.transactions.EconomyTransaction tx = acc.deposit(BigDecimal.valueOf(amount));
-                        if (tx != null && tx.successful()) {
-                            deposited = true;
-                            LOGGER.info("[REWARD PAYOUT/IMPACTOR] Deposited {} {} to {}", amount, reward.getCurrency(), playerName);
-                        }
+                    if (future != null) {
+                        future.orTimeout(3, TimeUnit.SECONDS).whenComplete((acc, error) -> {
+                            if (error != null || acc == null) {
+                                if (error != null) {
+                                    LOGGER.warn("[REWARD WARN] Impactor account lookup failed for {}, falling back to console command", playerName, error);
+                                }
+                                executeFallbackCurrencyCommand(server, playerName, amount);
+                                return;
+                            }
+                            try {
+                                net.impactdev.impactor.api.economy.transactions.EconomyTransaction tx = acc.deposit(BigDecimal.valueOf(amount));
+                                if (tx != null && tx.successful()) {
+                                    LOGGER.info("[REWARD PAYOUT/IMPACTOR] Deposited {} {} to {}", amount, reward.getCurrency(), playerName);
+                                } else {
+                                    LOGGER.warn("[REWARD WARN] Impactor deposit unsuccessful for {}, falling back to console command", playerName);
+                                    executeFallbackCurrencyCommand(server, playerName, amount);
+                                }
+                            } catch (Throwable t) {
+                                LOGGER.warn("[REWARD WARN] Impactor deposit failed for {}, falling back to console command", playerName, t);
+                                executeFallbackCurrencyCommand(server, playerName, amount);
+                            }
+                        });
+                        return;
                     }
                 }
             } catch (Throwable t) {
-                LOGGER.warn("[REWARD WARN] Impactor deposit failed for {}, falling back to console command", playerName, t);
+                LOGGER.warn("[REWARD WARN] Impactor service access failed for {}, falling back to console command", playerName, t);
             }
         }
 
-        if (!deposited) {
+        executeFallbackCurrencyCommand(server, playerName, amount);
+    }
+
+    private static void executeFallbackCurrencyCommand(MinecraftServer server, String playerName, int amount) {
+        Runnable task = () -> {
             String cmd = "eco give " + playerName + " " + amount;
             executeCommand(server, cmd);
             LOGGER.info("[REWARD PAYOUT/COMMAND] Executed fallback currency command: '{}'", cmd);
+        };
+        if (server.isSameThread()) {
+            task.run();
+        } else {
+            server.execute(task);
         }
     }
 

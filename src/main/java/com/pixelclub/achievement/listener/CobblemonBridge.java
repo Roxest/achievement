@@ -7,6 +7,7 @@ import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
 import com.cobblemon.mod.common.entity.pokeball.EmptyPokeBallEntity;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.evolution.variants.TradeEvolution;
+import com.pixelclub.achievement.PxcAchievementsMod;
 import com.pixelclub.achievement.api.PxcAchievementApi;
 import kotlin.Unit;
 import net.minecraft.server.level.ServerPlayer;
@@ -65,6 +66,9 @@ public class CobblemonBridge {
                 }
             }
 
+            // Live sync Pokédex caught achievements
+            PxcAchievementsMod.getInstance().getPlayerStore().syncPokedexCaught(player.getUUID());
+
             return Unit.INSTANCE;
         });
 
@@ -80,6 +84,9 @@ public class CobblemonBridge {
                 if (event.getEvolution() instanceof TradeEvolution) {
                     PxcAchievementApi.increment(player, "evolving_long_distance", 1);
                 }
+
+                // Live sync Pokédex caught achievements
+                PxcAchievementsMod.getInstance().getPlayerStore().syncPokedexCaught(player.getUUID());
             }
             return Unit.INSTANCE;
         });
