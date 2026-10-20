@@ -610,6 +610,15 @@ public class AchievementGui {
                 aDesc.addProperty("size", 0.74);
                 tChildren.add(aDesc);
 
+                if (ach.getRewardDisplay() != null && !ach.getRewardDisplay().isEmpty()) {
+                    JsonObject aReward = new JsonObject();
+                    aReward.addProperty("type", "text");
+                    aReward.addProperty("text", "✦ Reward: " + ach.getRewardDisplay());
+                    aReward.addProperty("color", "#FFB300");
+                    aReward.addProperty("size", 0.70);
+                    tChildren.add(aReward);
+                }
+
                 textCol.add("children", tChildren);
                 cardChildren.add(textCol);
 

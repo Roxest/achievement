@@ -56,7 +56,9 @@ public final class RewardDispatcher {
     private static void payoutIndividualReward(MinecraftServer server, ServerPlayer player, String playerName, AchievementReward reward) {
         String type = reward.getType();
 
-        if ("CURRENCY".equalsIgnoreCase(type)) {
+        if ("TITLE".equalsIgnoreCase(type)) {
+            payoutTitle(server, playerName, reward);
+        } else if ("CURRENCY".equalsIgnoreCase(type)) {
             payoutCurrency(server, player, playerName, reward);
         } else if ("COMMAND".equalsIgnoreCase(type) || reward.getCommand() != null) {
             String cmd = reward.getCommand();
@@ -77,6 +79,12 @@ public final class RewardDispatcher {
     private static void payoutCurrency(MinecraftServer server, ServerPlayer player, String playerName, AchievementReward reward) {
         int amount = reward.getAmount();
         if (amount <= 0) return;
+
+        // Route RAID_COIN separately: never deposit into primary PokéCoin balance
+        if ("RAID_COIN".equalsIgnoreCase(reward.getCurrency())) {
+            payoutRaidCoin(server, playerName, amount);
+            return;
+        }
 
         if (isImpactorAvailable()) {
             try {
@@ -127,6 +135,30 @@ public final class RewardDispatcher {
         } else {
             server.execute(task);
         }
+    }
+
+    private static void payoutRaidCoin(MinecraftServer server, String playerName, int amount) {
+        Runnable task = () -> {
+            String cmd = "raidcoin give " + playerName + " " + amount;
+            executeCommand(server, cmd);
+            LOGGER.info("[REWARD PAYOUT/RAID_COIN] Executed raid coin command: '{}'", cmd);
+        };
+        if (server.isSameThread()) {
+            task.run();
+        } else {
+            server.execute(task);
+        }
+    }
+
+    private static void payoutTitle(MinecraftServer server, String playerName, AchievementReward reward) {
+        if (reward.getCommand() != null && !reward.getCommand().isEmpty()) {
+            executeCommand(server, reward.getCommand().replace("{player}", playerName));
+            return;
+        }
+        String title = reward.getId() != null ? reward.getId() : reward.getDisplay();
+        String cmd = "lp user " + playerName + " meta setprefix 100 \"[" + title + "] \"";
+        executeCommand(server, cmd);
+        LOGGER.info("[REWARD PAYOUT/TITLE] Granted title '{}' to {}", title, playerName);
     }
 
     private static void payoutItem(MinecraftServer server, String playerName, AchievementReward reward) {

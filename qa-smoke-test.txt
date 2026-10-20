@@ -1,0 +1,93 @@
+# ==============================================================================
+# Pixelclub Achievements (pxc-achievements) — QA Smoke Test Script
+# Built Jar: build/libs/pxc-achievements-1.0.0.jar
+# Target Environment: Fabric 1.21.1 (Cobblemon 1.7.3)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# STEP 1: Verify Startup & Registration ("loaded" rung)
+# ------------------------------------------------------------------------------
+# 1. Place build/libs/pxc-achievements-1.0.0.jar into your server's mods/ directory.
+# 2. Boot the Fabric server.
+# 3. Check console/latest.log for the following line:
+#    [PxcAchievements] Pixelclub Achievements initialized successfully with 316 achievements registered.
+# If seen: loaded rung = PASS.
+
+# ------------------------------------------------------------------------------
+# STEP 2: Verify State Machine & Persistence ("state" rung)
+# ------------------------------------------------------------------------------
+# Run these commands via Server Console / RCON:
+# Replace <player> with an online player username.
+
+# A. Award progression (1/1 target):
+/ach progress <player> catching_gotcha 1
+
+# Expected console response:
+# Set progress of 'catching_gotcha' for <player> to 1/1.
+
+# B. Claim the achievement:
+/ach claim <player> catching_gotcha
+
+# Expected console response:
+# Successfully claimed 'catching_gotcha' for <player>.
+# [REWARD PAYOUT] Payout for player <player> (...) - Achievement Gotcha! (catching_gotcha)
+# [REWARD PAYOUT/ITEM] Executed item give command: 'give <player> cobblemon:poke_ball 10'
+
+# C. Verify persistence file on disk:
+# Inspect config/pxc-achievements/players/<UUID>.json:
+# Expected JSON fragment:
+# "catching_gotcha": {"p": 1, "s": 2}   (where s: 2 corresponds to ClaimState.CLAIMED)
+
+# D. Verify Watchdog duplicate-claim protection:
+/ach claim <player> catching_gotcha
+# Expected: Command fails or reports already claimed; watchdog logs alert.
+
+# E. Verify Watchdog non-monotonic (negative) progress protection:
+/ach progress <player> catching_gotcha -1
+# Expected: Rejected by Brigadier argument validator (val >= 0) or Watchdog alert.
+
+# If all pass: state rung = PASS.
+
+# ------------------------------------------------------------------------------
+# STEP 3: Verify Retroactive Statistics & Pokédex Sync
+# ------------------------------------------------------------------------------
+# Run via Server Console / RCON:
+/ach verify-sync <player>
+
+# Expected console output:
+# [PxcAchievements] Retroactive sync for <player> completed with <N> updated achievements.
+# Synced stats include:
+# - Playtime (exploring_wanderer, exploring_globe_trotter, exploring_odyssey)
+# - Distance traveled (walking/sprinting/flying)
+# - Fish caught (fishing_nibble, fishing_centurion_angler, fishing_leviathan, fishing_master_angler)
+# - Blocks mined (mining_quarry_worker, mining_strip_miner)
+# - Pokédex caught species (catching_a_good_start [50], variety_is_the_spice [25], kanto_veteran [151], halfway_home [500], the_800_club [800], living_legend [1000])
+
+# ------------------------------------------------------------------------------
+# STEP 4: Verify Quest Book UI ("seen" rung)
+# ------------------------------------------------------------------------------
+# Run in-game as player:
+/ach open
+
+# UI Checklist:
+# [ ] Left side-rail: Displays 16 category tabs with category progress counts (e.g. 1/25).
+# [ ] Category Icons: Custom Cobblemon icons appear for Catching (Poké Ball) and Evolving (Fire Stone).
+# [ ] Right main panel: Displays category header + scrollable list of section cards.
+# [ ] Section Cards: Displays Name, Description (auto-wrapped Thai/English font, no §l bold),
+#     and reward text formatted as "✦ Reward: <reward text>".
+# [ ] Progress Bar: Shows formatted numbers (e.g., 0/50, 0/1k).
+# [ ] Claim Button: Completed achievements display a green "✔ CLAIM" button.
+# [ ] Claim Action: Clicking "✔ CLAIM" claims the achievement, executes reward payouts,
+#     and updates the button to a dark "CLAIMED" badge while staying on the current category tab.
+# [ ] Tab Navigation: Clicking another category switches categories smoothly without resetting.
+# [ ] Close: Clicking close (or pressing ESC) closes the screen cleanly.
+
+# ------------------------------------------------------------------------------
+# STEP 5: Reset Command Verification (Clean Cleanup)
+# ------------------------------------------------------------------------------
+# Run via Server Console / RCON:
+/ach reset <player> catching_gotcha
+
+# Expected response:
+# Reset progress for 'catching_gotcha' for <player>.
+# Player progress reverts to p: 0, s: 0 (LOCKED).
