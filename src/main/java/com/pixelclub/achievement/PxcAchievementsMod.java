@@ -1,5 +1,7 @@
 package com.pixelclub.achievement;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.pixelclub.achievement.command.AchievementCommands;
 import com.pixelclub.achievement.data.AchievementRegistry;
 import com.pixelclub.achievement.listener.BuiltInListeners;
@@ -93,28 +95,69 @@ public class PxcAchievementsMod implements ModInitializer {
                 registry.getTotalCount());
     }
 
+    private static ServerPlayNetworking.PlayPayloadHandler<?> originalExternalHandler = null;
+    private static ServerPlayNetworking.PlayPayloadHandler<CustomPacketPayload> ourChainedHandler = null;
+
     @SuppressWarnings({"unchecked", "rawtypes"})
     public static void installPolymorphicUiChannel() {
         try {
             installPolymorphicForRegistry(PayloadTypeRegistry.playS2C(), "playS2C");
             installPolymorphicForRegistry(PayloadTypeRegistry.playC2S(), "playC2S");
 
-            CustomPacketPayload.Type canonicalType = UIPayload.getCanonicalType();
+            CustomPacketPayload.Type<CustomPacketPayload> canonicalType = (CustomPacketPayload.Type<CustomPacketPayload>) (Object) UIPayload.getCanonicalType();
+
+            // Capture any existing global receiver before installing our chained receiver
             try {
-                ServerPlayNetworking.registerGlobalReceiver(canonicalType, (payload, context) -> {
+                ServerPlayNetworking.PlayPayloadHandler<?> existing = ServerPlayNetworking.unregisterGlobalReceiver(canonicalType.id());
+                if (existing != null && existing != ourChainedHandler) {
+                    originalExternalHandler = existing;
+                    LOGGER.info("Captured existing global receiver for channel {} to chain with QuestBook", canonicalType.id());
+                }
+            } catch (Throwable t) {
+                LOGGER.debug("No existing receiver to unregister for channel {}", canonicalType.id());
+            }
+
+            final ServerPlayNetworking.PlayPayloadHandler fallback = originalExternalHandler;
+
+            ourChainedHandler = new ServerPlayNetworking.PlayPayloadHandler<CustomPacketPayload>() {
+                @Override
+                public void receive(CustomPacketPayload payload, ServerPlayNetworking.Context context) {
                     ServerPlayer player = context.player();
                     String json = UIPayload.extractJsonReflectively(payload);
-                    context.server().execute(() -> {
-                        AchievementGui.handleClientPacket(player, json);
-                    });
-                });
-                LOGGER.info("Registered global receiver for channel pixelclub:ui using type: {}", canonicalType);
-            } catch (IllegalArgumentException e) {
-                LOGGER.debug("Global receiver already registered for type: {}", canonicalType);
-            }
+
+                    if (isQuestBookPacket(json) || fallback == null) {
+                        context.server().execute(() -> {
+                            AchievementGui.handleClientPacket(player, json);
+                        });
+                    } else {
+                        try {
+                            fallback.receive(payload, context);
+                        } catch (Throwable t) {
+                            LOGGER.error("Failed to delegate packet to chained external UI handler", t);
+                        }
+                    }
+                }
+            };
+
+            boolean registered = ServerPlayNetworking.registerGlobalReceiver(canonicalType, ourChainedHandler);
+            LOGGER.info("Registered polymorphic global receiver for channel {} (success={}, hasChainedHandler={})",
+                    canonicalType, registered, fallback != null);
         } catch (Throwable t) {
             LOGGER.error("Failed to install polymorphic UIPayload channel", t);
         }
+    }
+
+    private static boolean isQuestBookPacket(String json) {
+        if (json == null || json.isEmpty()) return false;
+        if (json.contains("quest_book")) return true;
+        if (json.contains("select_category:") || json.contains("claim:") || json.contains("view_category_rewards:")) return true;
+        try {
+            JsonObject obj = JsonParser.parseString(json).getAsJsonObject();
+            String screenId = obj.has("screenId") ? obj.get("screenId").getAsString()
+                    : (obj.has("screen") ? obj.get("screen").getAsString() : (obj.has("id") ? obj.get("id").getAsString() : ""));
+            if ("quest_book".equalsIgnoreCase(screenId)) return true;
+        } catch (Exception ignored) {}
+        return false;
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})

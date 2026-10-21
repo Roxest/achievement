@@ -59,10 +59,22 @@ public class AchievementGui {
     public static void handleClientPacket(ServerPlayer player, String rawJson) {
         if (player == null || rawJson == null || rawJson.isEmpty()) return;
 
+        LOGGER.info("[QuestBook C2S] player={} json={}", player.getName().getString(), rawJson);
+
         try {
             JsonObject data = JsonParser.parseString(rawJson).getAsJsonObject();
             String action = data.has("action") ? data.get("action").getAsString() : "";
-            String elementId = data.has("elementId") ? data.get("elementId").getAsString() : "";
+
+            // Extract element ID from any potential key sent by SceneScreen / client
+            String elementId = "";
+            if (data.has("elementId")) elementId = data.get("elementId").getAsString();
+            else if (data.has("element_id")) elementId = data.get("element_id").getAsString();
+            else if (data.has("click")) elementId = data.get("click").getAsString();
+            else if (data.has("button")) elementId = data.get("button").getAsString();
+            else if (data.has("target")) elementId = data.get("target").getAsString();
+            else if (data.has("id") && !"quest_book".equalsIgnoreCase(data.get("id").getAsString())) {
+                elementId = data.get("id").getAsString();
+            }
 
             // Check if elementId itself is encoded as a nested JSON string
             if (elementId.startsWith("{") && elementId.endsWith("}")) {
@@ -71,30 +83,43 @@ public class AchievementGui {
                     if (nested.has("action")) action = nested.get("action").getAsString();
                     if (nested.has("category_id")) data.add("category_id", nested.get("category_id"));
                     if (nested.has("achievement_id")) data.add("achievement_id", nested.get("achievement_id"));
+                    if (nested.has("elementId")) elementId = nested.get("elementId").getAsString();
+                    else if (nested.has("id")) elementId = nested.get("id").getAsString();
                 } catch (Exception ignored) {}
             }
+
+            // Click token priority: elementId if non-empty, otherwise action
+            String token = !elementId.isEmpty() ? elementId : action;
 
             // Normalise action and targets
             String targetCategory = data.has("category_id") ? data.get("category_id").getAsString() : null;
             String targetAchievement = data.has("achievement_id") ? data.get("achievement_id").getAsString() : null;
 
-            if (elementId.startsWith("select_category:")) {
+            if (token.startsWith("select_category:")) {
                 action = "select_category";
-                targetCategory = elementId.substring("select_category:".length());
-            } else if (elementId.startsWith("claim:")) {
+                targetCategory = token.substring("select_category:".length());
+            } else if (token.startsWith("claim:")) {
                 action = "claim";
-                targetAchievement = elementId.substring("claim:".length());
-            } else if (elementId.startsWith("view_category_rewards:")) {
+                targetAchievement = token.substring("claim:".length());
+            } else if (token.startsWith("view_category_rewards:")) {
                 action = "view_category_rewards";
-                targetCategory = elementId.substring("view_category_rewards:".length());
-            } else if (elementId.equalsIgnoreCase("close") || action.equalsIgnoreCase("ui_close") || action.equalsIgnoreCase("close")) {
+                targetCategory = token.substring("view_category_rewards:".length());
+            } else if (token.equalsIgnoreCase("close") || token.equalsIgnoreCase("ui_close")
+                    || action.equalsIgnoreCase("close") || action.equalsIgnoreCase("ui_close")) {
                 action = "close";
+            } else if (action.equalsIgnoreCase("select_category") && targetCategory != null) {
+                action = "select_category";
+            } else if (action.equalsIgnoreCase("claim") && targetAchievement != null) {
+                action = "claim";
+            } else if (action.equalsIgnoreCase("view_category_rewards") && targetCategory != null) {
+                action = "view_category_rewards";
             }
 
             PlayerStore store = PxcAchievementsMod.getInstance().getPlayerStore();
 
             switch (action) {
                 case "select_category" -> {
+                    LOGGER.info("[QuestBook] Player {} switching category to: {}", player.getName().getString(), targetCategory);
                     open(player, targetCategory);
                 }
                 case "claim" -> {
@@ -117,7 +142,7 @@ public class AchievementGui {
                     ServerPlayNetworking.send(player, new UIPayload(closePacket.toString()));
                 }
                 default -> {
-                    LOGGER.debug("Unhandled UI action '{}' from player {}", action, player.getName().getString());
+                    LOGGER.warn("[QuestBook] Unhandled UI action '{}' (token='{}') from player {}", action, token, player.getName().getString());
                 }
             }
         } catch (Exception e) {

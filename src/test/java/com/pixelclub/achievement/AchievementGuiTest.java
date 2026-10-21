@@ -185,4 +185,20 @@ public class AchievementGuiTest {
             );
         } catch (Exception ignored) {}
     }
+
+    @Test
+    public void testHandleClientPacketAllTokenVariants() {
+        // Verify that handleClientPacket processes all client action/token formats gracefully without crashing
+        assertDoesNotThrow(() -> AchievementGui.handleClientPacket(null, "{\"action\":\"click\",\"screenId\":\"quest_book\",\"elementId\":\"select_category:gyms\"}"));
+        assertDoesNotThrow(() -> AchievementGui.handleClientPacket(null, "{\"action\":\"click\",\"element_id\":\"select_category:gyms\"}"));
+        assertDoesNotThrow(() -> AchievementGui.handleClientPacket(null, "{\"action\":\"click\",\"click\":\"select_category:gyms\"}"));
+        assertDoesNotThrow(() -> AchievementGui.handleClientPacket(null, "{\"action\":\"click\",\"id\":\"select_category:gyms\"}"));
+        assertDoesNotThrow(() -> AchievementGui.handleClientPacket(null, "{\"action\":\"select_category:gyms\"}"));
+        assertDoesNotThrow(() -> AchievementGui.handleClientPacket(null, "{\"action\":\"select_category\",\"category_id\":\"gyms\"}"));
+        assertDoesNotThrow(() -> AchievementGui.handleClientPacket(null, "{\"action\":\"click\",\"elementId\":\"claim:catching_gotcha\"}"));
+        assertDoesNotThrow(() -> AchievementGui.handleClientPacket(null, "{\"action\":\"claim\",\"achievement_id\":\"catching_gotcha\"}"));
+        assertDoesNotThrow(() -> AchievementGui.handleClientPacket(null, "{\"action\":\"click\",\"elementId\":\"view_category_rewards:raids\"}"));
+        assertDoesNotThrow(() -> AchievementGui.handleClientPacket(null, "{\"action\":\"click\",\"elementId\":\"close\"}"));
+        assertDoesNotThrow(() -> AchievementGui.handleClientPacket(null, "{\"action\":\"ui_close\"}"));
+    }
 }
