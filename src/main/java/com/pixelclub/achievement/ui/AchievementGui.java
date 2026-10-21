@@ -170,15 +170,15 @@ public class AchievementGui {
         root.addProperty("w", "fill");
         root.addProperty("h", "fill");
 
-        // Book Frame (780 x 460)
+        // Book Frame (560 x 355) - parchment open book centered in 800 x 480 viewport
         JsonObject bookFrame = new JsonObject();
         bookFrame.addProperty("type", "column");
-        bookFrame.addProperty("w", 780);
-        bookFrame.addProperty("h", 460);
-        bookFrame.addProperty("fill", "#26160B");
-        bookFrame.addProperty("border", "#4E2C14");
+        bookFrame.addProperty("w", 560);
+        bookFrame.addProperty("h", 355);
+        bookFrame.addProperty("fill", "#EED9B3");
+        bookFrame.addProperty("border", "#5C2612");
         bookFrame.addProperty("border_w", 3);
-        bookFrame.addProperty("radius", 10);
+        bookFrame.addProperty("radius", 8);
         bookFrame.addProperty("pad", 8);
         bookFrame.addProperty("gap", 6);
 
@@ -212,7 +212,7 @@ public class AchievementGui {
         JsonObject bar = new JsonObject();
         bar.addProperty("type", "row");
         bar.addProperty("w", "fill");
-        bar.addProperty("h", 28);
+        bar.addProperty("h", 24);
         bar.addProperty("align", "center");
         bar.addProperty("pad_l", 4);
         bar.addProperty("pad_r", 4);
@@ -222,7 +222,7 @@ public class AchievementGui {
         // Overall Progress Pill (Top-Left)
         JsonObject progressPill = new JsonObject();
         progressPill.addProperty("type", "column");
-        progressPill.addProperty("w", 130);
+        progressPill.addProperty("w", 110);
         progressPill.addProperty("gap", 2);
 
         JsonArray pillChildren = new JsonArray();
@@ -230,12 +230,12 @@ public class AchievementGui {
         pillText.addProperty("type", "text");
         pillText.addProperty("text", completed + "/" + total);
         pillText.addProperty("color", "#FCD34D");
-        pillText.addProperty("size", 0.85);
+        pillText.addProperty("size", 0.80);
         pillChildren.add(pillText);
 
         JsonObject progressBar = new JsonObject();
         progressBar.addProperty("type", "progress");
-        progressBar.addProperty("w", 120);
+        progressBar.addProperty("w", 100);
         progressBar.addProperty("h", 5);
         progressBar.addProperty("radius", 2);
         JsonObject progObj = new JsonObject();
@@ -257,12 +257,12 @@ public class AchievementGui {
 
         // Center Header Ribbon
         JsonObject ribbon = new JsonObject();
-        ribbon.addProperty("type", "column");
-        ribbon.addProperty("w", 160);
-        ribbon.addProperty("h", 24);
-        ribbon.addProperty("fill", "#3B1E08");
-        ribbon.addProperty("border", "#8C5A2B");
-        ribbon.addProperty("border_w", 2);
+        ribbon.addProperty("type", "row");
+        ribbon.addProperty("w", 140);
+        ribbon.addProperty("h", 22);
+        ribbon.addProperty("fill", "#B71C1C");
+        ribbon.addProperty("border", "#E53935");
+        ribbon.addProperty("border_w", 1);
         ribbon.addProperty("radius", 4);
         ribbon.addProperty("align", "center");
         ribbon.addProperty("justify", "center");
@@ -272,7 +272,9 @@ public class AchievementGui {
         ribbonText.addProperty("type", "text");
         ribbonText.addProperty("text", "QUEST BOOK");
         ribbonText.addProperty("color", "#F6D896");
-        ribbonText.addProperty("size", 1.1);
+        ribbonText.addProperty("size", 0.95);
+        ribbonText.addProperty("w", "fill");
+        ribbonText.addProperty("align_text", "center");
         ribbonChildren.add(ribbonText);
         ribbon.add("children", ribbonChildren);
         children.add(ribbon);
@@ -283,15 +285,15 @@ public class AchievementGui {
         spacer2.addProperty("w", "fill");
         children.add(spacer2);
 
-        // Close Button [X]
+        // Close Button [✕]
         JsonObject closeBtn = new JsonObject();
-        closeBtn.addProperty("type", "column");
-        closeBtn.addProperty("w", 24);
-        closeBtn.addProperty("h", 22);
-        closeBtn.addProperty("fill", "#B71C1C");
-        closeBtn.addProperty("border", "#EF5350");
+        closeBtn.addProperty("type", "row");
+        closeBtn.addProperty("w", 20);
+        closeBtn.addProperty("h", 20);
+        closeBtn.addProperty("fill", "#D32F2F");
+        closeBtn.addProperty("border", "#FFCDD2");
         closeBtn.addProperty("border_w", 1);
-        closeBtn.addProperty("radius", 4);
+        closeBtn.addProperty("radius", 3);
         closeBtn.addProperty("align", "center");
         closeBtn.addProperty("justify", "center");
         closeBtn.addProperty("action", "close");
@@ -301,7 +303,9 @@ public class AchievementGui {
         xText.addProperty("type", "text");
         xText.addProperty("text", "✕");
         xText.addProperty("color", "#FFFFFF");
-        xText.addProperty("size", 1.0);
+        xText.addProperty("size", 0.90);
+        xText.addProperty("w", "fill");
+        xText.addProperty("align_text", "center");
         closeChildren.add(xText);
         closeBtn.add("children", closeChildren);
         children.add(closeBtn);
@@ -313,14 +317,14 @@ public class AchievementGui {
     private static JsonObject buildLeftPage(List<AchievementCategory> categories, AchievementCategory selectedCat, Map<String, Integer> compMap) {
         JsonObject page = new JsonObject();
         page.addProperty("type", "column");
-        page.addProperty("w", 260);
+        page.addProperty("w", 185);
         page.addProperty("h", "fill");
-        page.addProperty("fill", "#1F120A");
-        page.addProperty("border", "#3A2111");
-        page.addProperty("border_w", 1.5);
-        page.addProperty("radius", 6);
+        page.addProperty("fill", "#2B170A");
+        page.addProperty("border", "#3E2211");
+        page.addProperty("border_w", 1);
+        page.addProperty("radius", 4);
         page.addProperty("pad", 4);
-        page.addProperty("gap", 2);
+        page.addProperty("gap", 1);
 
         JsonArray rows = new JsonArray();
         for (AchievementCategory cat : categories) {
@@ -330,11 +334,11 @@ public class AchievementGui {
             JsonObject row = new JsonObject();
             row.addProperty("type", "row");
             row.addProperty("w", "fill");
-            row.addProperty("h", 21);
+            row.addProperty("h", 18);
             row.addProperty("pad_l", 4);
             row.addProperty("pad_r", 4);
             row.addProperty("align", "center");
-            row.addProperty("radius", 4);
+            row.addProperty("radius", 3);
             row.addProperty("fill", isSelected ? "#4A2E19" : "#180D06");
             row.addProperty("border", isSelected ? "#F59E0B" : "#2B160A");
             row.addProperty("border_w", isSelected ? 2 : 1);
@@ -342,12 +346,12 @@ public class AchievementGui {
 
             JsonArray rowChildren = new JsonArray();
 
-            // Category Icon
+            // Category Icon (12x12)
             JsonObject icon = new JsonObject();
             icon.addProperty("type", "item");
             icon.addProperty("item", getCategoryIconItem(cat.getId()));
-            icon.addProperty("w", 16);
-            icon.addProperty("h", 16);
+            icon.addProperty("w", 12);
+            icon.addProperty("h", 12);
             rowChildren.add(icon);
 
             JsonObject iconSpacer = new JsonObject();
@@ -355,21 +359,21 @@ public class AchievementGui {
             iconSpacer.addProperty("w", 4);
             rowChildren.add(iconSpacer);
 
-            // Category Title (cleanly truncated)
+            // Category Title (cleanly truncated, w: fill pushes counter flush right)
             JsonObject title = new JsonObject();
             title.addProperty("type", "text");
-            title.addProperty("text", truncate(cat.getName(), 18));
+            title.addProperty("text", truncate(cat.getName(), 17));
             title.addProperty("color", isSelected ? "#FFFFFF" : "#D4B886");
-            title.addProperty("size", 0.82);
+            title.addProperty("size", 0.72);
             title.addProperty("w", "fill");
             rowChildren.add(title);
 
-            // Counter ratio
+            // Counter ratio (align_text: right)
             JsonObject counter = new JsonObject();
             counter.addProperty("type", "text");
             counter.addProperty("text", completed + "/" + cat.getTotalCount());
             counter.addProperty("color", isSelected ? "#FCD34D" : "#8C7B68");
-            counter.addProperty("size", 0.78);
+            counter.addProperty("size", 0.72);
             counter.addProperty("align_text", "right");
             rowChildren.add(counter);
 
@@ -386,24 +390,29 @@ public class AchievementGui {
         page.addProperty("type", "column");
         page.addProperty("w", "fill");
         page.addProperty("h", "fill");
+        page.addProperty("fill", "#381F0E");
+        page.addProperty("border", "#4E2C14");
+        page.addProperty("border_w", 1);
+        page.addProperty("radius", 4);
+        page.addProperty("pad", 6);
         page.addProperty("gap", 6);
 
         JsonArray pageChildren = new JsonArray();
 
-        // 1. Top Summary Banner
+        // 1. Top Summary Banner (3 Rows)
         JsonObject banner = new JsonObject();
         banner.addProperty("type", "column");
         banner.addProperty("w", "fill");
-        banner.addProperty("fill", "#361F10");
-        banner.addProperty("border", "#55331C");
-        banner.addProperty("border_w", 1.5);
-        banner.addProperty("radius", 6);
+        banner.addProperty("fill", "#583218");
+        banner.addProperty("border", "#7A4924");
+        banner.addProperty("border_w", 1);
+        banner.addProperty("radius", 4);
         banner.addProperty("pad", 6);
-        banner.addProperty("gap", 3);
+        banner.addProperty("gap", 4);
 
         JsonArray bannerChildren = new JsonArray();
 
-        // Banner Row 1: Title + Counter + Rewards Button
+        // Banner Row 1: Title (w: fill) + Counter (align_text: right)
         JsonObject bRow1 = new JsonObject();
         bRow1.addProperty("type", "row");
         bRow1.addProperty("w", "fill");
@@ -413,48 +422,18 @@ public class AchievementGui {
         JsonObject catTitle = new JsonObject();
         catTitle.addProperty("type", "text");
         catTitle.addProperty("text", currentCat.getName());
-        catTitle.addProperty("color", "#F6D896");
+        catTitle.addProperty("color", "#FFF4E0");
         catTitle.addProperty("size", 1.05);
+        catTitle.addProperty("w", "fill");
         bRow1Children.add(catTitle);
-
-        JsonObject sp = new JsonObject();
-        sp.addProperty("type", "spacer");
-        sp.addProperty("w", "fill");
-        bRow1Children.add(sp);
 
         JsonObject catRatio = new JsonObject();
         catRatio.addProperty("type", "text");
         catRatio.addProperty("text", catCompleted + " / " + currentCat.getTotalCount());
         catRatio.addProperty("color", "#FCD34D");
         catRatio.addProperty("size", 0.95);
+        catRatio.addProperty("align_text", "right");
         bRow1Children.add(catRatio);
-
-        JsonObject sp2 = new JsonObject();
-        sp2.addProperty("type", "spacer");
-        sp2.addProperty("w", 6);
-        bRow1Children.add(sp2);
-
-        // Rewards button
-        JsonObject rewBtn = new JsonObject();
-        rewBtn.addProperty("type", "row");
-        rewBtn.addProperty("fill", "#2E7D32");
-        rewBtn.addProperty("border", "#4CAF50");
-        rewBtn.addProperty("border_w", 1);
-        rewBtn.addProperty("radius", 3);
-        rewBtn.addProperty("pad", 3);
-        rewBtn.addProperty("pad_l", 6);
-        rewBtn.addProperty("pad_r", 6);
-        rewBtn.addProperty("action", "view_category_rewards:" + currentCat.getId());
-
-        JsonArray rewBtnChildren = new JsonArray();
-        JsonObject rewText = new JsonObject();
-        rewText.addProperty("type", "text");
-        rewText.addProperty("text", "🎁 REWARDS");
-        rewText.addProperty("color", "#FFFFFF");
-        rewText.addProperty("size", 0.8);
-        rewBtnChildren.add(rewText);
-        rewBtn.add("children", rewBtnChildren);
-        bRow1Children.add(rewBtn);
 
         bRow1.add("children", bRow1Children);
         bannerChildren.add(bRow1);
@@ -463,11 +442,19 @@ public class AchievementGui {
         JsonObject desc = new JsonObject();
         desc.addProperty("type", "text");
         desc.addProperty("text", currentCat.getDescription());
-        desc.addProperty("color", "#BFA586");
-        desc.addProperty("size", 0.75);
+        desc.addProperty("color", "#D4B896");
+        desc.addProperty("size", 0.72);
         bannerChildren.add(desc);
 
-        // Banner Row 3: Horizontal Progress Bar
+        // Banner Row 3: Horizontal Progress Bar (w: fill) + [🎁 REWARDS] Button (w: 68, h: 16)
+        JsonObject bRow3 = new JsonObject();
+        bRow3.addProperty("type", "row");
+        bRow3.addProperty("w", "fill");
+        bRow3.addProperty("align", "center");
+        bRow3.addProperty("gap", 8);
+
+        JsonArray bRow3Children = new JsonArray();
+
         JsonObject bar = new JsonObject();
         bar.addProperty("type", "progress");
         bar.addProperty("w", "fill");
@@ -477,9 +464,36 @@ public class AchievementGui {
         prog.addProperty("cur", catCompleted);
         prog.addProperty("total", Math.max(1, currentCat.getTotalCount()));
         prog.addProperty("fill", "#F59E0B");
-        prog.addProperty("track", "#1E1007");
+        prog.addProperty("track", "#241208");
         bar.add("progress", prog);
-        bannerChildren.add(bar);
+        bRow3Children.add(bar);
+
+        JsonObject rewBtn = new JsonObject();
+        rewBtn.addProperty("type", "row");
+        rewBtn.addProperty("w", 68);
+        rewBtn.addProperty("h", 16);
+        rewBtn.addProperty("fill", "#2E7D32");
+        rewBtn.addProperty("border", "#66BB6A");
+        rewBtn.addProperty("border_w", 1);
+        rewBtn.addProperty("radius", 3);
+        rewBtn.addProperty("align", "center");
+        rewBtn.addProperty("justify", "center");
+        rewBtn.addProperty("action", "view_category_rewards:" + currentCat.getId());
+
+        JsonArray rewBtnChildren = new JsonArray();
+        JsonObject rewText = new JsonObject();
+        rewText.addProperty("type", "text");
+        rewText.addProperty("text", "🎁 REWARDS");
+        rewText.addProperty("color", "#FFFFFF");
+        rewText.addProperty("size", 0.72);
+        rewText.addProperty("w", "fill");
+        rewText.addProperty("align_text", "center");
+        rewBtnChildren.add(rewText);
+        rewBtn.add("children", rewBtnChildren);
+        bRow3Children.add(rewBtn);
+
+        bRow3.add("children", bRow3Children);
+        bannerChildren.add(bRow3);
 
         banner.add("children", bannerChildren);
         pageChildren.add(banner);
@@ -535,18 +549,15 @@ public class AchievementGui {
             sTitle.addProperty("text", sectionName.toUpperCase());
             sTitle.addProperty("color", "#F6D896");
             sTitle.addProperty("size", 0.88);
+            sTitle.addProperty("w", "fill");
             hRowChildren.add(sTitle);
-
-            JsonObject sp3 = new JsonObject();
-            sp3.addProperty("type", "spacer");
-            sp3.addProperty("w", "fill");
-            hRowChildren.add(sp3);
 
             JsonObject sCount = new JsonObject();
             sCount.addProperty("type", "text");
             sCount.addProperty("text", secCompleted + "/" + list.size());
             sCount.addProperty("color", "#FCD34D");
             sCount.addProperty("size", 0.82);
+            sCount.addProperty("align_text", "right");
             hRowChildren.add(sCount);
 
             headerRow.add("children", hRowChildren);
@@ -570,22 +581,22 @@ public class AchievementGui {
                 JsonObject card = new JsonObject();
                 card.addProperty("type", "row");
                 card.addProperty("w", "fill");
-                card.addProperty("fill", "#27150A");
-                card.addProperty("border", "#3E2211");
-                card.addProperty("border_w", 1);
-                card.addProperty("radius", 4);
-                card.addProperty("pad", 6);
-                card.addProperty("gap", 6);
-                card.addProperty("align", "center");
+                card.addProperty("fill", "#2A160B");
+                card.addProperty("border", "#4A2914");
+                card.addProperty("radius", 3);
+                card.addProperty("pad", 4);
+                card.addProperty("gap", 4);
+                card.addProperty("align", "start");
 
                 JsonArray cardChildren = new JsonArray();
 
-                // Difficulty/Tier Dot
+                // Difficulty Dot aligned with top title line (dy: 2)
                 JsonObject dot = new JsonObject();
                 dot.addProperty("type", "column");
                 dot.addProperty("w", 6);
                 dot.addProperty("h", 6);
                 dot.addProperty("radius", 3);
+                dot.addProperty("dy", 2);
                 dot.addProperty("fill", getTierDotColor(ach.getTarget()));
                 cardChildren.add(dot);
 
@@ -593,7 +604,7 @@ public class AchievementGui {
                 JsonObject textCol = new JsonObject();
                 textCol.addProperty("type", "column");
                 textCol.addProperty("w", "fill");
-                textCol.addProperty("gap", 2);
+                textCol.addProperty("gap", 1);
 
                 JsonArray tChildren = new JsonArray();
                 JsonObject aName = new JsonObject();
@@ -625,9 +636,10 @@ public class AchievementGui {
                 // Right-Side Action / Progress Area
                 JsonObject actionArea = new JsonObject();
                 actionArea.addProperty("type", "column");
-                actionArea.addProperty("w", 85);
+                actionArea.addProperty("w", 68);
                 actionArea.addProperty("align", "center");
                 actionArea.addProperty("justify", "center");
+                actionArea.addProperty("gap", 2);
 
                 JsonArray aAreaChildren = new JsonArray();
 
@@ -637,12 +649,14 @@ public class AchievementGui {
                     pText.addProperty("text", formatNumber(p.getProgress()) + "/" + formatNumber(ach.getTarget()));
                     pText.addProperty("color", "#FCD34D");
                     pText.addProperty("size", 0.74);
+                    pText.addProperty("w", 64);
+                    pText.addProperty("align_text", "center");
                     aAreaChildren.add(pText);
 
                     JsonObject aBar = new JsonObject();
                     aBar.addProperty("type", "progress");
-                    aBar.addProperty("w", 75);
-                    aBar.addProperty("h", 5);
+                    aBar.addProperty("w", 64);
+                    aBar.addProperty("h", 4);
                     aBar.addProperty("radius", 2);
                     JsonObject apObj = new JsonObject();
                     apObj.addProperty("cur", p.getProgress());
@@ -654,8 +668,8 @@ public class AchievementGui {
                 } else if (state == ClaimState.COMPLETED) {
                     JsonObject claimBtn = new JsonObject();
                     claimBtn.addProperty("type", "row");
-                    claimBtn.addProperty("w", 80);
-                    claimBtn.addProperty("h", 20);
+                    claimBtn.addProperty("w", 64);
+                    claimBtn.addProperty("h", 18);
                     claimBtn.addProperty("fill", "#2E7D32");
                     claimBtn.addProperty("border", "#66BB6A");
                     claimBtn.addProperty("border_w", 1);
@@ -669,14 +683,16 @@ public class AchievementGui {
                     cText.addProperty("type", "text");
                     cText.addProperty("text", "✔ CLAIM");
                     cText.addProperty("color", "#FFFFFF");
-                    cText.addProperty("size", 0.82);
+                    cText.addProperty("size", 0.78);
+                    cText.addProperty("w", "fill");
+                    cText.addProperty("align_text", "center");
                     cBtnChildren.add(cText);
                     claimBtn.add("children", cBtnChildren);
                     aAreaChildren.add(claimBtn);
                 } else { // CLAIMED
                     JsonObject claimedBadge = new JsonObject();
                     claimedBadge.addProperty("type", "row");
-                    claimedBadge.addProperty("w", 80);
+                    claimedBadge.addProperty("w", 64);
                     claimedBadge.addProperty("h", 18);
                     claimedBadge.addProperty("fill", "#1A0E07");
                     claimedBadge.addProperty("border", "#331C0E");
@@ -691,6 +707,8 @@ public class AchievementGui {
                     bText.addProperty("text", "✔ CLAIMED");
                     bText.addProperty("color", "#888888");
                     bText.addProperty("size", 0.74);
+                    bText.addProperty("w", "fill");
+                    bText.addProperty("align_text", "center");
                     badgeChildren.add(bText);
                     claimedBadge.add("children", badgeChildren);
                     aAreaChildren.add(claimedBadge);
