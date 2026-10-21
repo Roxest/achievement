@@ -178,6 +178,7 @@ public class AchievementGui {
         scene.addProperty("layout", "scene");
         scene.addProperty("id", SCREEN_ID);
         scene.addProperty("title", "QUEST BOOK");
+        scene.addProperty("opaque", false);
         scene.addProperty("bg", "none");
         scene.addProperty("smooth", true);
         scene.addProperty("esc_action", "close");
