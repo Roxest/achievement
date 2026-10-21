@@ -12,9 +12,9 @@
     "sources": "https://github.com/PixelclubCenter"
   },
   "license": "All-Rights-Reserved",
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
-    "server": [
+    "main": [
       "com.pixelclub.achievement.PxcAchievementsMod"
     ]
   },

@@ -3,8 +3,10 @@ package com.pixelclub.achievement;
 import com.pixelclub.achievement.command.AchievementCommands;
 import com.pixelclub.achievement.data.AchievementRegistry;
 import com.pixelclub.achievement.listener.BuiltInListeners;
+import com.pixelclub.achievement.network.UIPayloadHelper;
 import com.pixelclub.achievement.storage.PlayerStore;
-import net.fabricmc.api.DedicatedServerModInitializer;
+import com.pixelclub.achievement.ui.AchievementGui;
+import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
@@ -14,9 +16,10 @@ import java.io.InputStream;
 import java.nio.file.Path;
 
 /**
- * Dedicated server mod entrypoint for Pixelclub Achievements.
+ * Mod entrypoint for Pixelclub Achievements (MC 1.21.1).
+ * Runs on both dedicated servers and integrated singleplayer/dev clients.
  */
-public class PxcAchievementsMod implements DedicatedServerModInitializer {
+public class PxcAchievementsMod implements ModInitializer {
     public static final String MOD_ID = "pxcachievements";
     private static final Logger LOGGER = LoggerFactory.getLogger("PxcAchievements");
     private static PxcAchievementsMod instance;
@@ -25,7 +28,7 @@ public class PxcAchievementsMod implements DedicatedServerModInitializer {
     private PlayerStore playerStore;
 
     @Override
-    public void onInitializeServer() {
+    public void onInitialize() {
         instance = this;
         LOGGER.info("Initializing Pixelclub Achievements (Fabric 1.21.1)...");
 
@@ -54,24 +57,9 @@ public class PxcAchievementsMod implements DedicatedServerModInitializer {
         BuiltInListeners.register();
 
         // 5. Register UIPayload networking channel & client callback receiver
-        try {
-            net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playS2C().register(com.pixelclub.achievement.network.UIPayload.TYPE, com.pixelclub.achievement.network.UIPayload.CODEC);
-        } catch (IllegalArgumentException ignored) {
-            LOGGER.debug("pixelclub:ui S2C payload type already registered by another mod.");
-        }
-
-        try {
-            net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playC2S().register(com.pixelclub.achievement.network.UIPayload.TYPE, com.pixelclub.achievement.network.UIPayload.CODEC);
-        } catch (IllegalArgumentException ignored) {
-            LOGGER.debug("pixelclub:ui C2S payload type already registered by another mod.");
-        }
-
-        net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.registerGlobalReceiver(com.pixelclub.achievement.network.UIPayload.TYPE, (payload, context) -> {
-            net.minecraft.server.level.ServerPlayer player = context.player();
-            String json = payload.json();
-            context.server().execute(() -> {
-                com.pixelclub.achievement.ui.AchievementGui.handleClientPacket(player, json);
-            });
+        UIPayloadHelper.registerPayloadTypes();
+        UIPayloadHelper.registerReceiver(packet -> {
+            AchievementGui.handleClientPacket(packet.player(), packet.json());
         });
 
         // 6. Register Disconnect & Shutdown Flush
