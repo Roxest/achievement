@@ -9,7 +9,7 @@ import com.pixelclub.achievement.model.Achievement;
 import com.pixelclub.achievement.model.AchievementCategory;
 import com.pixelclub.achievement.model.ClaimState;
 import com.pixelclub.achievement.model.PlayerProgress;
-import com.pixelclub.achievement.network.UIPayloadHelper;
+import com.pixelclub.achievement.network.UIPayload;
 import com.pixelclub.achievement.storage.PlayerStore;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.loader.api.FabricLoader;
@@ -50,7 +50,7 @@ public class AchievementGui {
         }
 
         JsonObject scene = buildSceneJson(player, categories, currentCat);
-        UIPayloadHelper.send(player, scene.toString());
+        ServerPlayNetworking.send(player, new UIPayload(scene.toString()));
     }
 
     /**
@@ -114,7 +114,7 @@ public class AchievementGui {
                 case "close" -> {
                     JsonObject closePacket = new JsonObject();
                     closePacket.addProperty("action", "close_screen");
-                    UIPayloadHelper.send(player, closePacket.toString());
+                    ServerPlayNetworking.send(player, new UIPayload(closePacket.toString()));
                 }
                 default -> {
                     LOGGER.debug("Unhandled UI action '{}' from player {}", action, player.getName().getString());
