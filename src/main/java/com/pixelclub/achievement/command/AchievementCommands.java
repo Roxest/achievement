@@ -58,6 +58,11 @@ public class AchievementCommands {
                     .requires(s -> s.hasPermission(2))
                     .then(Commands.argument("player", EntityArgument.player())
                         .executes(AchievementCommands::verifySync)))
+
+                // /ach reload
+                .then(Commands.literal("reload")
+                    .requires(s -> s.hasPermission(2))
+                    .executes(AchievementCommands::reloadConfigAndSchema))
         );
     }
 
@@ -170,6 +175,20 @@ public class AchievementCommands {
             return 1;
         } catch (Exception e) {
             ctx.getSource().sendFailure(Component.literal("Error: " + e.getMessage()));
+            return 0;
+        }
+    }
+
+    private static int reloadConfigAndSchema(CommandContext<CommandSourceStack> ctx) {
+        try {
+            PxcAchievementsMod.getInstance().loadConfigAndSchema();
+            int total = PxcAchievementsMod.getInstance().getRegistry().getTotalCount();
+            int cats = PxcAchievementsMod.getInstance().getRegistry().getCategories().size();
+            ctx.getSource().sendSuccess(() -> Component.literal(String.format("§a✔ Reloaded achievements and config! Loaded %d achievements across %d categories.",
+                    total, cats)), true);
+            return 1;
+        } catch (Exception e) {
+            ctx.getSource().sendFailure(Component.literal("§cFailed to reload achievements: " + e.getMessage()));
             return 0;
         }
     }

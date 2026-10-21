@@ -22,7 +22,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "pok_balls",
+              "id": "cobblemon:poke_ball",
               "display": "Poké Balls",
               "amount": 5
             },
@@ -47,7 +47,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "iron_ingots",
+              "id": "minecraft:iron_ingot",
               "display": "Iron Ingots",
               "amount": 16
             },
@@ -72,7 +72,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "great_balls",
+              "id": "cobblemon:great_ball",
               "display": "Great Balls",
               "amount": 10
             },
@@ -97,7 +97,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "ultra_balls",
+              "id": "cobblemon:ultra_ball",
               "display": "Ultra Balls",
               "amount": 5
             },
@@ -122,7 +122,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "premier_ball",
+              "id": "cobblemon:premier_ball",
               "display": "Premier Ball",
               "amount": 1
             },
@@ -147,7 +147,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "ultra_balls",
+              "id": "cobblemon:ultra_ball",
               "display": "Ultra Balls",
               "amount": 5
             },
@@ -196,7 +196,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "net_balls",
+              "id": "cobblemon:net_ball",
               "display": "Net Balls",
               "amount": 10
             },
@@ -221,7 +221,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "great_balls",
+              "id": "cobblemon:great_ball",
               "display": "Great Balls",
               "amount": 15
             },
@@ -275,7 +275,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "ultra_balls",
+              "id": "cobblemon:ultra_ball",
               "display": "Ultra Balls",
               "amount": 10
             },
@@ -329,7 +329,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "ultra_balls",
+              "id": "cobblemon:ultra_ball",
               "display": "Ultra Balls",
               "amount": 10
             },
@@ -417,7 +417,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -442,13 +442,13 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "master_ball",
+              "id": "cobblemon:master_ball",
               "display": "Master Ball",
               "amount": 1
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 2
             },
@@ -478,7 +478,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "lure",
+              "id": "minecraft:lure",
               "display": "Lure",
               "amount": 5
             },
@@ -532,13 +532,13 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "shiny_charm_voucher",
+              "id": "minecraft:shiny_charm_voucher",
               "display": "Shiny Charm Voucher",
               "amount": 1
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -563,7 +563,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "sweet_pok_snacks",
+              "id": "minecraft:sweet_pok_snack",
               "display": "Sweet Poké Snacks",
               "amount": 3
             },
@@ -588,7 +588,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "type_pok_snacks",
+              "id": "minecraft:type_pok_snack",
               "display": "Type Poké Snacks",
               "amount": 5
             },
@@ -613,7 +613,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "rare_candy",
+              "id": "cobblemon:rare_candy",
               "display": "Rare Candy",
               "amount": 1
             },
@@ -672,7 +672,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 1
             },
@@ -710,7 +710,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "rare_candies",
+              "id": "cobblemon:rare_candy",
               "display": "Rare Candies",
               "amount": 5
             },
@@ -735,7 +735,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "rare_candies",
+              "id": "cobblemon:rare_candy",
               "display": "Rare Candies",
               "amount": 10
             },
@@ -799,7 +799,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "max_revives",
+              "id": "cobblemon:max_revive",
               "display": "Max Revives",
               "amount": 10
             },
@@ -863,7 +863,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -956,7 +956,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -986,7 +986,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 2
             },
@@ -1016,7 +1016,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 5
             },
@@ -1046,7 +1046,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "rare_candies",
+              "id": "cobblemon:rare_candy",
               "display": "Rare Candies",
               "amount": 3
             },
@@ -1071,7 +1071,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "random_type_gem",
+              "id": "cobblemon:random_type_gem",
               "display": "Random Type Gem",
               "amount": 1
             },
@@ -1159,7 +1159,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -1218,7 +1218,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 1
             },
@@ -1277,7 +1277,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 2
             },
@@ -1315,7 +1315,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "potions",
+              "id": "cobblemon:potion",
               "display": "Potions",
               "amount": 3
             },
@@ -1340,7 +1340,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "super_potions",
+              "id": "cobblemon:super_potion",
               "display": "Super Potions",
               "amount": 5
             },
@@ -1365,7 +1365,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "rare_candies",
+              "id": "cobblemon:rare_candy",
               "display": "Rare Candies",
               "amount": 3
             },
@@ -1443,7 +1443,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "revives",
+              "id": "cobblemon:revive",
               "display": "Revives",
               "amount": 5
             },
@@ -1468,7 +1468,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "max_potions",
+              "id": "cobblemon:max_potion",
               "display": "Max Potions",
               "amount": 5
             },
@@ -1527,7 +1527,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "skill_reset_voucher",
+              "id": "minecraft:skill_reset_voucher",
               "display": "Skill Reset Voucher",
               "amount": 1
             },
@@ -1562,7 +1562,7 @@
             },
             {
               "type": "ITEM",
-              "id": "exp_candies_m",
+              "id": "cobblemon:exp_candy_m",
               "display": "Exp Candies M",
               "amount": 10
             }
@@ -1592,7 +1592,7 @@
             },
             {
               "type": "ITEM",
-              "id": "exp_candies_l",
+              "id": "cobblemon:exp_candy_l",
               "display": "Exp Candies L",
               "amount": 5
             }
@@ -1641,7 +1641,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "daily_battle_ticket",
+              "id": "minecraft:daily_battle_ticket",
               "display": "Daily Battle Ticket",
               "amount": 1
             },
@@ -1700,7 +1700,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -1725,7 +1725,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "focus_sash",
+              "id": "cobblemon:focus_sash",
               "display": "Focus Sash",
               "amount": 1
             },
@@ -1755,7 +1755,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "rare_candies",
+              "id": "cobblemon:rare_candy",
               "display": "Rare Candies",
               "amount": 5
             },
@@ -1790,7 +1790,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 1
             },
@@ -1915,7 +1915,7 @@
             },
             {
               "type": "ITEM",
-              "id": "exp_candies_xl",
+              "id": "cobblemon:exp_candy_xl",
               "display": "Exp Candies XL",
               "amount": 10
             }
@@ -2027,7 +2027,7 @@
             },
             {
               "type": "ITEM",
-              "id": "exp_candy_xl",
+              "id": "cobblemon:exp_candy_xl",
               "display": "Exp Candy XL",
               "amount": 1
             }
@@ -2057,7 +2057,7 @@
             },
             {
               "type": "ITEM",
-              "id": "heart_scale",
+              "id": "cobblemon:heart_scale",
               "display": "Heart Scale",
               "amount": 1
             }
@@ -2087,7 +2087,7 @@
             },
             {
               "type": "ITEM",
-              "id": "ability_capsule",
+              "id": "cobblemon:ability_capsule",
               "display": "Ability Capsule",
               "amount": 1
             }
@@ -2112,7 +2112,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -2137,7 +2137,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "dungeon_heals",
+              "id": "minecraft:dungeon_heal",
               "display": "Dungeon Heals",
               "amount": 3
             },
@@ -2172,7 +2172,7 @@
             },
             {
               "type": "ITEM",
-              "id": "max_potions",
+              "id": "cobblemon:max_potion",
               "display": "Max Potions",
               "amount": 5
             }
@@ -2284,7 +2284,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -2314,7 +2314,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 1
             },
@@ -2410,7 +2410,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "ultra_balls",
+              "id": "cobblemon:ultra_ball",
               "display": "Ultra Balls",
               "amount": 5
             },
@@ -2522,7 +2522,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "spinner_tokens",
+              "id": "minecraft:spinner_token",
               "display": "Spinner Tokens",
               "amount": 2
             },
@@ -2552,7 +2552,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "destiny_knot",
+              "id": "cobblemon:destiny_knot",
               "display": "Destiny Knot",
               "amount": 1
             },
@@ -2582,7 +2582,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "lure_balls",
+              "id": "cobblemon:lure_ball",
               "display": "Lure Balls",
               "amount": 10
             },
@@ -2612,7 +2612,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "everstone",
+              "id": "cobblemon:everstone",
               "display": "Everstone",
               "amount": 1
             },
@@ -2734,7 +2734,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -2764,7 +2764,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 1
             },
@@ -2794,7 +2794,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 1
             },
@@ -2829,7 +2829,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 2
             },
@@ -2867,7 +2867,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "pasture_blocks",
+              "id": "cobblemon:pasture",
               "display": "Pasture Blocks",
               "amount": 2
             },
@@ -2892,7 +2892,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "exp_candies_s",
+              "id": "cobblemon:exp_candy_s",
               "display": "Exp Candies S",
               "amount": 5
             },
@@ -2917,7 +2917,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "quick_powder",
+              "id": "minecraft:quick_powder",
               "display": "Quick Powder",
               "amount": 1
             },
@@ -2942,7 +2942,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "incubator_fuel",
+              "id": "minecraft:incubator_fuel",
               "display": "Incubator Fuel",
               "amount": 3
             },
@@ -2996,7 +2996,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "power_weight",
+              "id": "minecraft:power_weight",
               "display": "Power Weight",
               "amount": 1
             },
@@ -3021,7 +3021,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "destiny_knot",
+              "id": "cobblemon:destiny_knot",
               "display": "Destiny Knot",
               "amount": 1
             },
@@ -3051,7 +3051,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "bottle_cap",
+              "id": "cobblemon:bottle_cap",
               "display": "Bottle Cap",
               "amount": 1
             },
@@ -3081,7 +3081,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "gold_bottle_cap",
+              "id": "cobblemon:gold_bottle_cap",
               "display": "Gold Bottle Cap",
               "amount": 1
             },
@@ -3111,7 +3111,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "power_bracer",
+              "id": "minecraft:power_bracer",
               "display": "Power Bracer",
               "amount": 1
             },
@@ -3136,7 +3136,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "everstone",
+              "id": "cobblemon:everstone",
               "display": "Everstone",
               "amount": 1
             },
@@ -3161,7 +3161,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "luxury_balls",
+              "id": "cobblemon:luxury_ball",
               "display": "Luxury Balls",
               "amount": 5
             },
@@ -3186,7 +3186,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "moon_balls",
+              "id": "cobblemon:moon_ball",
               "display": "Moon Balls",
               "amount": 3
             },
@@ -3216,7 +3216,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "mirror_herb",
+              "id": "cobblemon:mirror_herb",
               "display": "Mirror Herb",
               "amount": 1
             },
@@ -3246,7 +3246,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "heart_scale",
+              "id": "cobblemon:heart_scale",
               "display": "Heart Scale",
               "amount": 1
             },
@@ -3276,7 +3276,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "pp_max",
+              "id": "minecraft:pp_max",
               "display": "PP Max",
               "amount": 1
             },
@@ -3369,7 +3369,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -3399,7 +3399,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 1
             },
@@ -3437,7 +3437,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "mint_vouchers",
+              "id": "cobblemon:mint_voucher",
               "display": "Mint Vouchers",
               "amount": 2
             },
@@ -3462,7 +3462,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "ability_capsule",
+              "id": "cobblemon:ability_capsule",
               "display": "Ability Capsule",
               "amount": 1
             },
@@ -3492,7 +3492,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "leftovers",
+              "id": "cobblemon:leftover",
               "display": "Leftovers",
               "amount": 1
             },
@@ -3517,7 +3517,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "ability_patch",
+              "id": "cobblemon:ability_patch",
               "display": "Ability Patch",
               "amount": 1
             },
@@ -3547,7 +3547,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "protein",
+              "id": "minecraft:protein",
               "display": "Protein",
               "amount": 5
             },
@@ -3572,7 +3572,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "muscle_mochi",
+              "id": "cobblemon:muscle_mochi",
               "display": "Muscle Mochi",
               "amount": 5
             },
@@ -3597,7 +3597,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "fresh_start_mochi",
+              "id": "cobblemon:fresh_start_mochi",
               "display": "Fresh-Start Mochi",
               "amount": 1
             },
@@ -3656,7 +3656,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "blank_tms",
+              "id": "minecraft:blank_tm",
               "display": "Blank TMs",
               "amount": 5
             },
@@ -3681,7 +3681,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "random_tms",
+              "id": "minecraft:random_tm",
               "display": "Random TMs",
               "amount": 3
             },
@@ -3706,7 +3706,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "random_trs",
+              "id": "minecraft:random_tr",
               "display": "Random TRs",
               "amount": 3
             },
@@ -3731,7 +3731,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "pp_up",
+              "id": "minecraft:pp_up",
               "display": "PP Up",
               "amount": 1
             },
@@ -3761,7 +3761,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "copper_brush",
+              "id": "minecraft:copper_brush",
               "display": "Copper Brush",
               "amount": 1
             },
@@ -3786,7 +3786,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "random_type_gems",
+              "id": "cobblemon:random_type_gem",
               "display": "Random Type Gems",
               "amount": 2
             },
@@ -3811,7 +3811,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "type_gems",
+              "id": "cobblemon:type_gem",
               "display": "Type Gems",
               "amount": 2
             },
@@ -3899,7 +3899,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "gold_bottle_cap",
+              "id": "cobblemon:gold_bottle_cap",
               "display": "Gold Bottle Cap",
               "amount": 1
             },
@@ -3934,7 +3934,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -3964,7 +3964,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 2
             },
@@ -4002,7 +4002,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "rare_candies",
+              "id": "cobblemon:rare_candy",
               "display": "Rare Candies",
               "amount": 3
             },
@@ -4027,7 +4027,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "evolution_stone_choice",
+              "id": "cobblemon:evolution_stone_choice",
               "display": "Evolution Stone Choice",
               "amount": 1
             },
@@ -4052,7 +4052,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "soothe_bell",
+              "id": "cobblemon:soothe_bell",
               "display": "Soothe Bell",
               "amount": 1
             },
@@ -4077,7 +4077,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "metal_coat",
+              "id": "cobblemon:metal_coat",
               "display": "Metal Coat",
               "amount": 1
             },
@@ -4102,7 +4102,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "rare_candies",
+              "id": "cobblemon:rare_candy",
               "display": "Rare Candies",
               "amount": 5
             },
@@ -4127,7 +4127,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "linking_cords",
+              "id": "cobblemon:link_cable",
               "display": "Linking Cords",
               "amount": 2
             },
@@ -4152,7 +4152,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "name_tag",
+              "id": "minecraft:name_tag",
               "display": "Name Tag",
               "amount": 1
             },
@@ -4177,7 +4177,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "focus_bands",
+              "id": "cobblemon:focus_band",
               "display": "Focus Bands",
               "amount": 3
             },
@@ -4202,7 +4202,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "strange_souvenir",
+              "id": "minecraft:strange_souvenir",
               "display": "Strange Souvenir",
               "amount": 1
             },
@@ -4227,7 +4227,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "copper_brush",
+              "id": "minecraft:copper_brush",
               "display": "Copper Brush",
               "amount": 1
             },
@@ -4252,7 +4252,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "random_fossil",
+              "id": "cobblemon:random_fossil",
               "display": "Random Fossil",
               "amount": 1
             },
@@ -4321,7 +4321,7 @@
             },
             {
               "type": "ITEM",
-              "id": "ultra_balls",
+              "id": "cobblemon:ultra_ball",
               "display": "Ultra Balls",
               "amount": 5
             }
@@ -4341,7 +4341,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "random_mega_stone_key",
+              "id": "cobblemon:random_mega_stone_key",
               "display": "Random Mega Stone Key",
               "amount": 1
             },
@@ -4381,7 +4381,7 @@
             },
             {
               "type": "ITEM",
-              "id": "max_revives",
+              "id": "cobblemon:max_revive",
               "display": "Max Revives",
               "amount": 5
             }
@@ -4401,7 +4401,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "random_mega_stone_key",
+              "id": "cobblemon:random_mega_stone_key",
               "display": "Random Mega Stone Key",
               "amount": 1
             },
@@ -4460,7 +4460,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "reveal_glass",
+              "id": "minecraft:reveal_glass",
               "display": "Reveal Glass",
               "amount": 1
             },
@@ -4495,7 +4495,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -4525,7 +4525,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 1
             },
@@ -4563,7 +4563,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "pok_balls",
+              "id": "cobblemon:poke_ball",
               "display": "Poké Balls",
               "amount": 5
             },
@@ -4588,7 +4588,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "great_balls",
+              "id": "cobblemon:great_ball",
               "display": "Great Balls",
               "amount": 10
             },
@@ -4613,7 +4613,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "ultra_balls",
+              "id": "cobblemon:ultra_ball",
               "display": "Ultra Balls",
               "amount": 5
             },
@@ -4638,7 +4638,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "dive_balls",
+              "id": "cobblemon:dive_ball",
               "display": "Dive Balls",
               "amount": 10
             },
@@ -4692,7 +4692,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "prism_scale",
+              "id": "cobblemon:prism_scale",
               "display": "Prism Scale",
               "amount": 1
             },
@@ -4717,7 +4717,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "magma_cream",
+              "id": "minecraft:magma_cream",
               "display": "Magma Cream",
               "amount": 5
             },
@@ -4747,7 +4747,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "bottle_cap",
+              "id": "cobblemon:bottle_cap",
               "display": "Bottle Cap",
               "amount": 1
             },
@@ -4777,7 +4777,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "water_gem",
+              "id": "cobblemon:water_gem",
               "display": "Water Gem",
               "amount": 1
             },
@@ -4807,7 +4807,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "size_up_voucher",
+              "id": "minecraft:size_up_voucher",
               "display": "Size Up Voucher",
               "amount": 1
             },
@@ -4866,7 +4866,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "tournament_ticket",
+              "id": "minecraft:tournament_ticket",
               "display": "Tournament Ticket",
               "amount": 1
             },
@@ -4920,7 +4920,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "valor",
+              "id": "minecraft:valor",
               "display": "Valor",
               "amount": 500
             },
@@ -4955,7 +4955,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -5019,7 +5019,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -5049,7 +5049,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 2
             },
@@ -5092,7 +5092,7 @@
             },
             {
               "type": "ITEM",
-              "id": "bread",
+              "id": "minecraft:bread",
               "display": "Bread",
               "amount": 3
             }
@@ -5122,7 +5122,7 @@
             },
             {
               "type": "ITEM",
-              "id": "waystone",
+              "id": "cobblemon:waystone",
               "display": "Waystone",
               "amount": 1
             }
@@ -5147,7 +5147,7 @@
             },
             {
               "type": "ITEM",
-              "id": "compass",
+              "id": "minecraft:compass",
               "display": "Compass",
               "amount": 1
             }
@@ -5172,7 +5172,7 @@
             },
             {
               "type": "ITEM",
-              "id": "shulker_shell",
+              "id": "minecraft:shulker_shell",
               "display": "Shulker Shell",
               "amount": 1
             }
@@ -5192,7 +5192,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "golden_shovel",
+              "id": "minecraft:golden_shovel",
               "display": "Golden Shovel",
               "amount": 1
             },
@@ -5222,7 +5222,7 @@
             },
             {
               "type": "ITEM",
-              "id": "bed_choice",
+              "id": "minecraft:bed_choice",
               "display": "Bed Choice",
               "amount": 1
             }
@@ -5242,7 +5242,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "bonus_claim_credits",
+              "id": "minecraft:bonus_claim_credit",
               "display": "Bonus Claim Credits",
               "amount": 2
             },
@@ -5272,7 +5272,7 @@
             },
             {
               "type": "ITEM",
-              "id": "player_head_choice",
+              "id": "minecraft:player_head_choice",
               "display": "Player Head Choice",
               "amount": 1
             }
@@ -5292,7 +5292,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "air_balloon",
+              "id": "minecraft:air_balloon",
               "display": "Air Balloon",
               "amount": 1
             },
@@ -5346,7 +5346,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "aprijuice",
+              "id": "minecraft:aprijuice",
               "display": "Aprijuice",
               "amount": 3
             },
@@ -5371,7 +5371,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "golden_bottle_cap",
+              "id": "cobblemon:golden_bottle_cap",
               "display": "Golden Bottle Cap",
               "amount": 1
             },
@@ -5411,7 +5411,7 @@
             },
             {
               "type": "ITEM",
-              "id": "ultra_balls",
+              "id": "cobblemon:ultra_ball",
               "display": "Ultra Balls",
               "amount": 10
             }
@@ -5460,7 +5460,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "stone_bricks",
+              "id": "minecraft:stone_bricks",
               "display": "Stone Bricks",
               "amount": 64
             },
@@ -5485,7 +5485,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "flying_gem",
+              "id": "cobblemon:flying_gem",
               "display": "Flying Gem",
               "amount": 1
             },
@@ -5554,7 +5554,7 @@
             },
             {
               "type": "ITEM",
-              "id": "claim_credits",
+              "id": "minecraft:claim_credit",
               "display": "Claim Credits",
               "amount": 2
             }
@@ -5584,7 +5584,7 @@
             },
             {
               "type": "ITEM",
-              "id": "waystone",
+              "id": "cobblemon:waystone",
               "display": "Waystone",
               "amount": 1
             }
@@ -5638,7 +5638,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 1
             },
@@ -5676,7 +5676,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "torches",
+              "id": "minecraft:torch",
               "display": "Torches",
               "amount": 16
             },
@@ -5701,7 +5701,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "diamonds",
+              "id": "minecraft:diamond",
               "display": "Diamonds",
               "amount": 3
             },
@@ -5755,7 +5755,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "iron_pickaxe_efficiency_iii",
+              "id": "minecraft:iron_pickaxe_efficiency_iii",
               "display": "Iron Pickaxe (Efficiency III)",
               "amount": 1
             },
@@ -5780,7 +5780,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "lapis_lazuli_blocks",
+              "id": "minecraft:lapis_block",
               "display": "Lapis Lazuli Blocks",
               "amount": 3
             },
@@ -5805,7 +5805,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "silk_touch_book",
+              "id": "minecraft:silk_touch_book",
               "display": "Silk Touch Book",
               "amount": 1
             },
@@ -5830,7 +5830,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "bottles_o_enchanting",
+              "id": "minecraft:experience_bottle",
               "display": "Bottles o' Enchanting",
               "amount": 5
             },
@@ -5855,7 +5855,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "mending_book",
+              "id": "minecraft:mending_book",
               "display": "Mending Book",
               "amount": 1
             },
@@ -5885,7 +5885,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "fertilizer",
+              "id": "minecraft:fertilizer",
               "display": "Fertilizer",
               "amount": 10
             },
@@ -5910,7 +5910,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "surprise_mulch",
+              "id": "cobblemon:surprise_mulch",
               "display": "Surprise Mulch",
               "amount": 5
             },
@@ -5935,7 +5935,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "mint_seeds",
+              "id": "cobblemon:mint_seed",
               "display": "Mint Seeds",
               "amount": 3
             },
@@ -5989,7 +5989,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "night_vision_potions",
+              "id": "cobblemon:night_vision_potion",
               "display": "Night Vision Potions",
               "amount": 5
             },
@@ -6014,7 +6014,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "netherite_scrap",
+              "id": "minecraft:netherite_scrap",
               "display": "Netherite Scrap",
               "amount": 1
             },
@@ -6044,7 +6044,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "diamond_block",
+              "id": "minecraft:diamond_block",
               "display": "Diamond Block",
               "amount": 1
             },
@@ -6074,7 +6074,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "netherite_ingot",
+              "id": "minecraft:netherite_ingot",
               "display": "Netherite Ingot",
               "amount": 1
             },
@@ -6104,7 +6104,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "diamond_brush",
+              "id": "minecraft:diamond_brush",
               "display": "Diamond Brush",
               "amount": 1
             },
@@ -6192,7 +6192,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -6235,7 +6235,7 @@
             },
             {
               "type": "ITEM",
-              "id": "shopping_coupon",
+              "id": "minecraft:shopping_coupon",
               "display": "Shopping Coupon",
               "amount": 1
             }
@@ -6260,7 +6260,7 @@
             },
             {
               "type": "ITEM",
-              "id": "bank_interest_token",
+              "id": "minecraft:bank_interest_token",
               "display": "% Bank Interest Token",
               "amount": 1
             }
@@ -6285,7 +6285,7 @@
             },
             {
               "type": "ITEM",
-              "id": "empty_banknote",
+              "id": "cobblemon:empty_banknote",
               "display": "Empty Banknote",
               "amount": 1
             }
@@ -6310,7 +6310,7 @@
             },
             {
               "type": "ITEM",
-              "id": "heart_particle",
+              "id": "minecraft:heart_particle",
               "display": "Heart Particle",
               "amount": 1
             }
@@ -6335,7 +6335,7 @@
             },
             {
               "type": "ITEM",
-              "id": "bread",
+              "id": "minecraft:bread",
               "display": "Bread",
               "amount": 5
             }
@@ -6360,7 +6360,7 @@
             },
             {
               "type": "ITEM",
-              "id": "empty_bottles",
+              "id": "minecraft:glass_bottle",
               "display": "Empty Bottles",
               "amount": 5
             }
@@ -6414,7 +6414,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -6444,7 +6444,7 @@
             },
             {
               "type": "ITEM",
-              "id": "auction_token",
+              "id": "minecraft:auction_token",
               "display": "Auction Token",
               "amount": 1
             }
@@ -6469,7 +6469,7 @@
             },
             {
               "type": "ITEM",
-              "id": "bidder_trophy",
+              "id": "minecraft:bidder_trophy",
               "display": "Bidder Trophy",
               "amount": 1
             }
@@ -6499,7 +6499,7 @@
             },
             {
               "type": "ITEM",
-              "id": "permanent_ah_slot",
+              "id": "minecraft:permanent_ah_slot",
               "display": "Permanent AH Slot",
               "amount": 1
             }
@@ -6529,7 +6529,7 @@
             },
             {
               "type": "ITEM",
-              "id": "golden_coin",
+              "id": "minecraft:golden_coin",
               "display": "Golden Coin",
               "amount": 1
             }
@@ -6578,13 +6578,13 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "sell_wand_1_2x_multiplier",
+              "id": "minecraft:sell_wand_1_2x_multiplier",
               "display": "Sell Wand (1.2x Multiplier",
               "amount": 1
             },
             {
               "type": "ITEM",
-              "id": "uses",
+              "id": "minecraft:use",
               "display": "uses)",
               "amount": 100
             },
@@ -6619,7 +6619,7 @@
             },
             {
               "type": "ITEM",
-              "id": "wand_upgrade_core",
+              "id": "minecraft:wand_upgrade_core",
               "display": "Wand Upgrade Core",
               "amount": 1
             }
@@ -6702,7 +6702,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 1
             },
@@ -6732,7 +6732,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 3
             },
@@ -6762,7 +6762,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 5
             },
@@ -6800,7 +6800,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "minion_fuel",
+              "id": "minecraft:minion_fuel",
               "display": "Minion Fuel",
               "amount": 1
             },
@@ -6825,7 +6825,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "minion_upgrade_slot",
+              "id": "minecraft:minion_upgrade_slot",
               "display": "Minion Upgrade Slot",
               "amount": 1
             },
@@ -6850,7 +6850,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "auto_smelt_module",
+              "id": "minecraft:auto_smelt_module",
               "display": "Auto-Smelt Module",
               "amount": 1
             },
@@ -6919,7 +6919,7 @@
             },
             {
               "type": "ITEM",
-              "id": "station_core",
+              "id": "minecraft:station_core",
               "display": "Station Core",
               "amount": 1
             }
@@ -6949,7 +6949,7 @@
             },
             {
               "type": "ITEM",
-              "id": "production_speedup",
+              "id": "minecraft:production_speedup",
               "display": "Production Speedup",
               "amount": 1
             }
@@ -6974,7 +6974,7 @@
             },
             {
               "type": "ITEM",
-              "id": "station_exp_bottle",
+              "id": "minecraft:station_exp_bottle",
               "display": "Station Exp Bottle",
               "amount": 1
             }
@@ -7023,7 +7023,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "crop_hopper",
+              "id": "minecraft:crop_hopper",
               "display": "Crop Hopper",
               "amount": 1
             },
@@ -7048,7 +7048,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "vacuum_hoppers",
+              "id": "minecraft:vacuum_hopper",
               "display": "Vacuum Hoppers",
               "amount": 2
             },
@@ -7078,7 +7078,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "autosell_chest",
+              "id": "minecraft:autosell_chest",
               "display": "AutoSell Chest",
               "amount": 1
             },
@@ -7108,7 +7108,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "chest_upgrade_module",
+              "id": "minecraft:chest_upgrade_module",
               "display": "Chest Upgrade Module",
               "amount": 1
             },
@@ -7138,7 +7138,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "work_station_overdrive_fuel",
+              "id": "minecraft:work_station_overdrive_fuel",
               "display": "Work Station Overdrive Fuel",
               "amount": 1
             },
@@ -7236,7 +7236,7 @@
             },
             {
               "type": "ITEM",
-              "id": "production_surge_pass",
+              "id": "minecraft:production_surge_pas",
               "display": "Production Surge Pass",
               "amount": 1
             }
@@ -7319,7 +7319,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 1
             },
@@ -7349,7 +7349,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 2
             },
@@ -7392,7 +7392,7 @@
             },
             {
               "type": "ITEM",
-              "id": "cosmetic_token",
+              "id": "minecraft:cosmetic_token",
               "display": "Cosmetic Token",
               "amount": 1
             }
@@ -7417,7 +7417,7 @@
             },
             {
               "type": "ITEM",
-              "id": "rainbow_tag_voucher",
+              "id": "minecraft:rainbow_tag_voucher",
               "display": "Rainbow Tag Voucher",
               "amount": 1
             }
@@ -7442,7 +7442,7 @@
             },
             {
               "type": "ITEM",
-              "id": "weapon_skin_voucher",
+              "id": "minecraft:weapon_skin_voucher",
               "display": "Weapon Skin Voucher",
               "amount": 1
             }
@@ -7467,7 +7467,7 @@
             },
             {
               "type": "ITEM",
-              "id": "invisibility_particle",
+              "id": "minecraft:invisibility_particle",
               "display": "Invisibility Particle",
               "amount": 1
             }
@@ -7492,7 +7492,7 @@
             },
             {
               "type": "ITEM",
-              "id": "heavy_balls",
+              "id": "cobblemon:heavy_ball",
               "display": "Heavy Balls",
               "amount": 5
             }
@@ -7517,7 +7517,7 @@
             },
             {
               "type": "ITEM",
-              "id": "fast_balls",
+              "id": "cobblemon:fast_ball",
               "display": "Fast Balls",
               "amount": 5
             }
@@ -7547,7 +7547,7 @@
             },
             {
               "type": "ITEM",
-              "id": "size_voucher_choice",
+              "id": "minecraft:size_voucher_choice",
               "display": "Size Voucher Choice",
               "amount": 1
             }
@@ -7601,7 +7601,7 @@
             },
             {
               "type": "ITEM",
-              "id": "random_mini_plushie",
+              "id": "minecraft:random_mini_plushie",
               "display": "Random Mini Plushie",
               "amount": 1
             }
@@ -7626,7 +7626,7 @@
             },
             {
               "type": "ITEM",
-              "id": "display_stand",
+              "id": "minecraft:display_stand",
               "display": "Display Stand",
               "amount": 1
             }
@@ -7656,7 +7656,7 @@
             },
             {
               "type": "ITEM",
-              "id": "pikachu_plushie",
+              "id": "minecraft:pikachu_plushie",
               "display": "Pikachu Plushie",
               "amount": 1
             }
@@ -7739,7 +7739,7 @@
             },
             {
               "type": "ITEM",
-              "id": "title_voucher",
+              "id": "minecraft:title_voucher",
               "display": "Title Voucher",
               "amount": 1
             }
@@ -7880,7 +7880,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -7915,7 +7915,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 2
             },
@@ -7958,7 +7958,7 @@
             },
             {
               "type": "ITEM",
-              "id": "chat_color_token",
+              "id": "minecraft:chat_color_token",
               "display": "Chat Color Token",
               "amount": 1
             }
@@ -7983,7 +7983,7 @@
             },
             {
               "type": "ITEM",
-              "id": "ender_pearls",
+              "id": "minecraft:ender_pearl",
               "display": "Ender Pearls",
               "amount": 3
             }
@@ -8008,7 +8008,7 @@
             },
             {
               "type": "ITEM",
-              "id": "showcase_token",
+              "id": "minecraft:showcase_token",
               "display": "Showcase Token",
               "amount": 1
             }
@@ -8033,7 +8033,7 @@
             },
             {
               "type": "ITEM",
-              "id": "emoji_pack",
+              "id": "minecraft:emoji_pack",
               "display": "Emoji Pack",
               "amount": 1
             }
@@ -8058,7 +8058,7 @@
             },
             {
               "type": "ITEM",
-              "id": "trade_token",
+              "id": "minecraft:trade_token",
               "display": "Trade Token",
               "amount": 1
             }
@@ -8141,7 +8141,7 @@
             },
             {
               "type": "ITEM",
-              "id": "clan_valor",
+              "id": "minecraft:clan_valor",
               "display": "Clan Valor",
               "amount": 100
             }
@@ -8166,7 +8166,7 @@
             },
             {
               "type": "ITEM",
-              "id": "clan_valor",
+              "id": "minecraft:clan_valor",
               "display": "Clan Valor",
               "amount": 50
             }
@@ -8191,7 +8191,7 @@
             },
             {
               "type": "ITEM",
-              "id": "clan_valor",
+              "id": "minecraft:clan_valor",
               "display": "Clan Valor",
               "amount": 250
             }
@@ -8221,7 +8221,7 @@
             },
             {
               "type": "ITEM",
-              "id": "clan_banner",
+              "id": "minecraft:clan_banner",
               "display": "Clan Banner",
               "amount": 1
             }
@@ -8275,7 +8275,7 @@
             },
             {
               "type": "ITEM",
-              "id": "clan_valor",
+              "id": "minecraft:clan_valor",
               "display": "Clan Valor",
               "amount": 200
             }
@@ -8305,7 +8305,7 @@
             },
             {
               "type": "ITEM",
-              "id": "clan_valor",
+              "id": "minecraft:clan_valor",
               "display": "Clan Valor",
               "amount": 500
             }
@@ -8345,7 +8345,7 @@
             },
             {
               "type": "ITEM",
-              "id": "clan_valor",
+              "id": "minecraft:clan_valor",
               "display": "Clan Valor",
               "amount": 0
             }
@@ -8370,7 +8370,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -8386,7 +8386,7 @@
             },
             {
               "type": "ITEM",
-              "id": "clan_valor",
+              "id": "minecraft:clan_valor",
               "display": "Clan Valor",
               "amount": 500
             }
@@ -8406,7 +8406,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "vote_key",
+              "id": "minecraft:vote_key",
               "display": "Vote Key",
               "amount": 1
             },
@@ -8431,7 +8431,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "karma",
+              "id": "minecraft:karma",
               "display": "Karma",
               "amount": 50
             },
@@ -8485,7 +8485,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "webstore_coupon_voucher",
+              "id": "minecraft:webstore_coupon_voucher",
               "display": "Webstore Coupon Voucher",
               "amount": 1
             },
@@ -8520,7 +8520,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 2
             },
@@ -8563,7 +8563,7 @@
             },
             {
               "type": "ITEM",
-              "id": "login_gift_box",
+              "id": "minecraft:login_gift_box",
               "display": "Login Gift Box",
               "amount": 1
             }
@@ -8646,7 +8646,7 @@
             },
             {
               "type": "ITEM",
-              "id": "playtime_box",
+              "id": "minecraft:playtime_box",
               "display": "Playtime Box",
               "amount": 1
             }
@@ -8666,7 +8666,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "farmer_minion",
+              "id": "minecraft:farmer_minion",
               "display": "Farmer Minion",
               "amount": 1
             },
@@ -8696,7 +8696,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "slayer_minion",
+              "id": "minecraft:slayer_minion",
               "display": "Slayer Minion",
               "amount": 1
             },
@@ -8760,7 +8760,7 @@
             },
             {
               "type": "ITEM",
-              "id": "bingo_chip",
+              "id": "minecraft:bingo_chip",
               "display": "Bingo Chip",
               "amount": 1
             }
@@ -8809,7 +8809,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "shiny_bingo_ticket",
+              "id": "minecraft:shiny_bingo_ticket",
               "display": "Shiny Bingo Ticket",
               "amount": 1
             },
@@ -8844,7 +8844,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 1
             },
@@ -8869,7 +8869,7 @@
           "rewards": [
             {
               "type": "ITEM",
-              "id": "spinner_token",
+              "id": "minecraft:spinner_token",
               "display": "Spinner Token",
               "amount": 1
             },
@@ -8933,7 +8933,7 @@
             },
             {
               "type": "ITEM",
-              "id": "spinner_tokens",
+              "id": "minecraft:spinner_token",
               "display": "Spinner Tokens",
               "amount": 2
             }
@@ -8963,7 +8963,7 @@
             },
             {
               "type": "ITEM",
-              "id": "ultra_balls",
+              "id": "cobblemon:ultra_ball",
               "display": "Ultra Balls",
               "amount": 10
             }
@@ -8988,7 +8988,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 1
             },
@@ -9023,7 +9023,7 @@
             },
             {
               "type": "ITEM",
-              "id": "5",
+              "id": "minecraft:5",
               "display": "5",
               "amount": 2
             },
@@ -9058,7 +9058,7 @@
             },
             {
               "type": "ITEM",
-              "id": "0",
+              "id": "minecraft:0",
               "display": "0",
               "amount": 5
             },

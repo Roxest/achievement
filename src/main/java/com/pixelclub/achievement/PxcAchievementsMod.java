@@ -3,6 +3,7 @@ package com.pixelclub.achievement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.pixelclub.achievement.command.AchievementCommands;
+import com.pixelclub.achievement.config.AchievementConfig;
 import com.pixelclub.achievement.data.AchievementRegistry;
 import com.pixelclub.achievement.listener.BuiltInListeners;
 import com.pixelclub.achievement.network.UIPayload;
@@ -26,7 +27,9 @@ import org.slf4j.LoggerFactory;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +43,7 @@ public class PxcAchievementsMod implements ModInitializer {
     private static PxcAchievementsMod instance;
 
     private AchievementRegistry registry;
+    private AchievementConfig config;
     private PlayerStore playerStore;
 
     @Override
@@ -47,17 +51,9 @@ public class PxcAchievementsMod implements ModInitializer {
         instance = this;
         LOGGER.info("Initializing Pixelclub Achievements (Fabric 1.21.1)...");
 
-        // 1. Initialize registry and load schema
+        // 1. Initialize registry and load config & schema
         this.registry = new AchievementRegistry();
-        try (InputStream stream = getClass().getClassLoader().getResourceAsStream("data/pxc-achievements/achievements.json")) {
-            if (stream != null) {
-                this.registry.loadFromStream(stream);
-            } else {
-                LOGGER.error("CRITICAL: achievements.json schema resource not found in classpath!");
-            }
-        } catch (Exception e) {
-            LOGGER.error("CRITICAL: Failed to load achievements schema", e);
-        }
+        loadConfigAndSchema();
 
         // 2. Initialize storage
         Path configDir = FabricLoader.getInstance().getConfigDir().resolve("pxc-achievements");
@@ -305,7 +301,56 @@ public class PxcAchievementsMod implements ModInitializer {
         return registry;
     }
 
+    public AchievementConfig getConfig() {
+        return config;
+    }
+
     public PlayerStore getPlayerStore() {
         return playerStore;
+    }
+
+    public void loadConfigAndSchema() {
+        Path configDir = FabricLoader.getInstance().getConfigDir().resolve("pxc-achievements");
+        this.config = AchievementConfig.loadOrCreate(configDir.resolve("config.json"));
+
+        Path schemaFile = configDir.resolve("achievements.json");
+        if (!Files.exists(schemaFile)) {
+            try {
+                Files.createDirectories(configDir);
+                try (InputStream in = getClass().getClassLoader().getResourceAsStream("data/pxc-achievements/achievements.json")) {
+                    if (in != null) {
+                        Files.copy(in, schemaFile, StandardCopyOption.REPLACE_EXISTING);
+                        LOGGER.info("Exported default achievements schema to {}", schemaFile);
+                    }
+                }
+            } catch (Exception e) {
+                LOGGER.error("Failed to export default achievements schema to {}", schemaFile, e);
+            }
+        }
+
+        boolean loaded = false;
+        if (Files.exists(schemaFile)) {
+            try (InputStream in = Files.newInputStream(schemaFile)) {
+                loaded = this.registry.loadFromStream(in);
+                if (loaded) {
+                    LOGGER.info("Loaded {} achievements across {} categories from schema file: {}",
+                            registry.getTotalCount(), registry.getCategories().size(), schemaFile);
+                }
+            } catch (Exception e) {
+                LOGGER.error("Failed to load achievements schema from {}, falling back to classpath", schemaFile, e);
+            }
+        }
+
+        if (!loaded) {
+            try (InputStream in = getClass().getClassLoader().getResourceAsStream("data/pxc-achievements/achievements.json")) {
+                if (in != null) {
+                    this.registry.loadFromStream(in);
+                    LOGGER.info("Loaded {} achievements across {} categories from classpath resource.",
+                            registry.getTotalCount(), registry.getCategories().size());
+                }
+            } catch (Exception e) {
+                LOGGER.error("CRITICAL: Failed to load achievements schema from classpath", e);
+            }
+        }
     }
 }
