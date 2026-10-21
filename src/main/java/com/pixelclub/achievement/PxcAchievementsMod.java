@@ -19,6 +19,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,6 +27,7 @@ import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -103,6 +105,26 @@ public class PxcAchievementsMod implements ModInitializer {
         try {
             installPolymorphicForRegistry(PayloadTypeRegistry.playS2C(), "playS2C");
             installPolymorphicForRegistry(PayloadTypeRegistry.playC2S(), "playC2S");
+
+            // Wrap ServerNetworkingImpl.PLAY.handlers with NonCollidingHandlersMap
+            try {
+                Class<?> serverNetworkingImpl = Class.forName("net.fabricmc.fabric.impl.networking.server.ServerNetworkingImpl");
+                Field playField = serverNetworkingImpl.getDeclaredField("PLAY");
+                playField.setAccessible(true);
+                Object globalRegistry = playField.get(null);
+                if (globalRegistry != null) {
+                    Field handlersField = globalRegistry.getClass().getDeclaredField("handlers");
+                    handlersField.setAccessible(true);
+                    Map handlers = (Map) handlersField.get(globalRegistry);
+                    if (!(handlers instanceof NonCollidingHandlersMap)) {
+                        NonCollidingHandlersMap nonCollidingHandlers = new NonCollidingHandlersMap(handlers);
+                        handlersField.set(globalRegistry, nonCollidingHandlers);
+                        LOGGER.info("Wrapped ServerNetworkingImpl.PLAY.handlers with NonCollidingHandlersMap");
+                    }
+                }
+            } catch (Throwable t) {
+                LOGGER.debug("Could not wrap ServerNetworkingImpl.PLAY reflectively: {}", t.getMessage());
+            }
 
             CustomPacketPayload.Type<CustomPacketPayload> canonicalType = (CustomPacketPayload.Type<CustomPacketPayload>) (Object) UIPayload.getCanonicalType();
 
@@ -186,8 +208,17 @@ public class PxcAchievementsMod implements ModInitializer {
             UIPayload.setCanonicalType(canonicalType);
             StreamCodec polymorphicCodec = UIPayload.createPolymorphicCodec(existingCodec);
             CustomPacketPayload.TypeAndCodec replacement = new CustomPacketPayload.TypeAndCodec(canonicalType, polymorphicCodec);
-            packetTypes.put(UIPayload.ID, replacement);
-            LOGGER.info("Installed polymorphic TypeAndCodec for pixelclub:ui on {} (canonicalType: {})", name, canonicalType);
+
+            NonCollidingPacketTypesMap nonCollidingMap;
+            if (packetTypes instanceof NonCollidingPacketTypesMap existingMap) {
+                nonCollidingMap = existingMap;
+            } else {
+                nonCollidingMap = new NonCollidingPacketTypesMap(packetTypes);
+                f.set(registryObj, nonCollidingMap);
+            }
+
+            nonCollidingMap.putDirect(UIPayload.ID, replacement);
+            LOGGER.info("Installed non-colliding polymorphic TypeAndCodec for pixelclub:ui on {} (canonicalType: {})", name, canonicalType);
         } catch (Throwable t) {
             LOGGER.warn("Could not patch packetTypes on {} reflectively, attempting fallback register", name, t);
             try {
@@ -195,6 +226,74 @@ public class PxcAchievementsMod implements ModInitializer {
                     reg.register(UIPayload.TYPE, UIPayload.createPolymorphicCodec(null));
                 }
             } catch (Throwable ignored) {}
+        }
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    private static class NonCollidingPacketTypesMap extends HashMap {
+        public NonCollidingPacketTypesMap(Map existing) {
+            if (existing != null) {
+                putAll(existing);
+            }
+        }
+
+        public Object putDirect(Object key, Object value) {
+            return super.put(key, value);
+        }
+
+        @Override
+        public boolean containsKey(Object key) {
+            if (UIPayload.ID.equals(key)) {
+                // Return false when checked by PayloadTypeRegistry.register() so subsequent mods
+                // (outbreak, Rew_Legendary) never get IllegalArgumentException!
+                for (StackTraceElement el : Thread.currentThread().getStackTrace()) {
+                    if ("register".equals(el.getMethodName()) && el.getClassName().contains("PayloadTypeRegistry")) {
+                        return false;
+                    }
+                }
+            }
+            return super.containsKey(key);
+        }
+
+        @Override
+        public Object put(Object key, Object value) {
+            if (UIPayload.ID.equals(key) && value != null) {
+                try {
+                    Method typeMethod = value.getClass().getMethod("type");
+                    CustomPacketPayload.Type externalType = (CustomPacketPayload.Type) typeMethod.invoke(value);
+                    Method codecMethod = value.getClass().getMethod("codec");
+                    StreamCodec externalCodec = (StreamCodec) codecMethod.invoke(value);
+
+                    LOGGER.info("[PixelclubNetworking] Intercepted pixelclub:ui registration by sibling mod: type={}", externalType);
+                    UIPayload.setCanonicalType(externalType);
+                    StreamCodec polymorphicCodec = UIPayload.createPolymorphicCodec(externalCodec);
+                    CustomPacketPayload.TypeAndCodec replacement = new CustomPacketPayload.TypeAndCodec(externalType, polymorphicCodec);
+                    return super.put(key, replacement);
+                } catch (Throwable t) {
+                    LOGGER.warn("[PixelclubNetworking] Failed to wrap sibling TypeAndCodec reflectively", t);
+                }
+            }
+            return super.put(key, value);
+        }
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    private static class NonCollidingHandlersMap extends HashMap {
+        public NonCollidingHandlersMap(Map existing) {
+            if (existing != null) {
+                putAll(existing);
+            }
+        }
+
+        @Override
+        public Object putIfAbsent(Object key, Object value) {
+            if (UIPayload.ID.equals(key) && value != null && value != ourChainedHandler) {
+                LOGGER.info("[PixelclubNetworking] Chaining C2S global receiver from sibling mod: {}", value.getClass().getName());
+                originalExternalHandler = (ServerPlayNetworking.PlayPayloadHandler<?>) value;
+                super.put(key, ourChainedHandler);
+                return null; // Return null so putIfAbsent signals successful registration to Fabric
+            }
+            return super.putIfAbsent(key, value);
         }
     }
 
