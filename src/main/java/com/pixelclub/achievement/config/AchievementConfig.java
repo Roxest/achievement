@@ -11,6 +11,10 @@ import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * Server configuration for Pixelclub Achievements.
@@ -19,6 +23,8 @@ import java.nio.file.Path;
 public class AchievementConfig {
     private static final Logger LOGGER = LoggerFactory.getLogger("PxcAchievements-Config");
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+
+    private transient Path configPath;
 
     @SerializedName("currency_command")
     private String currencyCommand = "money give {player} {amount}";
@@ -41,6 +47,9 @@ public class AchievementConfig {
     @SerializedName("notify_player_on_payout")
     private boolean notifyPlayerOnPayout = true;
 
+    @SerializedName("disabled_categories")
+    private Set<String> disabledCategories = new LinkedHashSet<>();
+
     public static AchievementConfig loadOrCreate(Path file) {
         AchievementConfig config = new AchievementConfig();
         if (Files.exists(file)) {
@@ -48,6 +57,10 @@ public class AchievementConfig {
                 AchievementConfig loaded = GSON.fromJson(reader, AchievementConfig.class);
                 if (loaded != null) {
                     config = loaded;
+                    config.configPath = file;
+                    if (config.disabledCategories == null) {
+                        config.disabledCategories = new LinkedHashSet<>();
+                    }
                     LOGGER.info("Loaded configuration from {}", file);
                     return config;
                 }
@@ -57,11 +70,19 @@ public class AchievementConfig {
         }
 
         // Save default file if missing or failed to parse
+        config.configPath = file;
         config.save(file);
         return config;
     }
 
-    public void save(Path file) {
+    public boolean save() {
+        if (this.configPath != null) {
+            return save(this.configPath);
+        }
+        return false;
+    }
+
+    public boolean save(Path file) {
         try {
             if (file.getParent() != null) {
                 Files.createDirectories(file.getParent());
@@ -69,10 +90,37 @@ public class AchievementConfig {
             try (OutputStreamWriter writer = new OutputStreamWriter(Files.newOutputStream(file), StandardCharsets.UTF_8)) {
                 GSON.toJson(this, writer);
             }
-            LOGGER.info("Saved default configuration to {}", file);
+            LOGGER.info("Saved configuration to {}", file);
+            return true;
         } catch (Exception e) {
             LOGGER.error("Failed to save configuration to {}", file, e);
+            return false;
         }
+    }
+
+    public boolean isCategoryEnabled(String categoryId) {
+        if (categoryId == null || disabledCategories == null) return true;
+        return !disabledCategories.contains(categoryId.toLowerCase());
+    }
+
+    public boolean setCategoryEnabled(String categoryId, boolean enabled) {
+        if (categoryId == null) return false;
+        if (disabledCategories == null) {
+            disabledCategories = new LinkedHashSet<>();
+        }
+        String id = categoryId.toLowerCase();
+        boolean changed;
+        if (enabled) {
+            changed = disabledCategories.remove(id);
+        } else {
+            changed = disabledCategories.add(id);
+        }
+        return changed;
+    }
+
+    public Set<String> getDisabledCategories() {
+        if (disabledCategories == null) return Collections.emptySet();
+        return Collections.unmodifiableSet(disabledCategories);
     }
 
     public String getCurrencyCommand() {

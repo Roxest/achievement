@@ -57,7 +57,7 @@ public class PxcAchievementsMod implements ModInitializer {
 
         // 2. Initialize storage
         Path configDir = FabricLoader.getInstance().getConfigDir().resolve("pxc-achievements");
-        this.playerStore = new PlayerStore(configDir.resolve("players"), registry);
+        this.playerStore = new PlayerStore(configDir.resolve("players"), registry, config);
 
         // 3. Register Brigadier Commands
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {

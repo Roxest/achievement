@@ -7,6 +7,8 @@ import com.cobblemon.mod.common.api.pokedex.SpeciesDexRecord;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.pixelclub.achievement.PxcAchievementsMod;
+import com.pixelclub.achievement.config.AchievementConfig;
 import com.pixelclub.achievement.data.AchievementRegistry;
 import com.pixelclub.achievement.model.Achievement;
 import com.pixelclub.achievement.model.ClaimState;
@@ -43,6 +45,7 @@ public class PlayerStore {
 
     private final Path storageDir;
     private final AchievementRegistry registry;
+    private final AchievementConfig config;
     private final ConcurrentHashMap<UUID, ConcurrentHashMap<String, PlayerProgress>> cache = new ConcurrentHashMap<>();
     private final Set<UUID> dirtyPlayers = ConcurrentHashMap.newKeySet();
 
@@ -53,8 +56,13 @@ public class PlayerStore {
     });
 
     public PlayerStore(Path storageDir, AchievementRegistry registry) {
+        this(storageDir, registry, null);
+    }
+
+    public PlayerStore(Path storageDir, AchievementRegistry registry, AchievementConfig config) {
         this.storageDir = storageDir;
         this.registry = registry;
+        this.config = config;
         try {
             Files.createDirectories(storageDir);
         } catch (IOException e) {
@@ -74,12 +82,28 @@ public class PlayerStore {
         return map.computeIfAbsent(achievementId, k -> new PlayerProgress());
     }
 
+    private boolean isCategoryLocked(String categoryId) {
+        if (categoryId == null) return false;
+        AchievementConfig cfg = this.config;
+        if (cfg == null) {
+            PxcAchievementsMod mod = PxcAchievementsMod.getInstance();
+            if (mod != null) {
+                cfg = mod.getConfig();
+            }
+        }
+        if (cfg != null) {
+            return !cfg.isCategoryEnabled(categoryId);
+        }
+        return false;
+    }
+
     /**
      * Atomically increments progress by amount. Rejects negative increments via watchdog.
      */
     public boolean increment(UUID uuid, String achievementId, int amount) {
         Achievement ach = registry.getAchievement(achievementId);
         if (ach == null) return false;
+        if (isCategoryLocked(ach.getCategoryId())) return false;
 
         PlayerProgress progress = getProgress(uuid, achievementId);
         if (amount < 0) {
@@ -99,6 +123,7 @@ public class PlayerStore {
     public boolean setMax(UUID uuid, String achievementId, int value) {
         Achievement ach = registry.getAchievement(achievementId);
         if (ach == null) return false;
+        if (isCategoryLocked(ach.getCategoryId())) return false;
 
         PlayerProgress progress = getProgress(uuid, achievementId);
         int previous = progress.getProgress();
@@ -129,6 +154,7 @@ public class PlayerStore {
         UUID uuid = player.getUUID();
         Achievement ach = registry.getAchievement(achievementId);
         if (ach == null) return false;
+        if (isCategoryLocked(ach.getCategoryId())) return false;
 
         PlayerProgress progress = getProgress(uuid, achievementId);
         if (progress.tryClaim()) {
@@ -147,6 +173,7 @@ public class PlayerStore {
     public boolean claim(UUID uuid, String achievementId) {
         Achievement ach = registry.getAchievement(achievementId);
         if (ach == null) return false;
+        if (isCategoryLocked(ach.getCategoryId())) return false;
 
         PlayerProgress progress = getProgress(uuid, achievementId);
         if (progress.tryClaim()) {

@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.pixelclub.achievement.PxcAchievementsMod;
+import com.pixelclub.achievement.config.AchievementConfig;
 import com.pixelclub.achievement.model.Achievement;
 import com.pixelclub.achievement.model.AchievementCategory;
 import com.pixelclub.achievement.model.ClaimState;
@@ -36,8 +37,21 @@ public class AchievementGui {
     public static void open(ServerPlayer player, String categoryId) {
         if (player == null) return;
 
-        List<AchievementCategory> categories = PxcAchievementsMod.getInstance().getRegistry().getCategories();
-        if (categories.isEmpty()) return;
+        List<AchievementCategory> allCategories = PxcAchievementsMod.getInstance().getRegistry().getCategories();
+        if (allCategories.isEmpty()) return;
+
+        AchievementConfig config = PxcAchievementsMod.getInstance().getConfig();
+        List<AchievementCategory> categories = new ArrayList<>();
+        for (AchievementCategory cat : allCategories) {
+            if (config == null || config.isCategoryEnabled(cat.getId())) {
+                categories.add(cat);
+            }
+        }
+
+        if (categories.isEmpty()) {
+            player.sendSystemMessage(Component.literal("§e[Quest Book] §7All achievement categories are currently locked."));
+            return;
+        }
 
         AchievementCategory currentCat = categories.get(0);
         if (categoryId != null && !categoryId.isEmpty()) {
@@ -119,11 +133,23 @@ public class AchievementGui {
 
             switch (action) {
                 case "select_category" -> {
+                    AchievementConfig cfg = PxcAchievementsMod.getInstance().getConfig();
+                    if (targetCategory != null && cfg != null && !cfg.isCategoryEnabled(targetCategory)) {
+                        player.sendSystemMessage(Component.literal("§e[Quest Book] §cThat category is currently locked."));
+                        open(player, null);
+                        return;
+                    }
                     LOGGER.info("[QuestBook] Player {} switching category to: {}", player.getName().getString(), targetCategory);
                     open(player, targetCategory);
                 }
                 case "claim" -> {
                     Achievement ach = targetAchievement != null ? PxcAchievementsMod.getInstance().getRegistry().getAchievement(targetAchievement) : null;
+                    AchievementConfig cfg = PxcAchievementsMod.getInstance().getConfig();
+                    if (ach != null && cfg != null && !cfg.isCategoryEnabled(ach.getCategoryId())) {
+                        player.sendSystemMessage(Component.literal("§e[Quest Book] §cThat category is currently locked."));
+                        open(player, null);
+                        return;
+                    }
                     if (targetAchievement != null && store != null) {
                         boolean claimed = store.claim(player, targetAchievement);
                         if (claimed && ach != null) {

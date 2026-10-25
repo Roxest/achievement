@@ -6,6 +6,7 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.pixelclub.achievement.PxcAchievementsMod;
 import com.pixelclub.achievement.model.Achievement;
+import com.pixelclub.achievement.model.AchievementCategory;
 import com.pixelclub.achievement.model.ClaimState;
 import com.pixelclub.achievement.model.PlayerProgress;
 import com.pixelclub.achievement.ui.AchievementGui;
@@ -63,6 +64,30 @@ public class AchievementCommands {
                 .then(Commands.literal("reload")
                     .requires(s -> s.hasPermission(2))
                     .executes(AchievementCommands::reloadConfigAndSchema))
+
+                // /ach category [list | enable <id> | disable <id>]
+                .then(Commands.literal("category")
+                    .requires(s -> s.hasPermission(2))
+                    .then(Commands.literal("list")
+                        .executes(AchievementCommands::listCategories))
+                    .then(Commands.literal("enable")
+                        .then(Commands.argument("category", StringArgumentType.word())
+                            .suggests((ctx, builder) -> {
+                                for (AchievementCategory cat : PxcAchievementsMod.getInstance().getRegistry().getCategories()) {
+                                    builder.suggest(cat.getId());
+                                }
+                                return builder.buildFuture();
+                            })
+                            .executes(ctx -> setCategoryState(ctx, true))))
+                    .then(Commands.literal("disable")
+                        .then(Commands.argument("category", StringArgumentType.word())
+                            .suggests((ctx, builder) -> {
+                                for (AchievementCategory cat : PxcAchievementsMod.getInstance().getRegistry().getCategories()) {
+                                    builder.suggest(cat.getId());
+                                }
+                                return builder.buildFuture();
+                            })
+                            .executes(ctx -> setCategoryState(ctx, false)))))
         );
     }
 
@@ -189,6 +214,61 @@ public class AchievementCommands {
             return 1;
         } catch (Exception e) {
             ctx.getSource().sendFailure(Component.literal("§cFailed to reload achievements: " + e.getMessage()));
+            return 0;
+        }
+    }
+
+    private static int listCategories(CommandContext<CommandSourceStack> ctx) {
+        try {
+            var registry = PxcAchievementsMod.getInstance().getRegistry();
+            var config = PxcAchievementsMod.getInstance().getConfig();
+            var categories = registry.getCategories();
+            if (categories.isEmpty()) {
+                ctx.getSource().sendSuccess(() -> Component.literal("No achievement categories registered."), false);
+                return 1;
+            }
+
+            ctx.getSource().sendSuccess(() -> Component.literal("=== Achievement Categories ==="), false);
+            for (AchievementCategory cat : categories) {
+                boolean enabled = config.isCategoryEnabled(cat.getId());
+                String status = enabled ? "§a[ENABLED]" : "§c[DISABLED]";
+                int count = cat.getAchievements().size();
+                ctx.getSource().sendSuccess(() -> Component.literal(
+                        String.format("%s §e%s §7(%s) - %d achievements", status, cat.getName(), cat.getId(), count)), false);
+            }
+            return 1;
+        } catch (Exception e) {
+            ctx.getSource().sendFailure(Component.literal("Error: " + e.getMessage()));
+            return 0;
+        }
+    }
+
+    private static int setCategoryState(CommandContext<CommandSourceStack> ctx, boolean enable) {
+        try {
+            String catId = StringArgumentType.getString(ctx, "category").toLowerCase();
+            var registry = PxcAchievementsMod.getInstance().getRegistry();
+            AchievementCategory cat = registry.getCategory(catId);
+            if (cat == null) {
+                ctx.getSource().sendFailure(Component.literal("Category not found: " + catId));
+                return 0;
+            }
+
+            var config = PxcAchievementsMod.getInstance().getConfig();
+            boolean currentlyEnabled = config.isCategoryEnabled(catId);
+            if (currentlyEnabled == enable) {
+                ctx.getSource().sendSuccess(() -> Component.literal(String.format("Category '%s' is already %s.",
+                        cat.getName(), enable ? "enabled" : "disabled")), false);
+                return 1;
+            }
+
+            config.setCategoryEnabled(catId, enable);
+            boolean saved = config.save();
+            String stateStr = enable ? "§aenabled" : "§cdisabled";
+            ctx.getSource().sendSuccess(() -> Component.literal(String.format("Category '%s' (%s) is now %s.%s",
+                    cat.getName(), catId, stateStr, saved ? " Saved to config.json." : " (Failed to save config file)")), true);
+            return 1;
+        } catch (Exception e) {
+            ctx.getSource().sendFailure(Component.literal("Error: " + e.getMessage()));
             return 0;
         }
     }
