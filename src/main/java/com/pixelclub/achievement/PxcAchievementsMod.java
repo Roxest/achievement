@@ -4,9 +4,11 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.pixelclub.achievement.command.AchievementCommands;
 import com.pixelclub.achievement.config.AchievementConfig;
+import com.pixelclub.achievement.config.DatabaseConfig;
 import com.pixelclub.achievement.data.AchievementRegistry;
 import com.pixelclub.achievement.listener.BuiltInListeners;
 import com.pixelclub.achievement.network.UIPayload;
+import com.pixelclub.achievement.storage.MysqlStorageBackend;
 import com.pixelclub.achievement.storage.PlayerStore;
 import com.pixelclub.achievement.ui.AchievementGui;
 import net.fabricmc.api.ModInitializer;
@@ -44,6 +46,8 @@ public class PxcAchievementsMod implements ModInitializer {
 
     private AchievementRegistry registry;
     private AchievementConfig config;
+    private DatabaseConfig databaseConfig;
+    private MysqlStorageBackend mysqlBackend;
     private PlayerStore playerStore;
 
     @Override
@@ -55,9 +59,13 @@ public class PxcAchievementsMod implements ModInitializer {
         this.registry = new AchievementRegistry();
         loadConfigAndSchema();
 
-        // 2. Initialize storage
+        // 2. Initialize storage backend (MySQL cross-server + local JSON fallback)
         Path configDir = FabricLoader.getInstance().getConfigDir().resolve("pxc-achievements");
-        this.playerStore = new PlayerStore(configDir.resolve("players"), registry, config);
+        this.databaseConfig = DatabaseConfig.loadOrCreate(configDir.resolve("database.json"));
+        this.mysqlBackend = new MysqlStorageBackend(databaseConfig);
+        this.mysqlBackend.init();
+
+        this.playerStore = new PlayerStore(configDir.resolve("players"), registry, config, mysqlBackend);
 
         // 3. Register Brigadier Commands
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
@@ -78,7 +86,7 @@ public class PxcAchievementsMod implements ModInitializer {
         ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
             ServerPlayer player = handler.getPlayer();
             if (player != null && playerStore != null) {
-                playerStore.flushPlayerSync(player.getUUID());
+                playerStore.onPlayerDisconnect(player.getUUID());
             }
         });
 
@@ -307,6 +315,14 @@ public class PxcAchievementsMod implements ModInitializer {
 
     public PlayerStore getPlayerStore() {
         return playerStore;
+    }
+
+    public DatabaseConfig getDatabaseConfig() {
+        return databaseConfig;
+    }
+
+    public MysqlStorageBackend getMysqlBackend() {
+        return mysqlBackend;
     }
 
     public void loadConfigAndSchema() {

@@ -16,9 +16,13 @@ public class PlayerProgress {
     }
 
     public PlayerProgress(int progress, ClaimState state) {
+        this(progress, state, System.currentTimeMillis());
+    }
+
+    public PlayerProgress(int progress, ClaimState state, long timestamp) {
         this.p = Math.max(0, progress);
-        this.s = state.getId();
-        this.t = System.currentTimeMillis();
+        this.s = state != null ? state.getId() : ClaimState.LOCKED.getId();
+        this.t = timestamp > 0 ? timestamp : System.currentTimeMillis();
     }
 
     public synchronized int getProgress() {
@@ -96,6 +100,13 @@ public class PlayerProgress {
 
     public synchronized boolean isClaimed() {
         return s == ClaimState.CLAIMED.getId();
+    }
+
+    public synchronized void forceState(ClaimState state) {
+        if (state != null) {
+            this.s = state.getId();
+            this.t = System.currentTimeMillis();
+        }
     }
 
     public synchronized boolean isCompleted() {

@@ -27,10 +27,10 @@ public class BuiltInListeners {
     private static final Logger LOGGER = LoggerFactory.getLogger("PxcAchievements-Listeners");
 
     public static void register() {
-        // 1. Join Event: Triggers retroactive stat sync & welcome check
+        // 1. Join Event: Loads fresh cross-server player data and triggers retroactive sync
         ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
             ServerPlayer player = handler.getPlayer();
-            PxcAchievementsMod.getInstance().getPlayerStore().performRetroactiveSync(player);
+            PxcAchievementsMod.getInstance().getPlayerStore().loadPlayerOnJoin(player);
         });
 
         // 2. Block Break Event: Mining & Gathering progression

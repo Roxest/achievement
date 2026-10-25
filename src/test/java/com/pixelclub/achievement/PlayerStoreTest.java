@@ -143,4 +143,53 @@ public class PlayerStoreTest {
         assertEquals(0, progress.getProgress());
         assertEquals(ClaimState.LOCKED, progress.getState());
     }
+
+    @Test
+    public void testOnPlayerDisconnectFlushesAndEvicts() {
+        String achId = "catching_gotcha";
+        store.increment(testPlayer, achId, 1);
+        assertTrue(store.getDirtyPlayers().contains(testPlayer), "Player must be dirty before disconnect");
+
+        // Disconnect player
+        store.onPlayerDisconnect(testPlayer);
+
+        assertFalse(store.getDirtyPlayers().contains(testPlayer), "Dirty set must be empty after disconnect flush");
+
+        Path file = tempDir.resolve(testPlayer.toString() + ".json");
+        assertTrue(Files.exists(file), "Player data file must be saved to storage on disconnect");
+
+        // Subsequent getProgress reloads from storage because in-memory cache was evicted
+        PlayerProgress reloaded = store.getProgress(testPlayer, achId);
+        assertEquals(1, reloaded.getProgress());
+        assertEquals(ClaimState.COMPLETED, reloaded.getState());
+    }
+
+    @Test
+    public void testAdminSetProgressAndResetOverwrite() {
+        String achId = "catching_a_good_start"; // target 50
+        store.setMax(testPlayer, achId, 40);
+        assertEquals(40, store.getProgress(testPlayer, achId).getProgress());
+        store.flushPlayerSync(testPlayer);
+
+        // Admin override to lower value (bypassing monotonic check)
+        store.setProgress(testPlayer, achId, 10);
+        assertEquals(10, store.getProgress(testPlayer, achId).getProgress(), "Admin setProgress must overwrite value");
+        store.flushPlayerSync(testPlayer);
+
+        // Verify fresh store reloaded from disk reflects explicit override
+        PlayerStore freshStore = new PlayerStore(tempDir, registry);
+        assertEquals(10, freshStore.getProgress(testPlayer, achId).getProgress(), "Storage must hold explicit override value 10");
+        freshStore.shutdown();
+
+        // Admin reset
+        store.reset(testPlayer, achId);
+        assertEquals(0, store.getProgress(testPlayer, achId).getProgress());
+        assertEquals(ClaimState.LOCKED, store.getProgress(testPlayer, achId).getState());
+        store.flushPlayerSync(testPlayer);
+
+        PlayerStore freshStore2 = new PlayerStore(tempDir, registry);
+        assertEquals(0, freshStore2.getProgress(testPlayer, achId).getProgress());
+        assertEquals(ClaimState.LOCKED, freshStore2.getProgress(testPlayer, achId).getState());
+        freshStore2.shutdown();
+    }
 }
