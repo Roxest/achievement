@@ -743,24 +743,24 @@
 | **Wheeler Dealer** | Complete 10 trades. | 0/10 |
 | **Master Trader** | Complete 50 trades. | 0/50 |
 
-#### Section: CLAN LIFE (5 achievements)
+#### Section: TEAM LIFE (5 achievements)
 
 | Achievement | Objective / Description | Target / Progress |
 |---|---|:---:|
-| **Find Your Clan** | Join or create a clan with /clan. | 0/1 |
-| **Clan Chat** | Send a message in clan chat (/cc). | 0/1 |
-| **Earn Your Valor** | Earn Valor for your clan. | 0/1 |
-| **Clan Leader** | Create a clan and recruit 2 or more members. | 0/1 |
-| **Climbing the Ranks** | Get your clan into the top 5 on a clan leaderboard. | 0/1 |
+| **Find Your Team** | Join or create a team with /team create or /team join. | 0/1 |
+| **Team Comms** | Send a message in team chat (/tc or /team chat). | 0/1 |
+| **Team Treasury** | Deposit money into your team's bank with /team bank deposit. | 0/1 |
+| **Team Captain** | Create a team and recruit 2 or more members. | 0/1 |
+| **Climbing the Ranks** | Check the top teams leaderboard with /team top. | 0/1 |
 
-#### Section: CLAN CHALLENGES (4 achievements)
+#### Section: TEAM PERKS (4 achievements)
 
 | Achievement | Objective / Description | Target / Progress |
 |---|---|:---:|
-| **Daily Duty** | Complete a daily clan challenge. | 0/1 |
-| **Top of the Table** | Place top 5 in a clan challenge. | 0/1 |
-| **Three-Day Triumph** | Win a 3-day clan challenge. | 0/1 |
-| **Biweekly Champion** | Be in a top-5 clan at the biweekly Valor payout. | 0/1 |
+| **Home Sweet Home** | Set a team home for your team members with /team sethome. | 0/1 |
+| **Team Outpost** | Create a team warp point with /team setwarp. | 0/1 |
+| **Shared Vault** | Open and use your team's shared chest with /team ec. | 0/1 |
+| **Expansion Era** | Upgrade your team's tier and perks with /team upgrade. | 0/1 |
 
 #### Section: PILLAR OF THE COMMUNITY (5 achievements)
 

@@ -8127,117 +8127,145 @@
           "id": "social_find_your_clan",
           "category_id": "social",
           "category_name": "Social & Clans",
-          "section": "CLAN LIFE",
-          "name": "Find Your Clan",
-          "description": "Join or create a clan with /clan.",
+          "section": "TEAM LIFE",
+          "name": "Find Your Team",
+          "description": "Join or create a team with /team create or /team join.",
           "target": 1,
-          "trigger_bucket": "BUILT_IN_HOOK",
-          "trigger_type": "StandardEvent",
+          "trigger_bucket": "EXTERNAL_API_BRIDGE",
+          "trigger_type": "TeamEvent",
           "rewards": [
             {
               "type": "CURRENCY",
               "currency": "POKECOIN",
-              "amount": 250
-            },
-            {
-              "type": "ITEM",
-              "id": "minecraft:clan_valor",
-              "display": "Clan Valor",
-              "amount": 100
+              "amount": 500
             }
           ],
-          "reward_display": "250 PokéCoins, 100 Clan Valor"
+          "reward_display": "500 PokéCoins"
         },
         {
           "id": "social_clan_chat",
           "category_id": "social",
           "category_name": "Social & Clans",
-          "section": "CLAN LIFE",
-          "name": "Clan Chat",
-          "description": "Send a message in clan chat (/cc).",
+          "section": "TEAM LIFE",
+          "name": "Team Comms",
+          "description": "Send a message in team chat (/tc or /team chat).",
           "target": 1,
-          "trigger_bucket": "BUILT_IN_HOOK",
-          "trigger_type": "StandardEvent",
+          "trigger_bucket": "EXTERNAL_API_BRIDGE",
+          "trigger_type": "TeamEvent",
           "rewards": [
             {
               "type": "CURRENCY",
               "currency": "POKECOIN",
-              "amount": 100
-            },
-            {
-              "type": "ITEM",
-              "id": "minecraft:clan_valor",
-              "display": "Clan Valor",
-              "amount": 50
+              "amount": 250
             }
           ],
-          "reward_display": "100 PokéCoins, 50 Clan Valor"
+          "reward_display": "250 PokéCoins"
         },
         {
-          "id": "social_earn_your_valor",
+          "id": "social_team_bank",
           "category_id": "social",
           "category_name": "Social & Clans",
-          "section": "CLAN LIFE",
-          "name": "Earn Your Valor",
-          "description": "Earn Valor for your clan.",
+          "section": "TEAM LIFE",
+          "name": "Team Treasury",
+          "description": "Deposit money into your team's bank with /team bank deposit.",
           "target": 1,
-          "trigger_bucket": "BUILT_IN_HOOK",
-          "trigger_type": "StandardEvent",
+          "trigger_bucket": "EXTERNAL_API_BRIDGE",
+          "trigger_type": "TeamEvent",
           "rewards": [
             {
               "type": "CURRENCY",
               "currency": "POKECOIN",
               "amount": 500
-            },
-            {
-              "type": "ITEM",
-              "id": "minecraft:clan_valor",
-              "display": "Clan Valor",
-              "amount": 250
             }
           ],
-          "reward_display": "500 PokéCoins, 250 Clan Valor"
+          "reward_display": "500 PokéCoins"
         },
         {
           "id": "social_clan_leader",
           "category_id": "social",
           "category_name": "Social & Clans",
-          "section": "CLAN LIFE",
-          "name": "Clan Leader",
-          "description": "Create a clan and recruit 2 or more members.",
+          "section": "TEAM LIFE",
+          "name": "Team Captain",
+          "description": "Create a team and recruit 2 or more members.",
           "target": 1,
-          "trigger_bucket": "BUILT_IN_HOOK",
-          "trigger_type": "StandardEvent",
+          "trigger_bucket": "EXTERNAL_API_BRIDGE",
+          "trigger_type": "TeamEvent",
           "rewards": [
-            {
-              "type": "COMMAND",
-              "command": "give-reward 1",
-              "display": "1"
-            },
             {
               "type": "CURRENCY",
               "currency": "POKECOIN",
-              "amount": 0
-            },
-            {
-              "type": "ITEM",
-              "id": "minecraft:clan_banner",
-              "display": "Clan Banner",
-              "amount": 1
+              "amount": 1000
             }
           ],
-          "reward_display": "1,000 PokéCoins, 1x Clan Banner"
+          "reward_display": "1,000 PokéCoins"
         },
         {
           "id": "social_climbing_the_ranks",
           "category_id": "social",
           "category_name": "Social & Clans",
-          "section": "CLAN LIFE",
+          "section": "TEAM LIFE",
           "name": "Climbing the Ranks",
-          "description": "Get your clan into the top 5 on a clan leaderboard.",
+          "description": "Check the top teams leaderboard with /team top.",
           "target": 1,
-          "trigger_bucket": "BUILT_IN_HOOK",
-          "trigger_type": "StandardEvent",
+          "trigger_bucket": "EXTERNAL_API_BRIDGE",
+          "trigger_type": "TeamEvent",
+          "rewards": [
+            {
+              "type": "CURRENCY",
+              "currency": "POKECOIN",
+              "amount": 1000
+            }
+          ],
+          "reward_display": "1,000 PokéCoins"
+        },
+        {
+          "id": "social_team_home",
+          "category_id": "social",
+          "category_name": "Social & Clans",
+          "section": "TEAM PERKS",
+          "name": "Home Sweet Home",
+          "description": "Set a team home for your team members with /team sethome.",
+          "target": 1,
+          "trigger_bucket": "EXTERNAL_API_BRIDGE",
+          "trigger_type": "TeamEvent",
+          "rewards": [
+            {
+              "type": "CURRENCY",
+              "currency": "POKECOIN",
+              "amount": 500
+            }
+          ],
+          "reward_display": "500 PokéCoins"
+        },
+        {
+          "id": "social_team_warp",
+          "category_id": "social",
+          "category_name": "Social & Clans",
+          "section": "TEAM PERKS",
+          "name": "Team Outpost",
+          "description": "Create a team warp point with /team setwarp.",
+          "target": 1,
+          "trigger_bucket": "EXTERNAL_API_BRIDGE",
+          "trigger_type": "TeamEvent",
+          "rewards": [
+            {
+              "type": "CURRENCY",
+              "currency": "POKECOIN",
+              "amount": 1000
+            }
+          ],
+          "reward_display": "1,000 PokéCoins"
+        },
+        {
+          "id": "social_team_enderchest",
+          "category_id": "social",
+          "category_name": "Social & Clans",
+          "section": "TEAM PERKS",
+          "name": "Shared Vault",
+          "description": "Open and use your team's shared chest with /team ec.",
+          "target": 1,
+          "trigger_bucket": "EXTERNAL_API_BRIDGE",
+          "trigger_type": "TeamEvent",
           "rewards": [
             {
               "type": "CRATE_KEY",
@@ -8245,123 +8273,23 @@
               "amount": 1
             },
             {
-              "type": "COMMAND",
-              "command": "give-reward 5",
-              "display": "5"
-            },
-            {
               "type": "CURRENCY",
               "currency": "POKECOIN",
-              "amount": 0
+              "amount": 1500
             }
           ],
-          "reward_display": "1x Ultra Crate Key, 5,000 PokéCoins"
+          "reward_display": "1x Ultra Crate Key, 1,500 PokéCoins"
         },
         {
-          "id": "social_daily_duty",
+          "id": "social_team_upgrade",
           "category_id": "social",
           "category_name": "Social & Clans",
-          "section": "CLAN CHALLENGES",
-          "name": "Daily Duty",
-          "description": "Complete a daily clan challenge.",
+          "section": "TEAM PERKS",
+          "name": "Expansion Era",
+          "description": "Upgrade your team's tier and perks with /team upgrade.",
           "target": 1,
-          "trigger_bucket": "BUILT_IN_HOOK",
-          "trigger_type": "StandardEvent",
-          "rewards": [
-            {
-              "type": "CURRENCY",
-              "currency": "POKECOIN",
-              "amount": 500
-            },
-            {
-              "type": "ITEM",
-              "id": "minecraft:clan_valor",
-              "display": "Clan Valor",
-              "amount": 200
-            }
-          ],
-          "reward_display": "500 PokéCoins, 200 Clan Valor"
-        },
-        {
-          "id": "social_top_of_the_table",
-          "category_id": "social",
-          "category_name": "Social & Clans",
-          "section": "CLAN CHALLENGES",
-          "name": "Top of the Table",
-          "description": "Place top 5 in a clan challenge.",
-          "target": 1,
-          "trigger_bucket": "BUILT_IN_HOOK",
-          "trigger_type": "StandardEvent",
-          "rewards": [
-            {
-              "type": "COMMAND",
-              "command": "give-reward 1",
-              "display": "1"
-            },
-            {
-              "type": "CURRENCY",
-              "currency": "POKECOIN",
-              "amount": 500
-            },
-            {
-              "type": "ITEM",
-              "id": "minecraft:clan_valor",
-              "display": "Clan Valor",
-              "amount": 500
-            }
-          ],
-          "reward_display": "1,500 PokéCoins, 500 Clan Valor"
-        },
-        {
-          "id": "social_three_day_triumph",
-          "category_id": "social",
-          "category_name": "Social & Clans",
-          "section": "CLAN CHALLENGES",
-          "name": "Three-Day Triumph",
-          "description": "Win a 3-day clan challenge.",
-          "target": 1,
-          "trigger_bucket": "BUILT_IN_HOOK",
-          "trigger_type": "StandardEvent",
-          "rewards": [
-            {
-              "type": "CRATE_KEY",
-              "key_id": "ultra",
-              "amount": 1
-            },
-            {
-              "type": "COMMAND",
-              "command": "give-reward 3",
-              "display": "3"
-            },
-            {
-              "type": "CURRENCY",
-              "currency": "POKECOIN",
-              "amount": 500
-            },
-            {
-              "type": "COMMAND",
-              "command": "give-reward 1",
-              "display": "1"
-            },
-            {
-              "type": "ITEM",
-              "id": "minecraft:clan_valor",
-              "display": "Clan Valor",
-              "amount": 0
-            }
-          ],
-          "reward_display": "1x Ultra Crate Key, 3,500 PokéCoins, 1,000 Clan Valor"
-        },
-        {
-          "id": "social_biweekly_champion",
-          "category_id": "social",
-          "category_name": "Social & Clans",
-          "section": "CLAN CHALLENGES",
-          "name": "Biweekly Champion",
-          "description": "Be in a top-5 clan at the biweekly Valor payout.",
-          "target": 1,
-          "trigger_bucket": "BUILT_IN_HOOK",
-          "trigger_type": "StandardEvent",
+          "trigger_bucket": "EXTERNAL_API_BRIDGE",
+          "trigger_type": "TeamEvent",
           "rewards": [
             {
               "type": "CRATE_KEY",
@@ -8369,29 +8297,12 @@
               "amount": 1
             },
             {
-              "type": "ITEM",
-              "id": "minecraft:0",
-              "display": "0",
-              "amount": 1
-            },
-            {
               "type": "CURRENCY",
               "currency": "POKECOIN",
-              "amount": 0
-            },
-            {
-              "type": "COMMAND",
-              "command": "give-reward 2",
-              "display": "2"
-            },
-            {
-              "type": "ITEM",
-              "id": "minecraft:clan_valor",
-              "display": "Clan Valor",
-              "amount": 500
+              "amount": 5000
             }
           ],
-          "reward_display": "1x Master Crate Key, 10,000 PokéCoins, 2,500 Clan Valor"
+          "reward_display": "1x Master Crate Key, 5,000 PokéCoins"
         },
         {
           "id": "social_rock_the_vote",

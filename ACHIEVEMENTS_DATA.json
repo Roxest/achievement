@@ -1957,64 +1957,6 @@
             "status": "TRANSCRIBED"
           }
         },
-        "CLAN LIFE": {
-          "Find Your Clan": {
-            "description": "Join or create a clan with /clan.",
-            "target": "0/1",
-            "proposed_reward": "250 PokéCoins, 100 Clan Valor",
-            "status": "COMPLETED_TRUNCATION"
-          },
-          "Clan Chat": {
-            "description": "Send a message in clan chat (/cc).",
-            "target": "0/1",
-            "proposed_reward": "100 PokéCoins, 50 Clan Valor",
-            "status": "TRANSCRIBED"
-          },
-          "Earn Your Valor": {
-            "description": "Earn Valor for your clan.",
-            "target": "0/1",
-            "proposed_reward": "500 PokéCoins, 250 Clan Valor",
-            "status": "TRANSCRIBED"
-          },
-          "Clan Leader": {
-            "description": "Create a clan and recruit 2 or more members.",
-            "target": "0/1",
-            "proposed_reward": "1,000 PokéCoins, 1x Clan Banner",
-            "status": "COMPLETED_TRUNCATION"
-          },
-          "Climbing the Ranks": {
-            "description": "Get your clan into the top 5 on a clan leaderboard.",
-            "target": "0/1",
-            "proposed_reward": "1x Ultra Crate Key, 5,000 PokéCoins",
-            "status": "COMPLETED_TRUNCATION"
-          }
-        },
-        "CLAN CHALLENGES": {
-          "Daily Duty": {
-            "description": "Complete a daily clan challenge.",
-            "target": "0/1",
-            "proposed_reward": "500 PokéCoins, 200 Clan Valor",
-            "status": "TRANSCRIBED"
-          },
-          "Top of the Table": {
-            "description": "Place top 5 in a clan challenge.",
-            "target": "0/1",
-            "proposed_reward": "1,500 PokéCoins, 500 Clan Valor",
-            "status": "TRANSCRIBED"
-          },
-          "Three-Day Triumph": {
-            "description": "Win a 3-day clan challenge.",
-            "target": "0/1",
-            "proposed_reward": "1x Ultra Crate Key, 3,500 PokéCoins, 1,000 Clan Valor",
-            "status": "TRANSCRIBED"
-          },
-          "Biweekly Champion": {
-            "description": "Be in a top-5 clan at the biweekly Valor payout.",
-            "target": "0/1",
-            "proposed_reward": "1x Master Crate Key, 10,000 PokéCoins, 2,500 Clan Valor",
-            "status": "COMPLETED_TRUNCATION"
-          }
-        },
         "PILLAR OF THE COMMUNITY": {
           "Rock the Vote": {
             "description": "Vote for the server with /vote.",
@@ -2045,6 +1987,73 @@
             "target": "0/365",
             "proposed_reward": "2x Master Crate Keys, 25,000 PokéCoins, Title: 'Server Pillar'",
             "status": "TRANSCRIBED"
+          }
+        },
+        "TEAM LIFE": {
+          "Find Your Team": {
+            "id": "social_find_your_clan",
+            "description": "Join or create a team with /team create or /team join.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins",
+            "status": "ALIGNED_JUSTTEAMS"
+          },
+          "Team Comms": {
+            "id": "social_clan_chat",
+            "description": "Send a message in team chat (/tc or /team chat).",
+            "target": "0/1",
+            "proposed_reward": "250 PokéCoins",
+            "status": "ALIGNED_JUSTTEAMS"
+          },
+          "Team Treasury": {
+            "id": "social_team_bank",
+            "description": "Deposit money into your team's bank with /team bank deposit.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins",
+            "status": "ALIGNED_JUSTTEAMS"
+          },
+          "Team Captain": {
+            "id": "social_clan_leader",
+            "description": "Create a team and recruit 2 or more members.",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins",
+            "status": "ALIGNED_JUSTTEAMS"
+          },
+          "Climbing the Ranks": {
+            "id": "social_climbing_the_ranks",
+            "description": "Check the top teams leaderboard with /team top.",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins",
+            "status": "ALIGNED_JUSTTEAMS"
+          }
+        },
+        "TEAM PERKS": {
+          "Home Sweet Home": {
+            "id": "social_team_home",
+            "description": "Set a team home for your team members with /team sethome.",
+            "target": "0/1",
+            "proposed_reward": "500 PokéCoins",
+            "status": "ALIGNED_JUSTTEAMS"
+          },
+          "Team Outpost": {
+            "id": "social_team_warp",
+            "description": "Create a team warp point with /team setwarp.",
+            "target": "0/1",
+            "proposed_reward": "1,000 PokéCoins",
+            "status": "ALIGNED_JUSTTEAMS"
+          },
+          "Shared Vault": {
+            "id": "social_team_enderchest",
+            "description": "Open and use your team's shared chest with /team ec.",
+            "target": "0/1",
+            "proposed_reward": "1x Ultra Crate Key, 1,500 PokéCoins",
+            "status": "ALIGNED_JUSTTEAMS"
+          },
+          "Expansion Era": {
+            "id": "social_team_upgrade",
+            "description": "Upgrade your team's tier and perks with /team upgrade.",
+            "target": "0/1",
+            "proposed_reward": "1x Master Crate Key, 5,000 PokéCoins",
+            "status": "ALIGNED_JUSTTEAMS"
           }
         }
       }
