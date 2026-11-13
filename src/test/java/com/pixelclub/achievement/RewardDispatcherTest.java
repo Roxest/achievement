@@ -51,8 +51,8 @@ public class RewardDispatcherTest {
         Path configFile = tempDir.resolve("config.json");
         AchievementConfig config = AchievementConfig.loadOrCreate(configFile);
         assertNotNull(config);
-        assertEquals("money give {player} {amount}", config.getCurrencyCommand());
-        assertEquals("eco give {player} {amount}", config.getCurrencyFallbackCommand());
+        assertEquals("eco give {player} {amount}", config.getCurrencyCommand());
+        assertEquals("impactoreconomy give {player} {amount}", config.getCurrencyFallbackCommand());
         assertTrue(config.isNotifyPlayerOnPayout());
 
         // Modify and reload

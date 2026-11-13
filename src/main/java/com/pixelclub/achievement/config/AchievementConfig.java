@@ -27,10 +27,10 @@ public class AchievementConfig {
     private transient Path configPath;
 
     @SerializedName("currency_command")
-    private String currencyCommand = "money give {player} {amount}";
+    private String currencyCommand = "eco give {player} {amount}";
 
     @SerializedName("currency_fallback_command")
-    private String currencyFallbackCommand = "eco give {player} {amount}";
+    private String currencyFallbackCommand = "impactoreconomy give {player} {amount}";
 
     @SerializedName("raid_coin_command")
     private String raidCoinCommand = "raidcoin give {player} {amount}";

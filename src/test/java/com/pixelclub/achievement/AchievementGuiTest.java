@@ -201,4 +201,20 @@ public class AchievementGuiTest {
         assertDoesNotThrow(() -> AchievementGui.handleClientPacket(null, "{\"action\":\"click\",\"elementId\":\"close\"}"));
         assertDoesNotThrow(() -> AchievementGui.handleClientPacket(null, "{\"action\":\"ui_close\"}"));
     }
+
+    @Test
+    public void testThaiSceneJson() {
+        UUID uuid = UUID.randomUUID();
+        JsonObject scene = AchievementGui.buildSceneJson(uuid, null, categories, categories.get(0), true);
+        assertNotNull(scene);
+        assertEquals("สมุดเควส", scene.get("title").getAsString());
+
+        AchievementCategory cat = categories.get(0);
+        assertEquals("การจับโปเกมอน", cat.getName(true));
+        assertFalse(cat.getName(true).contains("§l"), "Thai text must not contain bold");
+
+        com.pixelclub.achievement.model.Achievement ach = cat.getAchievements().get(0);
+        assertEquals("จับได้แล้ว!", ach.getName(true));
+        assertEquals("จับโปเกมอนตัวแรกของคุณสำเร็จ", ach.getDescription(true));
+    }
 }

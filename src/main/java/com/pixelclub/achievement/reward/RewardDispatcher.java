@@ -88,7 +88,7 @@ public final class RewardDispatcher {
         int amount = reward.getAmount();
         if (amount <= 0) return;
 
-        // Route RAID_COIN separately: never deposit into primary PokéCoin balance
+        // Route RAID_COIN separately: never deposit into primary PokéDollar balance
         if ("RAID_COIN".equalsIgnoreCase(reward.getCurrency())) {
             payoutRaidCoin(server, player, playerName, amount);
             return;
@@ -139,7 +139,7 @@ public final class RewardDispatcher {
             String template = cfg.getCurrencyCommand();
             String cmd = template.replace("{player}", playerName)
                     .replace("{amount}", String.valueOf(amount))
-                    .replace("{currency}", currency != null ? currency : "POKECOIN");
+                    .replace("{currency}", currency != null ? currency : "POKEDOLLAR");
             try {
                 executeCommand(server, cmd);
                 LOGGER.info("[REWARD PAYOUT/COMMAND] Executed primary currency command: '{}'", cmd);
@@ -149,7 +149,7 @@ public final class RewardDispatcher {
                 String fallbackTemplate = cfg.getCurrencyFallbackCommand();
                 String fallbackCmd = fallbackTemplate.replace("{player}", playerName)
                         .replace("{amount}", String.valueOf(amount))
-                        .replace("{currency}", currency != null ? currency : "POKECOIN");
+                        .replace("{currency}", currency != null ? currency : "POKEDOLLAR");
                 executeCommand(server, fallbackCmd);
                 LOGGER.info("[REWARD PAYOUT/COMMAND] Executed fallback currency command: '{}'", fallbackCmd);
                 notifyCurrency(player, amount, currency);
@@ -162,10 +162,23 @@ public final class RewardDispatcher {
         }
     }
 
+    public static boolean isThai(ServerPlayer player) {
+        if (player == null) return false;
+        try {
+            String lang = player.clientInformation().language();
+            return lang != null && lang.toLowerCase().startsWith("th");
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
     private static void notifyCurrency(ServerPlayer player, int amount, String currency) {
         if (player != null && getConfig().isNotifyPlayerOnPayout()) {
-            String currName = "RAID_COIN".equalsIgnoreCase(currency) ? "Raid Coins" : "PokéCoins";
-            player.sendSystemMessage(Component.literal("§8[§bQuest§8] §a✔ Received: §6" + amount + " " + currName));
+            boolean isRaid = "RAID_COIN".equalsIgnoreCase(currency);
+            String currName = isRaid ? "Raid Coins" : "PokéDollars";
+            String symbol = isRaid ? "" : "₽";
+            String formattedAmount = String.format(java.util.Locale.US, "%,d", amount);
+            player.sendSystemMessage(Component.literal("§8[§bQuest§8] §a✔ Received: §6" + symbol + formattedAmount + " " + currName));
         }
     }
 
@@ -221,9 +234,17 @@ public final class RewardDispatcher {
         LOGGER.info("[REWARD PAYOUT/ITEM] Executed item command: '{}'", cmd);
 
         if (player != null && getConfig().isNotifyPlayerOnPayout()) {
-            String display = reward.getDisplay() != null && !reward.getDisplay().isEmpty()
-                    ? reward.getDisplay()
-                    : (amount + "x " + itemTarget);
+            String rawDisplay = reward.getDisplay();
+            String display;
+            if (rawDisplay != null && !rawDisplay.isEmpty()) {
+                if (amount > 1 && !rawDisplay.matches("^\\d+x?\\s+.*")) {
+                    display = String.format(java.util.Locale.US, "%,dx %s", amount, rawDisplay);
+                } else {
+                    display = rawDisplay;
+                }
+            } else {
+                display = String.format(java.util.Locale.US, "%,dx %s", amount, itemTarget);
+            }
             player.sendSystemMessage(Component.literal("§8[§bQuest§8] §a✔ Received: §f" + display));
         }
     }
@@ -241,7 +262,7 @@ public final class RewardDispatcher {
         if (player != null && getConfig().isNotifyPlayerOnPayout()) {
             String display = reward.getDisplay() != null && !reward.getDisplay().isEmpty()
                     ? reward.getDisplay()
-                    : (amount + "x " + key + " Crate Key");
+                    : String.format(java.util.Locale.US, "%,dx %s Crate Key", amount, key);
             player.sendSystemMessage(Component.literal("§8[§bQuest§8] §a✔ Received: §e" + display));
         }
     }

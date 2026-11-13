@@ -49,7 +49,10 @@ public class AchievementGui {
         }
 
         if (categories.isEmpty()) {
-            player.sendSystemMessage(Component.literal("§e[Quest Book] §7All achievement categories are currently locked."));
+            boolean isTh = isThai(player);
+            player.sendSystemMessage(Component.literal(isTh
+                    ? "§e[สมุดเควส] §7หมวดหมู่ความสำเร็จทั้งหมดยังคงถูกล็อกอยู่"
+                    : "§e[Quest Book] §7All achievement categories are currently locked."));
             return;
         }
 
@@ -135,7 +138,10 @@ public class AchievementGui {
                 case "select_category" -> {
                     AchievementConfig cfg = PxcAchievementsMod.getInstance().getConfig();
                     if (targetCategory != null && cfg != null && !cfg.isCategoryEnabled(targetCategory)) {
-                        player.sendSystemMessage(Component.literal("§e[Quest Book] §cThat category is currently locked."));
+                        boolean isTh = isThai(player);
+                        player.sendSystemMessage(Component.literal(isTh
+                                ? "§e[สมุดเควส] §cหมวดหมู่นั้นถูกล็อกอยู่"
+                                : "§e[Quest Book] §cThat category is currently locked."));
                         open(player, null);
                         return;
                     }
@@ -146,20 +152,31 @@ public class AchievementGui {
                     Achievement ach = targetAchievement != null ? PxcAchievementsMod.getInstance().getRegistry().getAchievement(targetAchievement) : null;
                     AchievementConfig cfg = PxcAchievementsMod.getInstance().getConfig();
                     if (ach != null && cfg != null && !cfg.isCategoryEnabled(ach.getCategoryId())) {
-                        player.sendSystemMessage(Component.literal("§e[Quest Book] §cThat category is currently locked."));
+                        boolean isTh = isThai(player);
+                        player.sendSystemMessage(Component.literal(isTh
+                                ? "§e[สมุดเควส] §cหมวดหมู่นั้นถูกล็อกอยู่"
+                                : "§e[Quest Book] §cThat category is currently locked."));
                         open(player, null);
                         return;
                     }
                     if (targetAchievement != null && store != null) {
                         boolean claimed = store.claim(player, targetAchievement);
                         if (claimed && ach != null) {
-                            player.sendSystemMessage(Component.literal("§a✔ Claimed achievement: §e" + ach.getName()));
+                            boolean isTh = isThai(player);
+                            String msg = isTh
+                                    ? "§a✔ รับรางวัลความสำเร็จ: §e" + ach.getName(true)
+                                    : "§a✔ Claimed achievement: §e" + ach.getName(false);
+                            player.sendSystemMessage(Component.literal(msg));
                         }
                     }
                     open(player, ach != null ? ach.getCategoryId() : targetCategory);
                 }
                 case "view_category_rewards" -> {
-                    player.sendSystemMessage(Component.literal("§e[Quest Book] §7Previewing milestone rewards for category: §6" + targetCategory));
+                    boolean isTh = isThai(player);
+                    String msg = isTh
+                            ? "§e[สมุดเควส] §7ดูตัวอย่างรางวัลขั้นไมล์สโตนสำหรับหมวดหมู่: §6" + targetCategory
+                            : "§e[Quest Book] §7Previewing milestone rewards for category: §6" + targetCategory;
+                    player.sendSystemMessage(Component.literal(msg));
                     open(player, targetCategory);
                 }
                 case "close" -> {
@@ -176,12 +193,26 @@ public class AchievementGui {
         }
     }
 
+    public static boolean isThai(ServerPlayer player) {
+        if (player == null) return false;
+        try {
+            String lang = player.clientInformation().language();
+            return lang != null && lang.toLowerCase().startsWith("th");
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
     static JsonObject buildSceneJson(ServerPlayer player, List<AchievementCategory> categories, AchievementCategory currentCat) {
         PlayerStore store = PxcAchievementsMod.getInstance().getPlayerStore();
-        return buildSceneJson(player.getUUID(), store, categories, currentCat);
+        return buildSceneJson(player.getUUID(), store, categories, currentCat, isThai(player));
     }
 
     public static JsonObject buildSceneJson(UUID uuid, PlayerStore store, List<AchievementCategory> categories, AchievementCategory currentCat) {
+        return buildSceneJson(uuid, store, categories, currentCat, false);
+    }
+
+    public static JsonObject buildSceneJson(UUID uuid, PlayerStore store, List<AchievementCategory> categories, AchievementCategory currentCat, boolean isThai) {
         int totalCompleted = 0;
         int totalAchievements = 0;
         Map<String, Integer> categoryCompletedMap = new HashMap<>();
@@ -203,7 +234,7 @@ public class AchievementGui {
         scene.addProperty("action", "open_screen");
         scene.addProperty("layout", "scene");
         scene.addProperty("id", SCREEN_ID);
-        scene.addProperty("title", "QUEST BOOK");
+        scene.addProperty("title", isThai ? "สมุดเควส" : "QUEST BOOK");
         scene.addProperty("opaque", false);
         scene.addProperty("bg", "none");
         scene.addProperty("smooth", true);
@@ -236,7 +267,7 @@ public class AchievementGui {
 
         // 1. Top Bar Header
         bookFrame.add("children", new JsonArray());
-        bookFrame.getAsJsonArray("children").add(buildTopBar(totalCompleted, totalAchievements));
+        bookFrame.getAsJsonArray("children").add(buildTopBar(totalCompleted, totalAchievements, isThai));
 
         // 2. Main 2-Page Horizontal Container
         JsonObject pagesRow = new JsonObject();
@@ -247,10 +278,10 @@ public class AchievementGui {
         pagesRow.add("children", new JsonArray());
 
         // Left Page: All 16 Categories (Fixed / Non-paginated)
-        pagesRow.getAsJsonArray("children").add(buildLeftPage(categories, currentCat, categoryCompletedMap));
+        pagesRow.getAsJsonArray("children").add(buildLeftPage(categories, currentCat, categoryCompletedMap, isThai));
 
         // Right Page: Category Header + Scrollable Achievements
-        pagesRow.getAsJsonArray("children").add(buildRightPage(uuid, store, currentCat, categoryCompletedMap.getOrDefault(currentCat.getId(), 0)));
+        pagesRow.getAsJsonArray("children").add(buildRightPage(uuid, store, currentCat, categoryCompletedMap.getOrDefault(currentCat.getId(), 0), isThai));
 
         bookFrame.getAsJsonArray("children").add(pagesRow);
         root.add("children", new JsonArray());
@@ -260,7 +291,7 @@ public class AchievementGui {
         return scene;
     }
 
-    private static JsonObject buildTopBar(int completed, int total) {
+    private static JsonObject buildTopBar(int completed, int total, boolean isThai) {
         JsonObject bar = new JsonObject();
         bar.addProperty("type", "row");
         bar.addProperty("w", "fill");
@@ -322,7 +353,7 @@ public class AchievementGui {
         JsonArray ribbonChildren = new JsonArray();
         JsonObject ribbonText = new JsonObject();
         ribbonText.addProperty("type", "text");
-        ribbonText.addProperty("text", "QUEST BOOK");
+        ribbonText.addProperty("text", isThai ? "สมุดเควส" : "QUEST BOOK");
         ribbonText.addProperty("color", "#F6D896");
         ribbonText.addProperty("size", 0.95);
         ribbonText.addProperty("w", "fill");
@@ -366,7 +397,7 @@ public class AchievementGui {
         return bar;
     }
 
-    private static JsonObject buildLeftPage(List<AchievementCategory> categories, AchievementCategory selectedCat, Map<String, Integer> compMap) {
+    private static JsonObject buildLeftPage(List<AchievementCategory> categories, AchievementCategory selectedCat, Map<String, Integer> compMap, boolean isThai) {
         JsonObject page = new JsonObject();
         page.addProperty("type", "column");
         page.addProperty("w", 185);
@@ -414,7 +445,7 @@ public class AchievementGui {
             // Category Title (cleanly truncated, w: fill pushes counter flush right)
             JsonObject title = new JsonObject();
             title.addProperty("type", "text");
-            title.addProperty("text", truncate(cat.getName(), 17));
+            title.addProperty("text", truncate(cat.getName(isThai), 17));
             title.addProperty("color", isSelected ? "#FFFFFF" : "#D4B886");
             title.addProperty("size", 0.72);
             title.addProperty("w", "fill");
@@ -437,7 +468,7 @@ public class AchievementGui {
         return page;
     }
 
-    private static JsonObject buildRightPage(UUID uuid, PlayerStore store, AchievementCategory currentCat, int catCompleted) {
+    private static JsonObject buildRightPage(UUID uuid, PlayerStore store, AchievementCategory currentCat, int catCompleted, boolean isThai) {
         JsonObject page = new JsonObject();
         page.addProperty("type", "column");
         page.addProperty("w", "fill");
@@ -473,7 +504,7 @@ public class AchievementGui {
         JsonArray bRow1Children = new JsonArray();
         JsonObject catTitle = new JsonObject();
         catTitle.addProperty("type", "text");
-        catTitle.addProperty("text", currentCat.getName());
+        catTitle.addProperty("text", currentCat.getName(isThai));
         catTitle.addProperty("color", "#FFF4E0");
         catTitle.addProperty("size", 1.05);
         catTitle.addProperty("w", "fill");
@@ -493,7 +524,7 @@ public class AchievementGui {
         // Banner Row 2: Subtitle / Theme Description
         JsonObject desc = new JsonObject();
         desc.addProperty("type", "text");
-        desc.addProperty("text", currentCat.getDescription());
+        desc.addProperty("text", currentCat.getDescription(isThai));
         desc.addProperty("color", "#D4B896");
         desc.addProperty("size", 0.72);
         bannerChildren.add(desc);
@@ -661,14 +692,14 @@ public class AchievementGui {
                 JsonArray tChildren = new JsonArray();
                 JsonObject aName = new JsonObject();
                 aName.addProperty("type", "text");
-                aName.addProperty("text", ach.getName());
+                aName.addProperty("text", ach.getName(isThai));
                 aName.addProperty("color", "#FFF4E0");
                 aName.addProperty("size", 0.88);
                 tChildren.add(aName);
 
                 JsonObject aDesc = new JsonObject();
                 aDesc.addProperty("type", "text");
-                aDesc.addProperty("text", ach.getDescription());
+                aDesc.addProperty("text", ach.getDescription(isThai));
                 aDesc.addProperty("color", "#BFA88F");
                 aDesc.addProperty("size", 0.74);
                 tChildren.add(aDesc);
@@ -733,7 +764,7 @@ public class AchievementGui {
                     JsonArray cBtnChildren = new JsonArray();
                     JsonObject cText = new JsonObject();
                     cText.addProperty("type", "text");
-                    cText.addProperty("text", "✔ CLAIM");
+                    cText.addProperty("text", isThai ? "✔ รับรางวัล" : "✔ CLAIM");
                     cText.addProperty("color", "#FFFFFF");
                     cText.addProperty("size", 0.78);
                     cText.addProperty("w", "fill");
@@ -756,7 +787,7 @@ public class AchievementGui {
                     JsonArray badgeChildren = new JsonArray();
                     JsonObject bText = new JsonObject();
                     bText.addProperty("type", "text");
-                    bText.addProperty("text", "✔ CLAIMED");
+                    bText.addProperty("text", isThai ? "✔ รับแล้ว" : "✔ CLAIMED");
                     bText.addProperty("color", "#888888");
                     bText.addProperty("size", 0.74);
                     bText.addProperty("w", "fill");
